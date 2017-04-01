@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[mysql]]></title>
+      <url>http://blog.hugoxia.com/2017/03/31/mysql/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Vim Cheat Sheet]]></title>
+      <url>http://blog.hugoxia.com/2017/03/31/vim/</url>
+      <content type="html"><![CDATA[<p>date: 2015-09-21 16:55:54<br>tags:vim</p>
+<h2 id="光标"><a href="#光标" class="headerlink" title="光标"></a>光标</h2><ul>
+<li>h - 左移光标</li>
+<li>j - 下移光标</li>
+<li>k - 上移光标</li>
+<li>l - 右移光标</li>
+<li>w - 移动到下个单词开头</li>
+<li>W - 移动到下个单词开头(单词含标点)</li>
+<li>e - 移动到下个单词结尾</li>
+<li>E - 移动到下个单词结尾(单词含标点)</li>
+<li>b - 移动到上个单词结尾</li>
+<li>B - 移动到上个单词结尾(单词含标点)</li>
+<li>0 - 移动到行首</li>
+<li>^ - 移动到行首的非空白符</li>
+<li>$ - 移动到行尾</li>
+<li>G - 移动到文档末行行首</li>
+<li>5G - 移动到第五行</li>
+</ul>
+<p>Tip1 : 命令前追加数字表示命令的重复次数, 比如4j 表示向下移动四行</p>
+<h2 id="插入模式-插入-追加文本"><a href="#插入模式-插入-追加文本" class="headerlink" title="插入模式 - 插入/追加文本"></a>插入模式 - 插入/追加文本</h2><ul>
+<li>i - 从光标前开始插入字符</li>
+<li>I - 从行首开始插入字符</li>
+<li>a - 从光标后开始插入字符</li>
+<li>A - 从行尾开始插入字符</li>
+<li>o - 在当前行之下另起一行, 开始插入字符</li>
+<li>O - 在当前行之上另起一行, 开始插入字符</li>
+<li>ea - 从当前单词末尾开始插入</li>
+<li>Esc - 退出插入模式</li>
+</ul>
+<h2 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h2><ul>
+<li>r - 替换当前字符</li>
+<li>J - 将下一行合并到当前行</li>
+<li>cc - 清空当前行, 然后进入插入模式</li>
+<li>cw - 从光标位置开始, 修改单词</li>
+<li>c$ - 从光标位置开始, 修改当前行</li>
+<li>s - 删除当前字符, 然后进入插入模式</li>
+<li>S - 清空当前行, 然后进入插入模式 (同cc)</li>
+<li>xp - 当前字符后移</li>
+<li>u - 撤销</li>
+<li>Ctrl + r - 重复</li>
+<li>. - 再次执行上个命令</li>
+</ul>
+<h2 id="选择文本（可视化模式）"><a href="#选择文本（可视化模式）" class="headerlink" title="选择文本（可视化模式）"></a>选择文本（可视化模式）</h2><ul>
+<li>v - 进入可视化模式, 移动光标高亮选择, 然后可以对选择的文本执行命令(比如y-复制)</li>
+<li>V - 进入可视化模式(行粒度选择)</li>
+<li>o - 切换光标到选择区开头/结尾</li>
+<li>Ctrl + v - 进入可视化模式(矩阵选择)</li>
+<li>O - 切换光标到选择区的角</li>
+<li>aw - 选择当前单词</li>
+<li>ab - 选择被 () 包裹的区域(含括号)</li>
+<li>aB - 选择被 {} 包裹的区域(含花括号)</li>
+<li>ib - 选择被 () 包裹的区域(不含括号)</li>
+<li>iB - 选择被 {} 包裹的区域(不含花括号)</li>
+<li>Esc - 退出可视化模式</li>
+</ul>
+<h2 id="可视化模式命令"><a href="#可视化模式命令" class="headerlink" title="可视化模式命令"></a>可视化模式命令</h2><ul>
+<li>&lt; - 向左缩进 | &gt; - 向右缩进</li>
+<li>y - 复制</li>
+<li>d - 剪切</li>
+<li>~ - 大小写切换</li>
+</ul>
+<h2 id="剪切-复制-粘贴"><a href="#剪切-复制-粘贴" class="headerlink" title="剪切, 复制, 粘贴"></a>剪切, 复制, 粘贴</h2><ul>
+<li>yy - 复制当前行</li>
+<li>2yy - 复制 2 行</li>
+<li>yw - 复制当前单词</li>
+<li>y$ - 复制, 从光标位置到行末</li>
+<li>p - 在光标后粘贴</li>
+<li>P - 在光标前粘贴</li>
+<li>dd - 剪切当前行</li>
+<li>2dd - 剪切 2 行</li>
+<li>dw - 剪切当前单词</li>
+<li>D - 剪切, 从光标位置到行末</li>
+<li>d$ - 剪切, 从光标位置到行末 (同D)</li>
+<li>x - 剪切当前字符</li>
+</ul>
+<h2 id="查找-替换"><a href="#查找-替换" class="headerlink" title="查找/替换"></a>查找/替换</h2><ul>
+<li>/pattern - 查找pattern</li>
+<li>?pattern - 向上查找pattern</li>
+<li>n - 查找下一个</li>
+<li>N - 查找上一个</li>
+<li>:%s/old/new/g - 替换全部</li>
+<li>:%s/old/new/gc - (逐个)替换</li>
+</ul>
+<h2 id="多文件"><a href="#多文件" class="headerlink" title="多文件"></a>多文件</h2><ul>
+<li>:e filename - 新建缓冲区打开 filename</li>
+<li>:bnext or :bn - 切换到下个缓冲区</li>
+<li>:bprev or :bp - 切换到上个缓冲区</li>
+<li>:bd - 关闭缓冲区</li>
+<li>:sp filename - 新建缓冲区打开 filename 并水平分栏</li>
+<li>:vsp filename - 新缓冲区打开 filename 并垂直分栏</li>
+<li>Ctrl + ws - 水平分栏</li>
+<li>Ctrl + ww - 在分栏间切换</li>
+<li>Ctrl + wq - 关闭分栏</li>
+<li>Ctrl + wv - 垂直分栏</li>
+<li>Ctrl + wh - 切换到右侧分栏</li>
+<li>Ctrl + wl - 切换到左侧分栏</li>
+<li>Ctrl + wj - move cursor to the window below (horizontal split)</li>
+<li>Ctrl + wk - move cursor to the window above (horizontal split)</li>
+</ul>
+<h2 id="页签"><a href="#页签" class="headerlink" title="页签"></a>页签</h2><ul>
+<li>:tabnew filename or :tabn filename - 创建新页签/在新标签页中打开文档</li>
+<li>Ctrl + wT - 将分栏变成页签</li>
+<li>gt or :tabnext or :tabn - 切换到下一个页签</li>
+<li>gT or :tabprev or :tabp - 切换到上一个页签</li>
+<li>Xgt - 切换到第X个页签</li>
+<li>:tabmove # - 移动页签到第 # 位(下标从 0 开始)</li>
+<li>:tabclose or :tabc - 关闭当前页签</li>
+<li>:tabonly or :tabo - 关闭其他页签</li>
+</ul>
+<p>Tip2: “X”表示一个具体的数字</p>
+<h2 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h2><ul>
+<li>:w - 保存</li>
+<li>:wq or :x or ZZ - 保存并退出</li>
+<li>:q - 退出(修改未保存时警告)</li>
+<li>:q! or ZQ - 不保存强制退出</li>
+</ul>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><ul>
+<li>nu 显示光标所在行号</li>
+<li>set nu 显示所有行号</li>
+</ul>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://blog.hugoxia.com/2017/03/31/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[scp]]></title>
+      <url>http://blog.hugoxia.com/2015/10/10/scp/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[regex]]></title>
+      <url>http://blog.hugoxia.com/2015/09/26/regex/</url>
+      <content type="html"><![CDATA[<h1 id="Python3正则表达式特殊符号及用法-详细列表"><a href="#Python3正则表达式特殊符号及用法-详细列表" class="headerlink" title="Python3正则表达式特殊符号及用法(详细列表)"></a>Python3正则表达式特殊符号及用法(详细列表)</h1><p>正则表达式的强大之处在于特殊符号的应用,特殊符号定义了字符集合、子组匹配、模式重复次数。正是这些特性符号使得一个正则表达式可以匹配字符串集合而不只是一个字符串。</p>
+<blockquote>
+<p>注1: 为了便于理解，难点的地方均用<em>斜体</em>举了栗子。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:left">表示匹配除了换行符外的任何字符 <br> 注: 通过设置re.DOTALL标志可以使.匹配任何字符(包括换行符)</td>
+</tr>
+<tr>
+<td style="text-align:center">&brvbar;(竖杠)</td>
+<td style="text-align:left">A&brvbar;(竖杠)B,表示匹配正则表达式A或者B</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:left">1.(脱字符)匹配输入字符串的开始位置 <br>2.如果设置了re.MULTILINE标志,^也匹配换行符之后的位置</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:left">1.匹配输入字符串的结束位置<br>2.如果设置了re.MULTILINE标志,\$也匹配换行符之前的位置</td>
+</tr>
+<tr>
+<td style="text-align:center">\</td>
+<td style="text-align:left">1.将一个普通字符变成特殊字符，例如 \d 表示匹配所有十进制数字<br>2. 解除元字符的特殊功能，例如 \. 表示匹配点号本身<br>3. 引用序号对应的子组所匹配的字符串<br>4. 详见下方列举</td>
+</tr>
+<tr>
+<td style="text-align:center">[…]</td>
+<td style="text-align:left">字符类，匹配所包含的任意一个字符<br>注1：连字符 - 如果出现在字符串中间表示字符范围描述；如果如果出现在首位则仅作为普通字符<br>注2：特殊字符仅有反斜线 \ 保持特殊含义，用于转义字符。其它特殊字符如 *、+、? 等均作为普通字符匹配 <br>注3：脱字符 ^ 如果出现在首位则表示匹配不包含其中的任意字符；如果 ^ 出现在字符串中间就仅作为普通字符匹配</td>
+</tr>
+<tr>
+<td style="text-align:center">{M,N}</td>
+<td style="text-align:left">M 和 N 均为非负整数，其中 M &lt;= N，表示前边的 RE 匹配 M ~ N 次<br>注1：{M,} 表示至少匹配 M 次<br>注2：{,N} 等价于 {0,N}<br>注3：{N} 表示需要匹配 N 次</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:left">匹配前面的子表达式零次或多次，等价于 {0,}</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:left">匹配前面的子表达式一次或多次，等价于 {1,}</td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:left">匹配前面的子表达式零次或一次，等价于 {0,1}</td>
+</tr>
+<tr>
+<td style="text-align:center">*?, +?, ??</td>
+<td style="text-align:left">默认情况下 *、+ 和 ? 的匹配模式是贪婪模式（即会尽可能多地匹配符合规则的字符串）；*?、+?和 ?? 表示启用对应的非贪婪模式。<br><em>举个栗子：对于字符串 “FishCCC”，正则表达式 FishC+ 会匹配整个字符串，而 FishC+? 则匹配 “FishC”。</em></td>
+</tr>
+<tr>
+<td style="text-align:center">{M,N}?</td>
+<td style="text-align:left">同上，启用非贪婪模式，即只匹配 M 次</td>
+</tr>
+<tr>
+<td style="text-align:center">(…)</td>
+<td style="text-align:left">匹配圆括号中的正则表达式，或者指定一个子组的开始和结束位置<br>注：子组的内容可以在匹配之后被 \数字 再次引用<br> <em>举个栗子：(\w+) \1 可以字符串 “FishC FishC.com” 中的 “FishC FishC”（注意有空格）</em></td>
+</tr>
+<tr>
+<td style="text-align:center">(?…)</td>
+<td style="text-align:left">(? 开头的表示为正则表达式的扩展语法（下边这些是 Python 支持的所有扩展语法）</td>
+</tr>
+<tr>
+<td style="text-align:center">(?aiLmsux)</td>
+<td style="text-align:left">1. (? 后可以紧跟着 ‘a’，’i’，’L’，’m’，’s’，’u’，’x’ 中的一个或多个字符，只能在正则表达式的开头使用<br>2. 每一个字符对应一种匹配标志：re-A（只匹配 ASCII 字符），re-I（忽略大小写），re-L（区域设置），re-M（多行模式）, re-S（. 匹配任何符号），re-X（详细表达式），包含这些字符将会影响整个正则表达式的规则<br>3. 当你不想通过 re.compile() 设置正则表达式标志，这种方法就非常有用啦<br>注意，由于 (?x) 决定正则表达式如何被解析，所以它应该总是被放在最前边（最多允许前边有空白符）。如果 (?x) 的前边是非空白字符，那么 (?x) 就发挥不了作用了。</td>
+</tr>
+<tr>
+<td style="text-align:center">(?:…)</td>
+<td style="text-align:left">非捕获组，即该子组匹配的字符串无法从后边获取</td>
+</tr>
+<tr>
+<td style="text-align:center">(?P<name>…)</name></td>
+<td style="text-align:left">命名组，通过组的名字（name）即可访问到子组匹配的字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">(?P=name)</td>
+<td style="text-align:left">反向引用一个命名组，它匹配指定命名组匹配的任何内容</td>
+</tr>
+<tr>
+<td style="text-align:center">(?#…)</td>
+<td style="text-align:left">注释，括号中的内容将被忽略</td>
+</tr>
+<tr>
+<td style="text-align:center">(?=…)</td>
+<td style="text-align:left">前向肯定断言。如果当前包含的正则表达式（这里以 … 表示）在当前位置成功匹配，则代表成功，否则失败。一旦该部分正则表达式被匹配引擎尝试过，就不会继续进行匹配了；剩下的模式在此断言开始的地方继续尝试。<br><em>举个栗子：love(?=FishC) 只匹配后边紧跟着 “FishC” 的字符串 “love”</em></td>
+</tr>
+<tr>
+<td style="text-align:center">(?!…)</td>
+<td style="text-align:left">前向否定断言。这跟前向肯定断言相反（不匹配则表示成功，匹配表示失败）。<br><em>举个栗子：FishC(?!.com) 只匹配后边不是 “.com” 的字符串 “FishC”</em></td>
+</tr>
+<tr>
+<td style="text-align:center">(?&lt;=…)</td>
+<td style="text-align:left">后向肯定断言。跟前向肯定断言一样，只是方向相反。<br><em>举个栗子：(?&lt;=love)FishC 只匹配前边紧跟着 “love” 的字符串 “FishC”</em></td>
+</tr>
+<tr>
+<td style="text-align:center">(?&lt;!…)</td>
+<td style="text-align:left">后向否定断言。跟前向肯定断言一样，只是方向相反。<br><em>举个栗子：(?&lt;!FishC).com 只匹配前边不是 “FishC” 的字符串 “.com”</em></td>
+</tr>
+<tr>
+<td style="text-align:center">(?(id/name)yes-pattern&brvbar;(竖杠)no-pattern)</td>
+<td style="text-align:left">1. 如果子组的序号或名字存在的话，则尝试 yes-pattern 匹配模式；否则尝试 no-pattern 匹配模式<br>2. no-pattern 是可选的<br><em>举个栗子：(&lt;)?(\w+@\w+(?:\.\w+)+)(?(1)&gt;&brvbar;(竖杠)$) 是一个匹配邮件格式的正则表达式，可以匹配  &lt;user@fishc.com&gt; 和 ‘user@fishc.com’，但是不会匹配 ‘&lt;user@fishc.com’ 或 ‘user@fishc.com&gt;’</em></td>
+</tr>
+<tr>
+<td style="text-align:center">\</td>
+<td style="text-align:left">下边列举了由字符 ‘\’ 和另一个字符组成的特殊含义。注意，’\’ + 元字符的组合可以解除元字符的特殊功能</td>
+</tr>
+<tr>
+<td style="text-align:center">\序号</td>
+<td style="text-align:left">1. 引用序号对应的子组所匹配的字符串，子组的序号从 1 开始计算<br>2. 如果序号是以 0 开头，或者 3 个数字的长度。那么不会被用于引用对应的子组，而是用于匹配八进制数字所表示的 ASCII 码值对应的字符<br><em>举个栗子：(.+) \1 会匹配 “FishC FishC” 或 “55 55”，但不会匹配 “FishCFishC”（注意，因为子组后边还有一个空格）</em></td>
+</tr>
+<tr>
+<td style="text-align:center">\A</td>
+<td style="text-align:left">匹配输入字符串的开始位置</td>
+</tr>
+<tr>
+<td style="text-align:center">\Z</td>
+<td style="text-align:left">匹配输入字符串的结束位置</td>
+</tr>
+<tr>
+<td style="text-align:center">\b</td>
+<td style="text-align:left">匹配一个单词边界，单词被定义为 Unidcode 的字母数字或下横线字符<br><em>举个栗子：\bFishC\b 会匹配字符串 “love FishC”、FishC.” 或 “(FishC)”</em></td>
+</tr>
+<tr>
+<td style="text-align:center">\B</td>
+<td style="text-align:left">匹配非单词边界，其实就是与 \b 相反<br><em>举个栗子：py\B 会匹配字符串 “python”、”py3”  或 “py2”，但不会匹配 “py  “、”py.” 或  “py!”</em></td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td style="text-align:left">1. 对于 Unicode（str 类型）模式：匹配任何一个数字，包括 [0-9] 和其他数字字符；如果开启了 re.ASCII 标志，就只匹配 [0-9]<br>2. 对于 8 位（bytes 类型）模式：匹配 [0-9] 中任何一个数字</td>
+</tr>
+<tr>
+<td style="text-align:center">\D</td>
+<td style="text-align:left">匹配任何非 Unicode 的数字，其实就是与 \d 相反；如果开启了 re.ASCII 标志，则相当于匹配 [^0-9]</td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td style="text-align:left">1. 对于 Unicode（str 类型）模式：匹配 Unicode 中的空白字符（包括 [ \t\n\r\f\v] 以及其他空白字符）；如果开启了 re.ASCII 标志，就只匹配 [ \t\n\r\f\v]<br>2. 对于 8 位（bytes 类型）模式：匹配 ASCII 中定义的空白字符，即 [ \t\n\r\f\v]</td>
+</tr>
+<tr>
+<td style="text-align:center">\S</td>
+<td style="text-align:left">匹配任何非 Unicode 中的空白字符，其实就是与 \s 相反；如果开启了 re.ASCII 标志，则相当于匹配 [^ \t\n\r\f\v]</td>
+</tr>
+<tr>
+<td style="text-align:center">\w</td>
+<td style="text-align:left">1. 对于 Unicode（str 类型）模式：匹配任何 Unicode 的单词字符，基本上所有语言的字符都可以匹配，当然也包括数字和下横线；如果开启了 re.ASCII 标志，就只匹配 [a-zA-Z0-9<em>]<br>2. 对于 8 位（bytes 类型）模式：匹配 ASCII 中定义的字母数字，即 [a-zA-Z0-9</em>]</td>
+</tr>
+<tr>
+<td style="text-align:center">\W</td>
+<td style="text-align:left">匹配任何非 Unicode 的单词字符，其实就是与 \w 相反；如果开启了 re.ASCII 标志，则相当于 [^a-zA-Z0-9_]</td>
+</tr>
+<tr>
+<td style="text-align:center">转义符号</td>
+<td style="text-align:left">正则表达式还支持大部分 Python 字符串的转义符号：<br>\a，\b，\f，\n，\r，\t，\u，\U，\v，\x，\\<br>注1：\b 通常用于匹配一个单词边界，只有在字符类中才表示“退格”<br>注2：\u 和 \U 只有在 Unicode 模式下才会被识别<br>注3：八进制转义（\数字）是有限制的，如果第一个数字是 0，或者如果有 3 个八进制数字，那么就被认为是八进制数；其他情况则被认为是子组引用；至于字符串，八进制转义总是最多只能是 3 个数字的长度</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      
+        
+    </entry>
+    
+  
+  
+</search>

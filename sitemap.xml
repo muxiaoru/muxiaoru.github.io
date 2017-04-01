@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://blog.hugoxia.com/2017/03/31/mysql/</loc>
+    
+    <lastmod>2017-03-31T15:36:41.097Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.hugoxia.com/2017/03/31/hello-world/</loc>
+    
+    <lastmod>2017-03-31T15:12:51.750Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.hugoxia.com/2015/09/26/regex/</loc>
+    
+    <lastmod>2015-10-26T06:18:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.hugoxia.com/2015/10/10/scp/</loc>
+    
+    <lastmod>2015-10-09T23:53:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.hugoxia.com/2017/03/31/vim/</loc>
+    
+    <lastmod>2015-09-22T01:20:28.000Z</lastmod>
+    
+  </url>
+  
+</urlset>
