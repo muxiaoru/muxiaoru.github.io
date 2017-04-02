@@ -48,17 +48,41 @@
   
 
   
+    
+      
+    
 
+    
   
 
   
+    
+      
+    
 
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
   
 
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -71,7 +95,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="vim," />
 
 
 
@@ -87,8 +111,7 @@
 
 
 
-<meta name="description" content="date: 2015-09-21 16:55:54tags:vim
-光标
+<meta name="description" content="光标
 h - 左移光标
 j - 下移光标
 k - 上移光标
@@ -100,13 +123,15 @@ E - 移动到下个单词结尾(单词含标点)
 b - 移动到上个单词结尾
 B - 移动到上个单词结尾(单词含标点)
 0 - 移动到行首
-^ - 移动到行首的非空">
+^ - 移动到行首的非空白符
+$ - 移动到行尾
+G - 移动到文档末行行首
+5G - 移动">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vim Cheat Sheet">
-<meta property="og:url" content="http://blog.hugoxia.com/2017/03/31/vim/index.html">
+<meta property="og:url" content="http://blog.hugoxia.com/2015/09/21/vim/index.html">
 <meta property="og:site_name" content="Too Young Too Simple">
-<meta property="og:description" content="date: 2015-09-21 16:55:54tags:vim
-光标
+<meta property="og:description" content="光标
 h - 左移光标
 j - 下移光标
 k - 上移光标
@@ -118,12 +143,14 @@ E - 移动到下个单词结尾(单词含标点)
 b - 移动到上个单词结尾
 B - 移动到上个单词结尾(单词含标点)
 0 - 移动到行首
-^ - 移动到行首的非空">
-<meta property="og:updated_time" content="2015-09-22T01:20:28.000Z">
+^ - 移动到行首的非空白符
+$ - 移动到行尾
+G - 移动到文档末行行首
+5G - 移动">
+<meta property="og:updated_time" content="2017-04-02T14:12:46.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vim Cheat Sheet">
-<meta name="twitter:description" content="date: 2015-09-21 16:55:54tags:vim
-光标
+<meta name="twitter:description" content="光标
 h - 左移光标
 j - 下移光标
 k - 上移光标
@@ -135,7 +162,10 @@ E - 移动到下个单词结尾(单词含标点)
 b - 移动到上个单词结尾
 B - 移动到上个单词结尾(单词含标点)
 0 - 移动到行首
-^ - 移动到行首的非空">
+^ - 移动到行首的非空白符
+$ - 移动到行尾
+G - 移动到文档末行行首
+5G - 移动">
 
 
 
@@ -163,7 +193,7 @@ B - 移动到上个单词结尾(单词含标点)
 
 
 
-  <link rel="canonical" href="http://blog.hugoxia.com/2017/03/31/vim/"/>
+  <link rel="canonical" href="http://blog.hugoxia.com/2015/09/21/vim/"/>
 
 
 
@@ -322,7 +352,7 @@ B - 移动到上个单词结尾(单词含标点)
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://blog.hugoxia.com/2017/03/31/vim/">
+    <link itemprop="mainEntityOfPage" href="http://blog.hugoxia.com/2015/09/21/vim/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hugo Xia">
@@ -358,8 +388,8 @@ B - 移动到上个单词结尾(单词含标点)
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T23:27:26+08:00">
-                2017-03-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-21T16:55:54+08:00">
+                2015-09-21
               </time>
             
 
@@ -368,6 +398,28 @@ B - 移动到上个单词结尾(单词含标点)
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -394,8 +446,7 @@ B - 移动到上个单词结尾(单词含标点)
       
 
       
-        <p>date: 2015-09-21 16:55:54<br>tags:vim</p>
-<h2 id="光标"><a href="#光标" class="headerlink" title="光标"></a>光标</h2><ul>
+        <h2 id="光标"><a href="#光标" class="headerlink" title="光标"></a>光标</h2><ul>
 <li>h - 左移光标</li>
 <li>j - 下移光标</li>
 <li>k - 上移光标</li>
@@ -562,6 +613,12 @@ B - 移动到上个单词结尾(单词含标点)
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/vim/" rel="tag"># vim</a>
+          
+        </div>
+      
 
       
         
@@ -571,18 +628,14 @@ B - 移动到上个单词结尾(单词含标点)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/31/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/31/mysql/" rel="prev" title="mysql">
-                mysql <i class="fa fa-chevron-right"></i>
+              <a href="/2015/09/26/regex/" rel="prev" title="regex">
+                regex <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -662,7 +715,25 @@ B - 移动到上个单词结尾(单词含标点)
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -736,7 +807,7 @@ B - 移动到上个单词结尾(单词含标点)
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
