@@ -125,10 +125,7 @@ linux
 
 
 MySQL登录和退出
-
-
-参数
-描述">
+MySQL登录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql">
 <meta property="og:url" content="http://blog.hugoxia.com/2017/03/31/mysql/index.html">
@@ -147,11 +144,8 @@ linux
 
 
 MySQL登录和退出
-
-
-参数
-描述">
-<meta property="og:updated_time" content="2017-04-05T15:56:45.181Z">
+MySQL登录">
+<meta property="og:updated_time" content="2017-04-05T16:16:44.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql">
 <meta name="twitter:description" content="初涉MysqlMySQL概述
@@ -168,10 +162,7 @@ linux
 
 
 MySQL登录和退出
-
-
-参数
-描述">
+MySQL登录">
 
 
 
@@ -494,7 +485,10 @@ MySQL登录和退出
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service mysql start/stop</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="MySQL登录和退出"><a href="#MySQL登录和退出" class="headerlink" title="MySQL登录和退出"></a>MySQL登录和退出</h3><table>
+<h3 id="MySQL登录和退出"><a href="#MySQL登录和退出" class="headerlink" title="MySQL登录和退出"></a>MySQL登录和退出</h3><ul>
+<li>MySQL登录</li>
+</ul>
+<table>
 <thead>
 <tr>
 <th style="text-align:center">参数</th>
@@ -536,7 +530,52 @@ MySQL登录和退出
 </tr>
 </tbody>
 </table>
-<h3 id="修改MySQL提示符"><a href="#修改MySQL提示符" class="headerlink" title="修改MySQL提示符"></a>修改MySQL提示符</h3><h3 id="MySQL常用命令"><a href="#MySQL常用命令" class="headerlink" title="MySQL常用命令"></a>MySQL常用命令</h3><h3 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h3>
+<ul>
+<li>MySQL退出<ul>
+<li>mysql &gt; exit;</li>
+<li>mysql &gt; quit;</li>
+<li>mysql &gt; \q;</li>
+</ul>
+</li>
+</ul>
+<h3 id="修改MySQL提示符"><a href="#修改MySQL提示符" class="headerlink" title="修改MySQL提示符"></a>修改MySQL提示符</h3><ul>
+<li>MySQL提示符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">\D</td>
+<td style="text-align:center">完整的日期</td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td style="text-align:center">当前数据库</td>
+</tr>
+<tr>
+<td style="text-align:center">\h</td>
+<td style="text-align:center">服务器名称</td>
+</tr>
+<tr>
+<td style="text-align:center">\u</td>
+<td style="text-align:center">当前用户</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>连接客户端时通过参数指定</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">shell&gt;mysql -uroot -proot --prompt 提示符</div></pre></td></tr></table></figure>
+</li>
+<li><p>连接上客户端后，通过prompt命令修改</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt;prompt 提示符</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="MySQL常用命令"><a href="#MySQL常用命令" class="headerlink" title="MySQL常用命令"></a>MySQL常用命令</h3><h3 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h3><h2 id="数据类型和操作数据表"><a href="#数据类型和操作数据表" class="headerlink" title="数据类型和操作数据表"></a>数据类型和操作数据表</h2><h2 id="约束以及修改数据表"><a href="#约束以及修改数据表" class="headerlink" title="约束以及修改数据表"></a>约束以及修改数据表</h2><h2 id="操作数据表中的记录"><a href="#操作数据表中的记录" class="headerlink" title="操作数据表中的记录"></a>操作数据表中的记录</h2><h2 id="子查询和连接"><a href="#子查询和连接" class="headerlink" title="子查询和连接"></a>子查询和连接</h2><h2 id="运算符和函数"><a href="#运算符和函数" class="headerlink" title="运算符和函数"></a>运算符和函数</h2><h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><h2 id="MySQL存储过程"><a href="#MySQL存储过程" class="headerlink" title="MySQL存储过程"></a>MySQL存储过程</h2><h2 id="MySQL存储引擎"><a href="#MySQL存储引擎" class="headerlink" title="MySQL存储引擎"></a>MySQL存储引擎</h2><h2 id="MySQL图形化管理工具"><a href="#MySQL图形化管理工具" class="headerlink" title="MySQL图形化管理工具"></a>MySQL图形化管理工具</h2>
       
     </div>
 
@@ -783,7 +822,7 @@ MySQL登录和退出
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初涉Mysql"><span class="nav-number">1.</span> <span class="nav-text">初涉Mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL概述"><span class="nav-number">1.1.</span> <span class="nav-text">MySQL概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL的安装与配置"><span class="nav-number">1.2.</span> <span class="nav-text">MySQL的安装与配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动和停止MySQL"><span class="nav-number">1.3.</span> <span class="nav-text">启动和停止MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL登录和退出"><span class="nav-number">1.4.</span> <span class="nav-text">MySQL登录和退出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改MySQL提示符"><span class="nav-number">1.5.</span> <span class="nav-text">修改MySQL提示符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL常用命令"><span class="nav-number">1.6.</span> <span class="nav-text">MySQL常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作数据库"><span class="nav-number">1.7.</span> <span class="nav-text">操作数据库</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初涉Mysql"><span class="nav-number">1.</span> <span class="nav-text">初涉Mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL概述"><span class="nav-number">1.1.</span> <span class="nav-text">MySQL概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL的安装与配置"><span class="nav-number">1.2.</span> <span class="nav-text">MySQL的安装与配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动和停止MySQL"><span class="nav-number">1.3.</span> <span class="nav-text">启动和停止MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL登录和退出"><span class="nav-number">1.4.</span> <span class="nav-text">MySQL登录和退出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改MySQL提示符"><span class="nav-number">1.5.</span> <span class="nav-text">修改MySQL提示符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL常用命令"><span class="nav-number">1.6.</span> <span class="nav-text">MySQL常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作数据库"><span class="nav-number">1.7.</span> <span class="nav-text">操作数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型和操作数据表"><span class="nav-number">2.</span> <span class="nav-text">数据类型和操作数据表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#约束以及修改数据表"><span class="nav-number">3.</span> <span class="nav-text">约束以及修改数据表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作数据表中的记录"><span class="nav-number">4.</span> <span class="nav-text">操作数据表中的记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子查询和连接"><span class="nav-number">5.</span> <span class="nav-text">子查询和连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符和函数"><span class="nav-number">6.</span> <span class="nav-text">运算符和函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义函数"><span class="nav-number">7.</span> <span class="nav-text">自定义函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL存储过程"><span class="nav-number">8.</span> <span class="nav-text">MySQL存储过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL存储引擎"><span class="nav-number">9.</span> <span class="nav-text">MySQL存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL图形化管理工具"><span class="nav-number">10.</span> <span class="nav-text">MySQL图形化管理工具</span></a></li></ol></div>
             
 
           </div>
