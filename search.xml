@@ -4,6 +4,36 @@
   
     
     <entry>
+      <title><![CDATA[理解OAuth 2.0]]></title>
+      <url>http://blog.hugoxia.com/2017/04/11/oauth2-md/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>这篇文档的源自一个第三方登录的需求,于是我就想搞清楚怎么实现第三方登录的,网上有现成的解决方案: <a href="http://dev.umeng.com/social/android/login-page" target="_blank" rel="external">友盟</a>和<a href="http://wiki.mob.com/%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" target="_blank" rel="external">ShareSDK</a>;但是这不是我最需要,于是就有了下面的的记录: </p>
+</blockquote>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html" target="_blank" rel="external">阮一峰的网络日志之理解OAuth2.0</a>这篇讲的很详细,可以先看下这个</li>
+<li><a href="http://wiki.open.qq.com/wiki/mobile/OAuth2.0%E7%AE%80%E4%BB%8B" target="_blank" rel="external">QQ的OAuth2.0简介</a></li>
+<li><a href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=open1419317853&amp;token=&amp;lang=zh_CN" target="_blank" rel="external">微信登录功能官方文档(授权登录)</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Auth </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> OAuth2 </tag>
+            
+            <tag> Python </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Python和Excel的不解之缘]]></title>
       <url>http://blog.hugoxia.com/2017/04/10/python_excel/</url>
       <content type="html"><![CDATA[<h2 id="表格处理模块"><a href="#表格处理模块" class="headerlink" title="表格处理模块"></a>表格处理模块</h2><ul>
