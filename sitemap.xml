@@ -2,14 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.hugoxia.com/2017/04/11/oauth2/</loc>
+    <loc>http://blog.hugoxia.com/2017/04/12/python-format/</loc>
     
-    <lastmod>2017-04-11T15:41:14.665Z</lastmod>
+    <lastmod>2017-04-12T08:15:18.464Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.hugoxia.com/2017/04/10/python_excel/</loc>
+    <loc>http://blog.hugoxia.com/2015/09/26/regex/</loc>
+    
+    <lastmod>2017-04-12T08:14:07.111Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.hugoxia.com/2017/04/11/oauth2/</loc>
+    
+    <lastmod>2017-04-12T00:57:12.957Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.hugoxia.com/2017/04/10/python-excel/</loc>
     
     <lastmod>2017-04-10T14:57:03.503Z</lastmod>
     
@@ -47,13 +61,6 @@
     <loc>http://blog.hugoxia.com/2017/03/31/hello-world/</loc>
     
     <lastmod>2017-03-31T15:12:51.750Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.hugoxia.com/2015/09/26/regex/</loc>
-    
-    <lastmod>2015-10-26T06:18:32.000Z</lastmod>
     
   </url>
   

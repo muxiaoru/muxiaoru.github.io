@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,Excel," />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -111,37 +111,148 @@
 
 
 
-<meta name="description" content="表格处理模块
-xlwt (writing xls files)
-xlrd (reading xls/xlsx files)
-openpyxl (reading/writing xlsx files)
-xlsxwriter (writing xlsx files)
-more details
+<meta name="description" content="这篇文档整理自鱼C论坛, 感谢作者输出,我只是一枚搬运工…
 
-xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
+字符串格式化符号含义
+
+
+符号
+说明
+
+
+
+
+%c
+格式化字符及其ASCII码
+
+
+%s
+格式化字符串
+
+
+%d
+格式化整数
+
+
+%o
+格式化无符号八进制数
+
+
+%x
+格式化字符号十六进制数
+
+
+%X
+格式化字符号十六进制数(大写)
+
+
+%f
+格式化定点数,可指定小数点后的精度
+
+
+%e
+用科学计数法格式化定点数
+
+
+%E
+作用同%e">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python和Excel的不解之缘">
-<meta property="og:url" content="http://blog.hugoxia.com/2017/04/10/python_excel/index.html">
+<meta property="og:title" content="Python中字符串格式化符号和转义字符含义">
+<meta property="og:url" content="http://blog.hugoxia.com/2017/04/12/python-format/index.html">
 <meta property="og:site_name" content="Too Young Too Simple">
-<meta property="og:description" content="表格处理模块
-xlwt (writing xls files)
-xlrd (reading xls/xlsx files)
-openpyxl (reading/writing xlsx files)
-xlsxwriter (writing xlsx files)
-more details
+<meta property="og:description" content="这篇文档整理自鱼C论坛, 感谢作者输出,我只是一枚搬运工…
 
-xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
-<meta property="og:updated_time" content="2017-04-10T14:57:03.503Z">
+字符串格式化符号含义
+
+
+符号
+说明
+
+
+
+
+%c
+格式化字符及其ASCII码
+
+
+%s
+格式化字符串
+
+
+%d
+格式化整数
+
+
+%o
+格式化无符号八进制数
+
+
+%x
+格式化字符号十六进制数
+
+
+%X
+格式化字符号十六进制数(大写)
+
+
+%f
+格式化定点数,可指定小数点后的精度
+
+
+%e
+用科学计数法格式化定点数
+
+
+%E
+作用同%e">
+<meta property="og:updated_time" content="2017-04-12T08:15:18.464Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python和Excel的不解之缘">
-<meta name="twitter:description" content="表格处理模块
-xlwt (writing xls files)
-xlrd (reading xls/xlsx files)
-openpyxl (reading/writing xlsx files)
-xlsxwriter (writing xlsx files)
-more details
+<meta name="twitter:title" content="Python中字符串格式化符号和转义字符含义">
+<meta name="twitter:description" content="这篇文档整理自鱼C论坛, 感谢作者输出,我只是一枚搬运工…
 
-xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
+字符串格式化符号含义
+
+
+符号
+说明
+
+
+
+
+%c
+格式化字符及其ASCII码
+
+
+%s
+格式化字符串
+
+
+%d
+格式化整数
+
+
+%o
+格式化无符号八进制数
+
+
+%x
+格式化字符号十六进制数
+
+
+%X
+格式化字符号十六进制数(大写)
+
+
+%f
+格式化定点数,可指定小数点后的精度
+
+
+%e
+用科学计数法格式化定点数
+
+
+%E
+作用同%e">
 
 
 
@@ -169,13 +280,13 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
 
 
 
-  <link rel="canonical" href="http://blog.hugoxia.com/2017/04/10/python_excel/"/>
+  <link rel="canonical" href="http://blog.hugoxia.com/2017/04/12/python-format/"/>
 
 
 
 
 
-  <title> Python和Excel的不解之缘 | Too Young Too Simple </title>
+  <title> Python中字符串格式化符号和转义字符含义 | Too Young Too Simple </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -347,7 +458,7 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://blog.hugoxia.com/2017/04/10/python_excel/">
+    <link itemprop="mainEntityOfPage" href="http://blog.hugoxia.com/2017/04/12/python-format/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hugo Xia">
@@ -368,7 +479,7 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
             
             
               
-                Python和Excel的不解之缘
+                Python中字符串格式化符号和转义字符含义
               
             
           </h1>
@@ -383,8 +494,8 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T18:48:49+08:00">
-                2017-04-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-12T15:36:26+08:00">
+                2017-04-12
               </time>
             
 
@@ -424,7 +535,7 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/10/python_excel/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/04/12/python-format/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -456,17 +567,155 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
       
 
       
-        <h2 id="表格处理模块"><a href="#表格处理模块" class="headerlink" title="表格处理模块"></a>表格处理模块</h2><ul>
-<li><a href="http://xlwt.readthedocs.io/en/latest/" target="_blank" rel="external">xlwt (writing xls files)</a></li>
-<li><a href="http://xlrd.readthedocs.io/en/latest/" target="_blank" rel="external">xlrd (reading xls/xlsx files)</a></li>
-<li><a href="https://openpyxl.readthedocs.io/en/default/" target="_blank" rel="external">openpyxl (reading/writing xlsx files)</a></li>
-<li><a href="https://xlsxwriter.readthedocs.io" target="_blank" rel="external">xlsxwriter (writing xlsx files)</a></li>
-<li><a href="http://www.python-excel.org/" target="_blank" rel="external">more details</a></li>
-</ul>
-<h2 id="xlwt"><a href="#xlwt" class="headerlink" title="xlwt"></a>xlwt</h2><p>直接上干货, 重点看export_excel函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> xlwt</div><div class="line"><span class="keyword">import</span> functools</div><div class="line"></div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">cost_time</span><span class="params">(method)</span>:</span></div><div class="line"><span class="meta">    @functools.wraps(method)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(self, *args, **kwargs)</span>:</span></div><div class="line">        start_time = datetime.now()</div><div class="line">        num = method(self, *args, **kwargs)</div><div class="line">        end_time = datetime.now()</div><div class="line">        print(<span class="string">u"导出%s条数据, 共消耗%s时间"</span> % (num, str(end_time - start_time)))</div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">@cost_time</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">export_excel</span><span class="params">(filename, header, content, *args, **kwargs)</span>:</span></div><div class="line">    wb = xlwt.Workbook()</div><div class="line">    <span class="keyword">if</span> len(content) &gt; <span class="number">65536</span>:</div><div class="line">        <span class="keyword">raise</span> Exception(<span class="string">u"你的数据量为%s, 超过65536, 拒绝通过xlwt导出"</span> % len(content))</div><div class="line">    ws = wb.add_sheet(<span class="string">u"报表"</span>)</div><div class="line">    ws1 = wb.add_sheet(<span class="string">u"表2"</span>)</div><div class="line"></div><div class="line">    <span class="comment"># 写表头</span></div><div class="line">    map(<span class="keyword">lambda</span> h: ws.write(<span class="number">0</span>, h[<span class="number">0</span>], h[<span class="number">1</span>]), enumerate(header))</div><div class="line"></div><div class="line">    <span class="comment"># 写主体内容</span></div><div class="line">    map(<span class="keyword">lambda</span> c: map(<span class="keyword">lambda</span> sub_c: ws.write(c[<span class="number">0</span>] + <span class="number">1</span>, sub_c[<span class="number">0</span>], sub_c[<span class="number">1</span>]), enumerate(c[<span class="number">1</span>])), enumerate(content))</div><div class="line"></div><div class="line">    ws1.write(<span class="number">0</span>, <span class="number">0</span>, <span class="string">u"test"</span>)</div><div class="line"></div><div class="line">    wb.save(filename)</div><div class="line">    <span class="keyword">return</span> len(content)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    header = (<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>, <span class="string">"E"</span>, <span class="string">"F"</span>, <span class="string">"G"</span>)</div><div class="line">    a = xrange(<span class="number">0</span>, <span class="number">77777</span>*<span class="number">1</span>)</div><div class="line">    content = [(a[i], a[i+<span class="number">1</span>], a[i+<span class="number">2</span>], a[i+<span class="number">3</span>], a[i+<span class="number">4</span>], a[i+<span class="number">5</span>], a[i+<span class="number">6</span>]) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(a))[::<span class="number">7</span>]]</div><div class="line">    export_excel(<span class="string">"test.xls"</span>, header=header, content=content)</div></pre></td></tr></table></figure></p>
-<h2 id="xlrd"><a href="#xlrd" class="headerlink" title="xlrd"></a>xlrd</h2><p>后续更新, 敬请期待…</p>
-<h2 id="openpyxl"><a href="#openpyxl" class="headerlink" title="openpyxl"></a>openpyxl</h2><p>后续更新, 敬请期待…</p>
-<h2 id="xlsxwriter"><a href="#xlsxwriter" class="headerlink" title="xlsxwriter"></a>xlsxwriter</h2><p>后续更新, 敬请期待…</p>
+        <blockquote>
+<p>这篇文档整理自<a href="http://bbs.fishc.com/forum.php?mod=viewthread&amp;tid=39140&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D403" target="_blank" rel="external">鱼C论坛</a>, 感谢作者输出,我只是一枚搬运工…</p>
+</blockquote>
+<h3 id="字符串格式化符号含义"><a href="#字符串格式化符号含义" class="headerlink" title="字符串格式化符号含义"></a>字符串格式化符号含义</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">%c</td>
+<td style="text-align:left">格式化字符及其ASCII码</td>
+</tr>
+<tr>
+<td style="text-align:center">%s</td>
+<td style="text-align:left">格式化字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">%d</td>
+<td style="text-align:left">格式化整数</td>
+</tr>
+<tr>
+<td style="text-align:center">%o</td>
+<td style="text-align:left">格式化无符号八进制数</td>
+</tr>
+<tr>
+<td style="text-align:center">%x</td>
+<td style="text-align:left">格式化字符号十六进制数</td>
+</tr>
+<tr>
+<td style="text-align:center">%X</td>
+<td style="text-align:left">格式化字符号十六进制数(大写)</td>
+</tr>
+<tr>
+<td style="text-align:center">%f</td>
+<td style="text-align:left">格式化定点数,可指定小数点后的精度</td>
+</tr>
+<tr>
+<td style="text-align:center">%e</td>
+<td style="text-align:left">用科学计数法格式化定点数</td>
+</tr>
+<tr>
+<td style="text-align:center">%E</td>
+<td style="text-align:left">作用同%e, 用科学计数法格式化定点数</td>
+</tr>
+<tr>
+<td style="text-align:center">%g</td>
+<td style="text-align:left">根据值的大小决定使用%f或%e</td>
+</tr>
+<tr>
+<td style="text-align:center">%G</td>
+<td style="text-align:left">作用同%g, 根据值的大小决定使用%f或者%E</td>
+</tr>
+</tbody>
+</table>
+<h3 id="格式化操作符辅助指令"><a href="#格式化操作符辅助指令" class="headerlink" title="格式化操作符辅助指令"></a>格式化操作符辅助指令</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">m.n</td>
+<td style="text-align:left">m是显示的最小总宽度,n是小数点后的位数</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:left">用于左对齐</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:left">在正数前面显示加好(+)</td>
+</tr>
+<tr>
+<td style="text-align:center">#</td>
+<td style="text-align:left">在八进制数前面显示’0o’, 在十六进制数前面显示’0x’或’0X’</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:left">显示的数字前面填充’0’取代空格</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符串转义字符含义"><a href="#字符串转义字符含义" class="headerlink" title="字符串转义字符含义"></a>字符串转义字符含义</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">\’</td>
+<td style="text-align:left">单引号</td>
+</tr>
+<tr>
+<td style="text-align:center">\”</td>
+<td style="text-align:left">双引号</td>
+</tr>
+<tr>
+<td style="text-align:center">\a</td>
+<td style="text-align:left">发出系统响铃声</td>
+</tr>
+<tr>
+<td style="text-align:center">\b</td>
+<td style="text-align:left">退格符</td>
+</tr>
+<tr>
+<td style="text-align:center">\n</td>
+<td style="text-align:left">换行符</td>
+</tr>
+<tr>
+<td style="text-align:center">\t</td>
+<td style="text-align:left">横向制表符(TAB)</td>
+</tr>
+<tr>
+<td style="text-align:center">\v</td>
+<td style="text-align:left">纵向制表符</td>
+</tr>
+<tr>
+<td style="text-align:center">\r</td>
+<td style="text-align:left">回车符</td>
+</tr>
+<tr>
+<td style="text-align:center">\f</td>
+<td style="text-align:left">换页符</td>
+</tr>
+<tr>
+<td style="text-align:center">\o</td>
+<td style="text-align:left">八进制数代表的字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\x</td>
+<td style="text-align:left">十六进制数代表的字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\0</td>
+<td style="text-align:left">表示一个空字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\</td>
+<td style="text-align:left">反斜杠</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -519,8 +768,6 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
           
             <a href="/tags/Python/" rel="tag"># Python</a>
           
-            <a href="/tags/Excel/" rel="tag"># Excel</a>
-          
         </div>
       
 
@@ -532,8 +779,8 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/31/mysql/" rel="next" title="mysql">
-                <i class="fa fa-chevron-left"></i> mysql
+              <a href="/2017/04/11/oauth2/" rel="next" title="第三方登录">
+                <i class="fa fa-chevron-left"></i> 第三方登录
               </a>
             
           </div>
@@ -541,10 +788,6 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/11/oauth2/" rel="prev" title="理解OAuth 2.0">
-                理解OAuth 2.0 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -641,7 +884,7 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -652,7 +895,7 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -663,7 +906,7 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -718,7 +961,7 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#表格处理模块"><span class="nav-number">1.</span> <span class="nav-text">表格处理模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xlwt"><span class="nav-number">2.</span> <span class="nav-text">xlwt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xlrd"><span class="nav-number">3.</span> <span class="nav-text">xlrd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#openpyxl"><span class="nav-number">4.</span> <span class="nav-text">openpyxl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xlsxwriter"><span class="nav-number">5.</span> <span class="nav-text">xlsxwriter</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串格式化符号含义"><span class="nav-number">1.</span> <span class="nav-text">字符串格式化符号含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化操作符辅助指令"><span class="nav-number">2.</span> <span class="nav-text">格式化操作符辅助指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串转义字符含义"><span class="nav-number">3.</span> <span class="nav-text">字符串转义字符含义</span></a></li></ol></div>
             
 
           </div>
