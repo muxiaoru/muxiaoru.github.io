@@ -423,38 +423,41 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DROP &#123;DATABASE | SCHEMA&#125; [IF EXISTS] db_name</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="数据类型和操作数据表"><a href="#数据类型和操作数据表" class="headerlink" title="数据类型和操作数据表"></a>数据类型和操作数据表</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h4><table>
+<h2 id="数据类型和操作数据表"><a href="#数据类型和操作数据表" class="headerlink" title="数据类型和操作数据表"></a>数据类型和操作数据表</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><blockquote>
+<p>数据类型是指列、存储过程参数、表达式和局部变量的数字特征，它决定了数据的存储格式，代表了不同的信息类型。</p>
+</blockquote>
+<h4 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h4><table>
 <thead>
 <tr>
-<th style="text-align:left">数据类型</th>
-<th style="text-align:left">存储范围</th>
+<th style="text-align:center">数据类型</th>
+<th>存储范围</th>
 <th style="text-align:center">字节</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">TINYINT</td>
-<td style="text-align:left">有符号值: -128到127(-2<sup>7</sup>到2^<sup>7</sup>-1)<br>无符号值: 0到255(0到2<sup>8</sup>-1)</td>
+<td style="text-align:center">TINYINT</td>
+<td>有符号值: -128到127(-2<sup>7</sup>到2^<sup>7</sup>-1)<br>无符号值: 0到255(0到2<sup>8</sup>-1)</td>
 <td style="text-align:center">1</td>
 </tr>
 <tr>
-<td style="text-align:left">SMALLINT</td>
-<td style="text-align:left">有符号值: -32768到32767(-2<sup>15</sup>到2^<sup>15</sup>-1)<br>无符号值: 0到65535(0到2<sup>16</sup>-1)</td>
+<td style="text-align:center">SMALLINT</td>
+<td>有符号值: -32768到32767(-2<sup>15</sup>到2^<sup>15</sup>-1)<br>无符号值: 0到65535(0到2<sup>16</sup>-1)</td>
 <td style="text-align:center">2</td>
 </tr>
 <tr>
-<td style="text-align:left">MEDIUMINT</td>
-<td style="text-align:left">有符号值: -83886088到8388607(-2<sup>23</sup>到2^<sup>23</sup>-1)<br>无符号值: 0到16777215(0到2<sup>24</sup>-1)</td>
+<td style="text-align:center">MEDIUMINT</td>
+<td>有符号值: -83886088到8388607(-2<sup>23</sup>到2^<sup>23</sup>-1)<br>无符号值: 0到16777215(0到2<sup>24</sup>-1)</td>
 <td style="text-align:center">3</td>
 </tr>
 <tr>
-<td style="text-align:left">INT</td>
-<td style="text-align:left">有符号值: -2147483648到2147483648(-2<sup>31</sup>到2^<sup>31</sup>-1)<br>无符号值: 0到4294967295(0到2<sup>32</sup>-1)</td>
+<td style="text-align:center">INT</td>
+<td>有符号值: -2147483648到2147483648(-2<sup>31</sup>到2^<sup>31</sup>-1)<br>无符号值: 0到4294967295(0到2<sup>32</sup>-1)</td>
 <td style="text-align:center">4</td>
 </tr>
 <tr>
-<td style="text-align:left">BIGINT</td>
-<td style="text-align:left">有符号值: -9223373036854775808到9223373036854775807(-2<sup>63</sup>到2^<sup>63</sup>-1)<br>无符号值: 0到18446744073709551615(0到2<sup>64</sup>-1)</td>
+<td style="text-align:center">BIGINT</td>
+<td>有符号值: -9223373036854775808到9223373036854775807(-2<sup>63</sup>到2^<sup>63</sup>-1)<br>无符号值: 0到18446744073709551615(0到2<sup>64</sup>-1)</td>
 <td style="text-align:center">8</td>
 </tr>
 </tbody>
@@ -462,17 +465,17 @@
 <h4 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h4><table>
 <thead>
 <tr>
-<th style="text-align:left">数据类型</th>
+<th style="text-align:center">数据类型</th>
 <th style="text-align:left">存储范围</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">FLOAT[(M,D)]</td>
+<td style="text-align:center">FLOAT[(M,D)]</td>
 <td style="text-align:left">-3.402823466E+38到-1.175494351E-38; 0和1.175494351E-38到3.402823466E+38.<br>M是数字总位数, D是小数点后面的位数.如果M和D被省略, 根据硬件允许的限制来保存值.<br>单精度浮点数精确到大约7位小数位.</td>
 </tr>
 <tr>
-<td style="text-align:left">DOUBLE[(M,D)]</td>
+<td style="text-align:center">DOUBLE[(M,D)]</td>
 <td style="text-align:left">-1.7976931348623157E+308到-2.2250738585072014E-308; <br>0和2.2250738585072014E-308到1.7976931348623157E+308.</td>
 </tr>
 </tbody>
@@ -511,41 +514,41 @@
 <thead>
 <tr>
 <th style="text-align:left">列类型</th>
-<th style="text-align:left">存储需求</th>
+<th>存储需求</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left">CHAR(M)</td>
-<td style="text-align:left">M个字节, 0 &lt;= M &lt;= 255</td>
+<td>M个字节, 0 &lt;= M &lt;= 255</td>
 </tr>
 <tr>
 <td style="text-align:left">VARCHAR(M)</td>
-<td style="text-align:left">L+1个字节, 其中L &lt;= M且0 &lt;= M &lt;= 65535</td>
+<td>L+1个字节, 其中L &lt;= M且0 &lt;= M &lt;= 65535</td>
 </tr>
 <tr>
 <td style="text-align:left">TINYTEXT</td>
-<td style="text-align:left">L+1个字节, 其中L &lt; 2<sup>8</sup></td>
+<td>L+1个字节, 其中L &lt; 2<sup>8</sup></td>
 </tr>
 <tr>
 <td style="text-align:left">TEXT</td>
-<td style="text-align:left">L+2个字节, 其中L &lt; 2<sup>16</sup></td>
+<td>L+2个字节, 其中L &lt; 2<sup>16</sup></td>
 </tr>
 <tr>
 <td style="text-align:left">MEDIUMTEXT</td>
-<td style="text-align:left">L+3个字节, 其中L &lt; 2<sup>24</sup></td>
+<td>L+3个字节, 其中L &lt; 2<sup>24</sup></td>
 </tr>
 <tr>
 <td style="text-align:left">LONGTEXT</td>
-<td style="text-align:left">L+4个字节, 其中L &lt; 2<sup>32</sup></td>
+<td>L+4个字节, 其中L &lt; 2<sup>32</sup></td>
 </tr>
 <tr>
 <td style="text-align:left">ENUM(‘value1’, ‘value2’, …)</td>
-<td style="text-align:left">1或2个字节, 取决于枚举值的个数(最多65535个值)</td>
+<td>1或2个字节, 取决于枚举值的个数(最多65535个值)</td>
 </tr>
 <tr>
 <td style="text-align:left">SET(‘value1’, ‘value2’, …)</td>
-<td style="text-align:left">1,2,3,4或者8个字节, 取决于set成员的数目(最多64个成员)</td>
+<td>1,2,3,4或者8个字节, 取决于set成员的数目(最多64个成员)</td>
 </tr>
 </tbody>
 </table>
