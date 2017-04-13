@@ -12,7 +12,13 @@
 <li><code>Settings</code>–&gt;<code>Tools</code>–&gt;<code>External Tools</code>, 点击<code>+</code>按钮<ul>
 <li>Name: autopep8 (可以自定义)</li>
 <li>Tools settings:<ul>
-<li>Programs: autopep8(Ubuntu<a href="示例绝对路径(/home/hugo/.virtualenvs/test/bin/autopep8)">^1</a>和Windows<a href="示例绝对路径(C:\Users\hugo\AppData\Local\Programs\Python\Python35\Scripts\autopep8.exe)">^2</a>)</li>
+<li>Programs: autopep8(Ubuntu^1和Windows^2)<blockquote>
+<ol>
+<li>Ubuntu(/home/hugo/.virtualenvs/test/bin/autopep8)</li>
+<li>Windows(C:\Users\hugo\AppData\Local\Programs\Python\Python35\Scripts\autopep8.exe)</li>
+</ol>
+</blockquote>
+</li>
 <li>Parameters: <code>--in-place --aggressive --aggressive $FilePath$</code></li>
 <li>Working directory: <code>$ProjectFileDir$</code></li>
 </ul>
@@ -21,7 +27,7 @@
 </li>
 <li>点击<code>Output Filters...</code><ul>
 <li>点击<code>+</code>，名称可以任意填写</li>
-<li>Regular expression to match output：$FILE_PATH$\:$LINE$\:$COLUMN$\:.*</li>
+<li>Regular expression to match output: <code>$FILE_PATH$\:$LINE$\:$COLUMN$\:.*</code></li>
 </ul>
 </li>
 </ul>

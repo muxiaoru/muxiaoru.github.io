@@ -123,7 +123,7 @@ Settings–&amp;gt;Tools–&amp;gt;External Tools, 点击+按钮">
 安装autopep81pip install autopep8
 Pycharm中进行设置
 Settings–&amp;gt;Tools–&amp;gt;External Tools, 点击+按钮">
-<meta property="og:updated_time" content="2017-04-12T15:58:27.876Z">
+<meta property="og:updated_time" content="2017-04-13T01:33:58.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pycharm配置autopep8到菜单">
 <meta name="twitter:description" content="Pycharm可以自动检测PEP8规范, 菜单Code–&amp;gt;Reformat Code可以自动调整代码,但是效果一般,只能实现简单的规范代码; 为了满足需要, 可以安装autopep8来自动修改文件实现PEP8规范.
@@ -450,7 +450,13 @@ Settings–&amp;gt;Tools–&amp;gt;External Tools, 点击+按钮">
 <li><code>Settings</code>–&gt;<code>Tools</code>–&gt;<code>External Tools</code>, 点击<code>+</code>按钮<ul>
 <li>Name: autopep8 (可以自定义)</li>
 <li>Tools settings:<ul>
-<li>Programs: autopep8(Ubuntu<a href="示例绝对路径(/home/hugo/.virtualenvs/test/bin/autopep8)">^1</a>和Windows<a href="示例绝对路径(C:\Users\hugo\AppData\Local\Programs\Python\Python35\Scripts\autopep8.exe)">^2</a>)</li>
+<li>Programs: autopep8(Ubuntu^1和Windows^2)<blockquote>
+<ol>
+<li>Ubuntu(/home/hugo/.virtualenvs/test/bin/autopep8)</li>
+<li>Windows(C:\Users\hugo\AppData\Local\Programs\Python\Python35\Scripts\autopep8.exe)</li>
+</ol>
+</blockquote>
+</li>
 <li>Parameters: <code>--in-place --aggressive --aggressive $FilePath$</code></li>
 <li>Working directory: <code>$ProjectFileDir$</code></li>
 </ul>
@@ -459,7 +465,7 @@ Settings–&amp;gt;Tools–&amp;gt;External Tools, 点击+按钮">
 </li>
 <li>点击<code>Output Filters...</code><ul>
 <li>点击<code>+</code>，名称可以任意填写</li>
-<li>Regular expression to match output：$FILE_PATH$\:$LINE$\:$COLUMN$\:.*</li>
+<li>Regular expression to match output: <code>$FILE_PATH$\:$LINE$\:$COLUMN$\:.*</code></li>
 </ul>
 </li>
 </ul>
