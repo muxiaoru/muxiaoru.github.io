@@ -145,7 +145,7 @@ linux
 
 MySQL登录和退出
 MySQL登录">
-<meta property="og:updated_time" content="2017-04-09T15:51:04.172Z">
+<meta property="og:updated_time" content="2017-04-13T15:11:29.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql">
 <meta name="twitter:description" content="初涉MysqlMySQL概述
@@ -613,7 +613,133 @@ MySQL登录">
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DROP &#123;DATABASE | SCHEMA&#125; [IF EXISTS] db_name</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="数据类型和操作数据表"><a href="#数据类型和操作数据表" class="headerlink" title="数据类型和操作数据表"></a>数据类型和操作数据表</h2><h2 id="约束以及修改数据表"><a href="#约束以及修改数据表" class="headerlink" title="约束以及修改数据表"></a>约束以及修改数据表</h2><h2 id="操作数据表中的记录"><a href="#操作数据表中的记录" class="headerlink" title="操作数据表中的记录"></a>操作数据表中的记录</h2><h2 id="子查询和连接"><a href="#子查询和连接" class="headerlink" title="子查询和连接"></a>子查询和连接</h2><h2 id="运算符和函数"><a href="#运算符和函数" class="headerlink" title="运算符和函数"></a>运算符和函数</h2><h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><h2 id="MySQL存储过程"><a href="#MySQL存储过程" class="headerlink" title="MySQL存储过程"></a>MySQL存储过程</h2><h2 id="MySQL存储引擎"><a href="#MySQL存储引擎" class="headerlink" title="MySQL存储引擎"></a>MySQL存储引擎</h2><h2 id="MySQL图形化管理工具"><a href="#MySQL图形化管理工具" class="headerlink" title="MySQL图形化管理工具"></a>MySQL图形化管理工具</h2>
+<h2 id="数据类型和操作数据表"><a href="#数据类型和操作数据表" class="headerlink" title="数据类型和操作数据表"></a>数据类型和操作数据表</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">存储范围</th>
+<th style="text-align:center">字节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TINYINT</td>
+<td style="text-align:left">有符号值: -128到127(-2<sup>7</sup>到2^<sup>7</sup>-1)<br>无符号值: 0到255(0到2<sup>8</sup>-1)</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:left">SMALLINT</td>
+<td style="text-align:left">有符号值: -32768到32767(-2<sup>15</sup>到2^<sup>15</sup>-1)<br>无符号值: 0到65535(0到2<sup>16</sup>-1)</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:left">MEDIUMINT</td>
+<td style="text-align:left">有符号值: -83886088到8388607(-2<sup>23</sup>到2^<sup>23</sup>-1)<br>无符号值: 0到16777215(0到2<sup>24</sup>-1)</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">有符号值: -2147483648到2147483648(-2<sup>31</sup>到2^<sup>31</sup>-1)<br>无符号值: 0到4294967295(0到2<sup>32</sup>-1)</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:left">BIGINT</td>
+<td style="text-align:left">有符号值: -9223373036854775808到9223373036854775807(-2<sup>63</sup>到2^<sup>63</sup>-1)<br>无符号值: 0到18446744073709551615(0到2<sup>64</sup>-1)</td>
+<td style="text-align:center">8</td>
+</tr>
+</tbody>
+</table>
+<h4 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">存储范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">FLOAT[(M,D)]</td>
+<td style="text-align:left">-3.402823466E+38到-1.175494351E-38; 0和1.175494351E-38到3.402823466E+38.<br>M是数字总位数, D是小数点后面的位数.如果M和D被省略, 根据硬件允许的限制来保存值.<br>单精度浮点数精确到大约7位小数位.</td>
+</tr>
+<tr>
+<td style="text-align:left">DOUBLE[(M,D)]</td>
+<td style="text-align:left">-1.7976931348623157E+308到-2.2250738585072014E-308; <br>0和2.2250738585072014E-308到1.7976931348623157E+308.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="日期时间型"><a href="#日期时间型" class="headerlink" title="日期时间型"></a>日期时间型</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">列类型</th>
+<th style="text-align:left">存储需求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">YEAR</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">TIME</td>
+<td style="text-align:left">3</td>
+</tr>
+<tr>
+<td style="text-align:left">DATE</td>
+<td style="text-align:left">3</td>
+</tr>
+<tr>
+<td style="text-align:left">DATETIME</td>
+<td style="text-align:left">8</td>
+</tr>
+<tr>
+<td style="text-align:left">TIMESTAMP</td>
+<td style="text-align:left">4</td>
+</tr>
+</tbody>
+</table>
+<h4 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">列类型</th>
+<th style="text-align:left">存储需求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CHAR(M)</td>
+<td style="text-align:left">M个字节, 0 &lt;= M &lt;= 255</td>
+</tr>
+<tr>
+<td style="text-align:left">VARCHAR(M)</td>
+<td style="text-align:left">L+1个字节, 其中L &lt;= M且0 &lt;= M &lt;= 65535</td>
+</tr>
+<tr>
+<td style="text-align:left">TINYTEXT</td>
+<td style="text-align:left">L+1个字节, 其中L &lt; 2<sup>8</sup></td>
+</tr>
+<tr>
+<td style="text-align:left">TEXT</td>
+<td style="text-align:left">L+2个字节, 其中L &lt; 2<sup>16</sup></td>
+</tr>
+<tr>
+<td style="text-align:left">MEDIUMTEXT</td>
+<td style="text-align:left">L+3个字节, 其中L &lt; 2<sup>24</sup></td>
+</tr>
+<tr>
+<td style="text-align:left">LONGTEXT</td>
+<td style="text-align:left">L+4个字节, 其中L &lt; 2<sup>32</sup></td>
+</tr>
+<tr>
+<td style="text-align:left">ENUM(‘value1’, ‘value2’, …)</td>
+<td style="text-align:left">1或2个字节, 取决于枚举值的个数(最多65535个值)</td>
+</tr>
+<tr>
+<td style="text-align:left">SET(‘value1’, ‘value2’, …)</td>
+<td style="text-align:left">1,2,3,4或者8个字节, 取决于set成员的数目(最多64个成员)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="操作数据表"><a href="#操作数据表" class="headerlink" title="操作数据表"></a>操作数据表</h3><h2 id="约束以及修改数据表"><a href="#约束以及修改数据表" class="headerlink" title="约束以及修改数据表"></a>约束以及修改数据表</h2><h2 id="操作数据表中的记录"><a href="#操作数据表中的记录" class="headerlink" title="操作数据表中的记录"></a>操作数据表中的记录</h2><h2 id="子查询和连接"><a href="#子查询和连接" class="headerlink" title="子查询和连接"></a>子查询和连接</h2><h2 id="运算符和函数"><a href="#运算符和函数" class="headerlink" title="运算符和函数"></a>运算符和函数</h2><h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><h2 id="MySQL存储过程"><a href="#MySQL存储过程" class="headerlink" title="MySQL存储过程"></a>MySQL存储过程</h2><h2 id="MySQL存储引擎"><a href="#MySQL存储引擎" class="headerlink" title="MySQL存储引擎"></a>MySQL存储引擎</h2><h2 id="MySQL图形化管理工具"><a href="#MySQL图形化管理工具" class="headerlink" title="MySQL图形化管理工具"></a>MySQL图形化管理工具</h2>
       
     </div>
 
@@ -864,7 +990,7 @@ MySQL登录">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初涉Mysql"><span class="nav-number">1.</span> <span class="nav-text">初涉Mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL概述"><span class="nav-number">1.1.</span> <span class="nav-text">MySQL概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL的安装与配置"><span class="nav-number">1.2.</span> <span class="nav-text">MySQL的安装与配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动和停止MySQL"><span class="nav-number">1.3.</span> <span class="nav-text">启动和停止MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL登录和退出"><span class="nav-number">1.4.</span> <span class="nav-text">MySQL登录和退出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改MySQL提示符"><span class="nav-number">1.5.</span> <span class="nav-text">修改MySQL提示符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL常用命令"><span class="nav-number">1.6.</span> <span class="nav-text">MySQL常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作数据库"><span class="nav-number">1.7.</span> <span class="nav-text">操作数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型和操作数据表"><span class="nav-number">2.</span> <span class="nav-text">数据类型和操作数据表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#约束以及修改数据表"><span class="nav-number">3.</span> <span class="nav-text">约束以及修改数据表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作数据表中的记录"><span class="nav-number">4.</span> <span class="nav-text">操作数据表中的记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子查询和连接"><span class="nav-number">5.</span> <span class="nav-text">子查询和连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符和函数"><span class="nav-number">6.</span> <span class="nav-text">运算符和函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义函数"><span class="nav-number">7.</span> <span class="nav-text">自定义函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL存储过程"><span class="nav-number">8.</span> <span class="nav-text">MySQL存储过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL存储引擎"><span class="nav-number">9.</span> <span class="nav-text">MySQL存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL图形化管理工具"><span class="nav-number">10.</span> <span class="nav-text">MySQL图形化管理工具</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初涉Mysql"><span class="nav-number">1.</span> <span class="nav-text">初涉Mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL概述"><span class="nav-number">1.1.</span> <span class="nav-text">MySQL概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL的安装与配置"><span class="nav-number">1.2.</span> <span class="nav-text">MySQL的安装与配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动和停止MySQL"><span class="nav-number">1.3.</span> <span class="nav-text">启动和停止MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL登录和退出"><span class="nav-number">1.4.</span> <span class="nav-text">MySQL登录和退出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改MySQL提示符"><span class="nav-number">1.5.</span> <span class="nav-text">修改MySQL提示符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL常用命令"><span class="nav-number">1.6.</span> <span class="nav-text">MySQL常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作数据库"><span class="nav-number">1.7.</span> <span class="nav-text">操作数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型和操作数据表"><span class="nav-number">2.</span> <span class="nav-text">数据类型和操作数据表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">2.1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整型"><span class="nav-number">2.1.1.</span> <span class="nav-text">整型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点型"><span class="nav-number">2.1.2.</span> <span class="nav-text">浮点型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#日期时间型"><span class="nav-number">2.1.3.</span> <span class="nav-text">日期时间型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符型"><span class="nav-number">2.1.4.</span> <span class="nav-text">字符型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作数据表"><span class="nav-number">2.2.</span> <span class="nav-text">操作数据表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#约束以及修改数据表"><span class="nav-number">3.</span> <span class="nav-text">约束以及修改数据表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作数据表中的记录"><span class="nav-number">4.</span> <span class="nav-text">操作数据表中的记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子查询和连接"><span class="nav-number">5.</span> <span class="nav-text">子查询和连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符和函数"><span class="nav-number">6.</span> <span class="nav-text">运算符和函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义函数"><span class="nav-number">7.</span> <span class="nav-text">自定义函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL存储过程"><span class="nav-number">8.</span> <span class="nav-text">MySQL存储过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL存储引擎"><span class="nav-number">9.</span> <span class="nav-text">MySQL存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL图形化管理工具"><span class="nav-number">10.</span> <span class="nav-text">MySQL图形化管理工具</span></a></li></ol></div>
             
 
           </div>

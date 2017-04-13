@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.hugoxia.com/2017/03/31/mysql/</loc>
+    
+    <lastmod>2017-04-13T15:11:29.268Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.hugoxia.com/2017/04/12/pycharm-autopep8/</loc>
     
     <lastmod>2017-04-13T02:47:30.773Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://blog.hugoxia.com/2017/04/10/python-excel/</loc>
     
     <lastmod>2017-04-10T14:57:03.503Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.hugoxia.com/2017/03/31/mysql/</loc>
-    
-    <lastmod>2017-04-09T15:51:04.172Z</lastmod>
     
   </url>
   
