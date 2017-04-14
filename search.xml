@@ -4,6 +4,30 @@
   
     
     <entry>
+      <title><![CDATA[Flask成长之路(一)]]></title>
+      <url>http://blog.hugoxia.com/2017/04/14/flask-1/</url>
+      <content type="html"></content>
+      
+        <categories>
+            
+            <category> Python </category>
+            
+            <category> Flask </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Flask </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Pycharm配置autopep8到菜单]]></title>
       <url>http://blog.hugoxia.com/2017/04/12/pycharm-autopep8/</url>
       <content type="html"><![CDATA[<p>Pycharm可以自动检测PEP8规范, 菜单<code>Code</code>–&gt;<code>Reformat Code</code>可以自动调整代码,但是效果一般,只能实现简单的规范代码; 为了满足需要, 可以安装autopep8来自动修改文件实现PEP8规范.</p>
@@ -243,9 +267,9 @@
         
         <tags>
             
-            <tag> OAuth2 </tag>
-            
             <tag> Python </tag>
+            
+            <tag> OAuth2 </tag>
             
         </tags>
         
