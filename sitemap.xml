@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.hugoxia.com/2017/03/31/mysql/</loc>
+    
+    <lastmod>2017-04-16T15:03:04.618Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.hugoxia.com/2017/04/15/pnvssn/</loc>
     
     <lastmod>2017-04-15T11:09:10.119Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://blog.hugoxia.com/2017/04/14/flask-1/</loc>
     
     <lastmod>2017-04-14T15:55:21.993Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.hugoxia.com/2017/03/31/mysql/</loc>
-    
-    <lastmod>2017-04-13T15:20:51.227Z</lastmod>
     
   </url>
   

@@ -1758,7 +1758,43 @@
 </tr>
 </tbody>
 </table>
-<h3 id="操作数据表"><a href="#操作数据表" class="headerlink" title="操作数据表"></a>操作数据表</h3><h2 id="约束以及修改数据表"><a href="#约束以及修改数据表" class="headerlink" title="约束以及修改数据表"></a>约束以及修改数据表</h2><h2 id="操作数据表中的记录"><a href="#操作数据表中的记录" class="headerlink" title="操作数据表中的记录"></a>操作数据表中的记录</h2><h2 id="子查询和连接"><a href="#子查询和连接" class="headerlink" title="子查询和连接"></a>子查询和连接</h2><h2 id="运算符和函数"><a href="#运算符和函数" class="headerlink" title="运算符和函数"></a>运算符和函数</h2><h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><h2 id="MySQL存储过程"><a href="#MySQL存储过程" class="headerlink" title="MySQL存储过程"></a>MySQL存储过程</h2><h2 id="MySQL存储引擎"><a href="#MySQL存储引擎" class="headerlink" title="MySQL存储引擎"></a>MySQL存储引擎</h2><h2 id="MySQL图形化管理工具"><a href="#MySQL图形化管理工具" class="headerlink" title="MySQL图形化管理工具"></a>MySQL图形化管理工具</h2>
+<h3 id="操作数据表"><a href="#操作数据表" class="headerlink" title="操作数据表"></a>操作数据表</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><ul>
+<li>数据表(或称表)是数据库最重要的组成部分之一，是其他对象的基础。</li>
+</ul>
+<h4 id="USE"><a href="#USE" class="headerlink" title="USE"></a>USE</h4><ul>
+<li>打开数据库</li>
+<li>USE 数据库名称;</li>
+</ul>
+<h4 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] table_name (</div><div class="line">    column_name data_type, </div><div class="line">    ...</div><div class="line">)</div></pre></td></tr></table></figure>
+<h4 id="查看数据表列表"><a href="#查看数据表列表" class="headerlink" title="查看数据表列表"></a>查看数据表列表</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SHOW</span> <span class="keyword">TABLES</span> [<span class="keyword">FROM</span> db_name]</div><div class="line">[<span class="keyword">LIKE</span> <span class="string">'pattern'</span> | <span class="keyword">WHERE</span> expr]</div></pre></td></tr></table></figure>
+<h4 id="查看数据表结构"><a href="#查看数据表结构" class="headerlink" title="查看数据表结构"></a>查看数据表结构</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SHOW</span> <span class="keyword">COLUMNS</span> <span class="keyword">FROM</span> tbl_name</div></pre></td></tr></table></figure>
+<h4 id="插入记录"><a href="#插入记录" class="headerlink" title="插入记录"></a>插入记录</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">INSERT</span> [<span class="keyword">INTO</span>] tbl_name [(col_name,...)] <span class="keyword">VALUES</span> (val,...)</div></pre></td></tr></table></figure>
+<h4 id="记录查找"><a href="#记录查找" class="headerlink" title="记录查找"></a>记录查找</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> expr,... <span class="keyword">FROM</span> tbl_name</div></pre></td></tr></table></figure>
+<h4 id="空值与非空"><a href="#空值与非空" class="headerlink" title="空值与非空"></a>空值与非空</h4><ul>
+<li>NULL, 字段值可以为空</li>
+<li>NOT NULL, 字段值禁止为空</li>
+</ul>
+<h4 id="AUTO-INCREMENT"><a href="#AUTO-INCREMENT" class="headerlink" title="AUTO_INCREMENT"></a>AUTO_INCREMENT</h4><ul>
+<li>自动编号，且必须与主键组合使用</li>
+<li>默认情况下，起始值为1，每次增量为1</li>
+</ul>
+<h4 id="PRIMARY-KEY"><a href="#PRIMARY-KEY" class="headerlink" title="PRIMARY KEY"></a>PRIMARY KEY</h4><ul>
+<li>主键约束</li>
+<li>每张数据表只能存在一个主键</li>
+<li>主键保证记录的唯一性</li>
+<li>主键自动为NOT NULL</li>
+</ul>
+<h4 id="UNIQUE-KEY"><a href="#UNIQUE-KEY" class="headerlink" title="UNIQUE KEY"></a>UNIQUE KEY</h4><ul>
+<li>唯一约束</li>
+<li>唯一约束可以保证记录的唯一性</li>
+<li>唯一约束的字段可以为空值(NULL)</li>
+<li>每张数据表可以存在多个唯一约束</li>
+</ul>
+<h4 id="DEFAULT"><a href="#DEFAULT" class="headerlink" title="DEFAULT"></a>DEFAULT</h4><ul>
+<li>默认值</li>
+<li>当插入记录时，如果没有明确为字段赋值，则自动赋予默认值。</li>
+</ul>
+<h2 id="约束以及修改数据表"><a href="#约束以及修改数据表" class="headerlink" title="约束以及修改数据表"></a>约束以及修改数据表</h2><h2 id="操作数据表中的记录"><a href="#操作数据表中的记录" class="headerlink" title="操作数据表中的记录"></a>操作数据表中的记录</h2><h2 id="子查询和连接"><a href="#子查询和连接" class="headerlink" title="子查询和连接"></a>子查询和连接</h2><h2 id="运算符和函数"><a href="#运算符和函数" class="headerlink" title="运算符和函数"></a>运算符和函数</h2><h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><h2 id="MySQL存储过程"><a href="#MySQL存储过程" class="headerlink" title="MySQL存储过程"></a>MySQL存储过程</h2><h2 id="MySQL存储引擎"><a href="#MySQL存储引擎" class="headerlink" title="MySQL存储引擎"></a>MySQL存储引擎</h2><h2 id="MySQL图形化管理工具"><a href="#MySQL图形化管理工具" class="headerlink" title="MySQL图形化管理工具"></a>MySQL图形化管理工具</h2>
           
         
       
