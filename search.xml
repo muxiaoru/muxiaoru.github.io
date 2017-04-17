@@ -676,7 +676,29 @@
 <li>默认值</li>
 <li>当插入记录时，如果没有明确为字段赋值，则自动赋予默认值。</li>
 </ul>
-<h2 id="约束以及修改数据表"><a href="#约束以及修改数据表" class="headerlink" title="约束以及修改数据表"></a>约束以及修改数据表</h2><h2 id="操作数据表中的记录"><a href="#操作数据表中的记录" class="headerlink" title="操作数据表中的记录"></a>操作数据表中的记录</h2><h2 id="子查询和连接"><a href="#子查询和连接" class="headerlink" title="子查询和连接"></a>子查询和连接</h2><h2 id="运算符和函数"><a href="#运算符和函数" class="headerlink" title="运算符和函数"></a>运算符和函数</h2><h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><h2 id="MySQL存储过程"><a href="#MySQL存储过程" class="headerlink" title="MySQL存储过程"></a>MySQL存储过程</h2><h2 id="MySQL存储引擎"><a href="#MySQL存储引擎" class="headerlink" title="MySQL存储引擎"></a>MySQL存储引擎</h2><h2 id="MySQL图形化管理工具"><a href="#MySQL图形化管理工具" class="headerlink" title="MySQL图形化管理工具"></a>MySQL图形化管理工具</h2>]]></content>
+<h2 id="约束以及修改数据表"><a href="#约束以及修改数据表" class="headerlink" title="约束以及修改数据表"></a>约束以及修改数据表</h2><h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><ul>
+<li>约束保证数据的完整性和一致性。</li>
+<li>约束分为表级约束和列级约束。</li>
+<li>约束类型包括:<ul>
+<li>NOT NULL(非空约束)</li>
+<li>PRIMARY KEY(主键约束)</li>
+<li>UNIQUE KEY(唯一约束)</li>
+<li>DEFAULT(默认约束)</li>
+<li>FOREIGIN KEY(外键约束)</li>
+</ul>
+</li>
+</ul>
+<h4 id="FOREIGN-KEY"><a href="#FOREIGN-KEY" class="headerlink" title="FOREIGN KEY"></a>FOREIGN KEY</h4><ul>
+<li>保持数据一致性，完整性</li>
+<li>实现一对一或一对多关系。</li>
+</ul>
+<h4 id="外键约束的要求"><a href="#外键约束的要求" class="headerlink" title="外键约束的要求"></a>外键约束的要求</h4><ul>
+<li>父表和子表必须使用相同的存储引擎，而且禁止使用临时表。</li>
+<li>数据表的存储引擎只能为InnoDB。</li>
+<li>外键列和参照列必须具有相似的数据类型。其中数字的长度或是否有符号位必须相同;而字符的长度则可以不同。</li>
+<li>外键列和参照列必须创建索引。如果外键列不存在索引的话，MySQL将自动创建索引。<h4 id="编辑数据表的默认存储引擎"><a href="#编辑数据表的默认存储引擎" class="headerlink" title="编辑数据表的默认存储引擎"></a>编辑数据表的默认存储引擎</h4>MySQL配置文件<br>  <code>default-storage-engine=INNODB</code></li>
+</ul>
+<h3 id="数据表的操作"><a href="#数据表的操作" class="headerlink" title="数据表的操作"></a>数据表的操作</h3><h2 id="操作数据表中的记录"><a href="#操作数据表中的记录" class="headerlink" title="操作数据表中的记录"></a>操作数据表中的记录</h2><h2 id="子查询和连接"><a href="#子查询和连接" class="headerlink" title="子查询和连接"></a>子查询和连接</h2><h2 id="运算符和函数"><a href="#运算符和函数" class="headerlink" title="运算符和函数"></a>运算符和函数</h2><h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><h2 id="MySQL存储过程"><a href="#MySQL存储过程" class="headerlink" title="MySQL存储过程"></a>MySQL存储过程</h2><h2 id="MySQL存储引擎"><a href="#MySQL存储引擎" class="headerlink" title="MySQL存储引擎"></a>MySQL存储引擎</h2><h2 id="MySQL图形化管理工具"><a href="#MySQL图形化管理工具" class="headerlink" title="MySQL图形化管理工具"></a>MySQL图形化管理工具</h2>]]></content>
       
         <categories>
             
