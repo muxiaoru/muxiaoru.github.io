@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title><![CDATA[读《鸟哥的Linux私房菜 基础学习篇(第三版)》笔记(一)]]></title>
+      <url>http://blog.hugoxia.com/2017/04/17/linux-1/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>古人云: 读书从厚到薄，从薄到厚。我现在开始做第一步。。。</p>
+</blockquote>
+<h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><p>无图无真相，先来了图。<br><img src="/uploads/operate_system.png" style="margin: auto" title="操作系统的角色"><br>说白了，操作系统就是一个调度者，实现硬件控制和资源管理的一个管理员。而Linux 提供了一个完整的操作系统当中最底层的硬件控制与资源管理的完整架构。</p>
+<h3 id="Linux的核心版本"><a href="#Linux的核心版本" class="headerlink" title="Linux的核心版本"></a>Linux的核心版本</h3><h4 id="查询指令"><a href="#查询指令" class="headerlink" title="查询指令"></a>查询指令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uname -r</div></pre></td></tr></table></figure>
+<h4 id="版本号解释"><a href="#版本号解释" class="headerlink" title="版本号解释"></a>版本号解释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2.6.18-92.el5</div><div class="line">主版本.次版本.释出版本-修改版本</div></pre></td></tr></table></figure>
+<ul>
+<li>次版本为奇数: 发展中版本(development)</li>
+<li>次版本为偶数: 稳定版本(stable)<blockquote>
+<p>Linux 核心版本和distribution的版本不相同。比如Ubuntu系统, 它的版本号是14.04和linux核心版本明显不同。</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Linux </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[由罗技G502鼠标引起的“聒噪”]]></title>
       <url>http://blog.hugoxia.com/2017/04/15/pnvssn/</url>
       <content type="html"><![CDATA[<blockquote>
