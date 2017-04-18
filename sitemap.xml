@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.hugoxia.com/2017/04/18/linux-2/</loc>
+    
+    <lastmod>2017-04-18T07:25:15.973Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.hugoxia.com/2017/04/17/linux-1/</loc>
+    
+    <lastmod>2017-04-18T06:26:34.623Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.hugoxia.com/2017/04/18/heartbeat/</loc>
     
     <lastmod>2017-04-18T03:51:43.991Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://blog.hugoxia.com/2017/03/31/mysql/</loc>
     
     <lastmod>2017-04-17T15:43:31.184Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.hugoxia.com/2017/04/17/linux-1/</loc>
-    
-    <lastmod>2017-04-17T10:31:53.257Z</lastmod>
     
   </url>
   
