@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,Excel," />
+  <meta name="keywords" content="Python,Socket," />
 
 
 
@@ -111,37 +111,34 @@
 
 
 
-<meta name="description" content="表格处理模块
-xlwt (writing xls files)
-xlrd (reading xls/xlsx files)
-openpyxl (reading/writing xlsx files)
-xlsxwriter (writing xlsx files)
-more details
+<meta name="description" content="心跳检测是什么？这里的“心跳”，可不是男女之间心动啥的“砰砰砰”。
 
-xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
+心跳检测是判断对方(设备，进程或其它网元)是否正常进行，一般采用定时发送简单的通讯包，如果长时间未收到对方响应，则判断对方已经挂掉。
+心跳机制是服务端和客户端检测对方是否在线的一种方式
+心跳包就是客户端定时发送简单的信息给服务端告诉它我还在，服务端视情况而定给客户单返回合适信息，一般情况下是客户端给服务端发心跳包。
+
+为什么要用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python和Excel的不解之缘">
-<meta property="og:url" content="http://blog.hugoxia.com/2017/04/10/python-excel/index.html">
+<meta property="og:title" content="玩的就是“心跳”">
+<meta property="og:url" content="http://blog.hugoxia.com/2017/04/18/heartbeat/index.html">
 <meta property="og:site_name" content="Too Young Too Simple">
-<meta property="og:description" content="表格处理模块
-xlwt (writing xls files)
-xlrd (reading xls/xlsx files)
-openpyxl (reading/writing xlsx files)
-xlsxwriter (writing xlsx files)
-more details
+<meta property="og:description" content="心跳检测是什么？这里的“心跳”，可不是男女之间心动啥的“砰砰砰”。
 
-xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
-<meta property="og:updated_time" content="2017-04-10T14:57:03.503Z">
+心跳检测是判断对方(设备，进程或其它网元)是否正常进行，一般采用定时发送简单的通讯包，如果长时间未收到对方响应，则判断对方已经挂掉。
+心跳机制是服务端和客户端检测对方是否在线的一种方式
+心跳包就是客户端定时发送简单的信息给服务端告诉它我还在，服务端视情况而定给客户单返回合适信息，一般情况下是客户端给服务端发心跳包。
+
+为什么要用">
+<meta property="og:updated_time" content="2017-04-18T03:34:19.041Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python和Excel的不解之缘">
-<meta name="twitter:description" content="表格处理模块
-xlwt (writing xls files)
-xlrd (reading xls/xlsx files)
-openpyxl (reading/writing xlsx files)
-xlsxwriter (writing xlsx files)
-more details
+<meta name="twitter:title" content="玩的就是“心跳”">
+<meta name="twitter:description" content="心跳检测是什么？这里的“心跳”，可不是男女之间心动啥的“砰砰砰”。
 
-xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
+心跳检测是判断对方(设备，进程或其它网元)是否正常进行，一般采用定时发送简单的通讯包，如果长时间未收到对方响应，则判断对方已经挂掉。
+心跳机制是服务端和客户端检测对方是否在线的一种方式
+心跳包就是客户端定时发送简单的信息给服务端告诉它我还在，服务端视情况而定给客户单返回合适信息，一般情况下是客户端给服务端发心跳包。
+
+为什么要用">
 
 
 
@@ -169,13 +166,13 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
 
 
 
-  <link rel="canonical" href="http://blog.hugoxia.com/2017/04/10/python-excel/"/>
+  <link rel="canonical" href="http://blog.hugoxia.com/2017/04/18/heartbeat/"/>
 
 
 
 
 
-  <title> Python和Excel的不解之缘 | Too Young Too Simple </title>
+  <title> 玩的就是“心跳” | Too Young Too Simple </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -347,7 +344,7 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://blog.hugoxia.com/2017/04/10/python-excel/">
+    <link itemprop="mainEntityOfPage" href="http://blog.hugoxia.com/2017/04/18/heartbeat/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hugo Xia">
@@ -368,7 +365,7 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
             
             
               
-                Python和Excel的不解之缘
+                玩的就是“心跳”
               
             
           </h1>
@@ -383,8 +380,8 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T18:48:49+08:00">
-                2017-04-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-18T09:49:26+08:00">
+                2017-04-18
               </time>
             
 
@@ -406,8 +403,8 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/架构/" itemprop="url" rel="index">
+                    <span itemprop="name">架构</span>
                   </a>
                 </span>
 
@@ -424,7 +421,7 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/10/python-excel/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/04/18/heartbeat/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -456,17 +453,37 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
       
 
       
-        <h2 id="表格处理模块"><a href="#表格处理模块" class="headerlink" title="表格处理模块"></a>表格处理模块</h2><ul>
-<li><a href="http://xlwt.readthedocs.io/en/latest/" target="_blank" rel="external">xlwt (writing xls files)</a></li>
-<li><a href="http://xlrd.readthedocs.io/en/latest/" target="_blank" rel="external">xlrd (reading xls/xlsx files)</a></li>
-<li><a href="https://openpyxl.readthedocs.io/en/default/" target="_blank" rel="external">openpyxl (reading/writing xlsx files)</a></li>
-<li><a href="https://xlsxwriter.readthedocs.io" target="_blank" rel="external">xlsxwriter (writing xlsx files)</a></li>
-<li><a href="http://www.python-excel.org/" target="_blank" rel="external">more details</a></li>
+        <h3 id="心跳检测是什么？"><a href="#心跳检测是什么？" class="headerlink" title="心跳检测是什么？"></a>心跳检测是什么？</h3><p>这里的“心跳”，可不是男女之间心动啥的“砰砰砰”。</p>
+<ul>
+<li>心跳检测是判断对方(设备，进程或其它网元)是否正常进行，一般采用定时发送简单的通讯包，如果长时间未收到对方响应，则判断对方已经挂掉。</li>
+<li><a href="http://www.baike.com/wiki/%E5%BF%83%E8%B7%B3%E6%9C%BA%E5%88%B6" target="_blank" rel="external">心跳机制</a>是服务端和客户端检测对方是否在线的一种方式</li>
+<li>心跳包就是客户端定时发送简单的信息给服务端告诉它我还在，服务端视情况而定给客户单返回合适信息，一般情况下是客户端给服务端发心跳包。</li>
 </ul>
-<h2 id="xlwt"><a href="#xlwt" class="headerlink" title="xlwt"></a>xlwt</h2><p>直接上干货, 重点看export_excel函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> xlwt</div><div class="line"><span class="keyword">import</span> functools</div><div class="line"></div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">cost_time</span><span class="params">(method)</span>:</span></div><div class="line"><span class="meta">    @functools.wraps(method)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(self, *args, **kwargs)</span>:</span></div><div class="line">        start_time = datetime.now()</div><div class="line">        num = method(self, *args, **kwargs)</div><div class="line">        end_time = datetime.now()</div><div class="line">        print(<span class="string">u"导出%s条数据, 共消耗%s时间"</span> % (num, str(end_time - start_time)))</div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">@cost_time</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">export_excel</span><span class="params">(filename, header, content, *args, **kwargs)</span>:</span></div><div class="line">    wb = xlwt.Workbook()</div><div class="line">    <span class="keyword">if</span> len(content) &gt; <span class="number">65536</span>:</div><div class="line">        <span class="keyword">raise</span> Exception(<span class="string">u"你的数据量为%s, 超过65536, 拒绝通过xlwt导出"</span> % len(content))</div><div class="line">    ws = wb.add_sheet(<span class="string">u"报表"</span>)</div><div class="line">    ws1 = wb.add_sheet(<span class="string">u"表2"</span>)</div><div class="line"></div><div class="line">    <span class="comment"># 写表头</span></div><div class="line">    map(<span class="keyword">lambda</span> h: ws.write(<span class="number">0</span>, h[<span class="number">0</span>], h[<span class="number">1</span>]), enumerate(header))</div><div class="line"></div><div class="line">    <span class="comment"># 写主体内容</span></div><div class="line">    map(<span class="keyword">lambda</span> c: map(<span class="keyword">lambda</span> sub_c: ws.write(c[<span class="number">0</span>] + <span class="number">1</span>, sub_c[<span class="number">0</span>], sub_c[<span class="number">1</span>]), enumerate(c[<span class="number">1</span>])), enumerate(content))</div><div class="line"></div><div class="line">    ws1.write(<span class="number">0</span>, <span class="number">0</span>, <span class="string">u"test"</span>)</div><div class="line"></div><div class="line">    wb.save(filename)</div><div class="line">    <span class="keyword">return</span> len(content)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    header = (<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>, <span class="string">"E"</span>, <span class="string">"F"</span>, <span class="string">"G"</span>)</div><div class="line">    a = xrange(<span class="number">0</span>, <span class="number">77777</span>*<span class="number">1</span>)</div><div class="line">    content = [(a[i], a[i+<span class="number">1</span>], a[i+<span class="number">2</span>], a[i+<span class="number">3</span>], a[i+<span class="number">4</span>], a[i+<span class="number">5</span>], a[i+<span class="number">6</span>]) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(a))[::<span class="number">7</span>]]</div><div class="line">    export_excel(<span class="string">"test.xls"</span>, header=header, content=content)</div></pre></td></tr></table></figure></p>
-<h2 id="xlrd"><a href="#xlrd" class="headerlink" title="xlrd"></a>xlrd</h2><p>后续更新, 敬请期待…</p>
-<h2 id="openpyxl"><a href="#openpyxl" class="headerlink" title="openpyxl"></a>openpyxl</h2><p>后续更新, 敬请期待…</p>
-<h2 id="xlsxwriter"><a href="#xlsxwriter" class="headerlink" title="xlsxwriter"></a>xlsxwriter</h2><p>后续更新, 敬请期待…</p>
+<h3 id="为什么要用心跳机制？"><a href="#为什么要用心跳机制？" class="headerlink" title="为什么要用心跳机制？"></a>为什么要用心跳机制？</h3><ul>
+<li>服务端不能有效判断客户端是否在线</li>
+<li>心跳包可以用于长连接的保活和断线处理。</li>
+</ul>
+<h3 id="怎么代码实现心跳机制？"><a href="#怎么代码实现心跳机制？" class="headerlink" title="怎么代码实现心跳机制？"></a>怎么代码实现心跳机制？</h3><ol>
+<li>客户端每隔一个时间间隔发生一个探测包给服务器。</li>
+<li>客户端发包时启动一个超时定时器。</li>
+<li>服务器端接收到检测包，应该回应一个包。</li>
+<li>如果客户机收到服务器的应答包，则说明服务器正常，删除超时定时器。</li>
+<li>如果客户端的超时定时器超时，依然没有收到应答包，则说明服务器挂了。</li>
+</ol>
+<h4 id="Python代码实现心跳检测"><a href="#Python代码实现心跳检测" class="headerlink" title="Python代码实现心跳检测"></a>Python代码实现心跳检测</h4><blockquote>
+<p>具体代码参见<a href="https://github.com/hugoxia/Python/heartbeat" target="_blank" rel="external">Github</a></p>
+</blockquote>
+<ul>
+<li><p>server</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment">#encoding:utf-8</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> socket, sys, json</div><div class="line"><span class="keyword">from</span> thread <span class="keyword">import</span> *</div><div class="line">BUF_SIZE = <span class="number">4096</span></div><div class="line"></div><div class="line">HOST = socket.gethostname()</div><div class="line">PORT = <span class="number">7878</span></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</div><div class="line"><span class="keyword">except</span> socket.error, e:</div><div class="line">    <span class="keyword">print</span> <span class="string">"Error creating socket: %s"</span> % e</div><div class="line">    sys.exit()</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    server.bind((HOST, PORT))</div><div class="line"><span class="keyword">except</span> socket.error:</div><div class="line">    <span class="keyword">print</span> <span class="string">"Bind failed!"</span></div><div class="line">    sys.exit()</div><div class="line"><span class="keyword">print</span> <span class="string">"Socket bind complete"</span></div><div class="line"></div><div class="line">server.listen(<span class="number">10</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"Socket now listening"</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">clientthread</span><span class="params">(coon)</span>:</span></div><div class="line">    coon.send(<span class="string">"Welcome to the server!"</span>)</div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            data = coon.recv(BUF_SIZE)</div><div class="line">            data_loaded = json.loads(data)</div><div class="line">            <span class="keyword">print</span> <span class="string">"ip: "</span>+str(data_loaded[<span class="string">'ip'</span>])+<span class="string">" |status: "</span>+data_loaded[<span class="string">'status'</span>]+<span class="string">" |pid: "</span>+str(data_loaded[<span class="string">'pid'</span>])</div><div class="line">            <span class="comment"># coon.sendall("hello, I love you!")    # set the client :setblock(0)is ok!</span></div><div class="line">        <span class="keyword">except</span> socket.error:</div><div class="line">            <span class="keyword">print</span> <span class="string">"One Client (IP: %s) Connected over!"</span> % data_loaded[<span class="string">'ip'</span>]</div><div class="line">            <span class="keyword">break</span></div><div class="line">    coon.close()</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    coon, addr = server.accept()</div><div class="line">    <span class="keyword">print</span> <span class="string">"Connected with %s: %s "</span> % (addr[<span class="number">0</span>], str(addr[<span class="number">1</span>]))</div><div class="line">    start_new_thread(clientthread, (coon,))</div><div class="line"></div><div class="line">server.close()</div></pre></td></tr></table></figure>
+</li>
+<li><p>client</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment">#encoding:utf-8</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> socket, sys, os</div><div class="line"><span class="keyword">import</span> time, json</div><div class="line"></div><div class="line">host = socket.gethostname()  <span class="comment"># 这里获得的是本地，视情况而定</span></div><div class="line">port = <span class="number">7878</span></div><div class="line">BUF_SIZE = <span class="number">4096</span></div><div class="line"></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</div><div class="line"><span class="keyword">except</span> socket.error, e:</div><div class="line">    <span class="keyword">print</span> <span class="string">"Error creating socket: %s"</span> % e</div><div class="line">    sys.exit()</div><div class="line"></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    remote_ip = socket.gethostbyname(host)</div><div class="line"><span class="keyword">except</span> socket.gaierror:</div><div class="line">    <span class="keyword">print</span> <span class="string">"Hostname couldn't be resolved. Exciting"</span></div><div class="line"></div><div class="line">    sys.exit()</div><div class="line"></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    client.connect((remote_ip, port))</div><div class="line">    client.setblocking(<span class="number">0</span>)   <span class="comment"># set the socket is not blocking</span></div><div class="line">    <span class="keyword">print</span> <span class="string">"Socket connected to %s on ip %s"</span> % (host, remote_ip)</div><div class="line"><span class="keyword">except</span> socket.gaierror, e:  <span class="comment">#address related error</span></div><div class="line">    <span class="keyword">print</span> <span class="string">"connected to server error%s"</span> % e</div><div class="line">    sys.exit()</div><div class="line"></div><div class="line"><span class="comment">#send heart_beat</span></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    host_name = socket.gethostname()</div><div class="line">    data_to_server = &#123;<span class="string">'ip'</span>: socket.gethostbyname(host_name), <span class="string">'status'</span>: <span class="string">'alive'</span>, <span class="string">'pid'</span>: os.getpid()&#125;</div><div class="line">    data_dumped = json.dumps(data_to_server)</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        client.sendall(data_dumped)</div><div class="line">    <span class="keyword">except</span> socket.error:</div><div class="line">        <span class="keyword">print</span> <span class="string">"Send failed!!"</span></div><div class="line">        sys.exit()</div><div class="line"></div><div class="line">    <span class="keyword">print</span> <span class="string">'I - '</span>, os.getpid(), <span class="string">'- am alive.'</span></div><div class="line">    time.sleep(<span class="number">50</span>)</div><div class="line">client.close()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>具体代码参见<a href="https://github.com/hugoxia/Python/heartbeat" target="_blank" rel="external">Github</a></p>
+</blockquote>
 
       
     </div>
@@ -519,7 +536,7 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
           
             <a href="/tags/Python/" rel="tag"># Python</a>
           
-            <a href="/tags/Excel/" rel="tag"># Excel</a>
+            <a href="/tags/Socket/" rel="tag"># Socket</a>
           
         </div>
       
@@ -532,8 +549,8 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/31/mysql/" rel="next" title="mysql">
-                <i class="fa fa-chevron-left"></i> mysql
+              <a href="/2017/04/17/linux-1/" rel="next" title="读《鸟哥的Linux私房菜 基础学习篇(第三版)》笔记(一)">
+                <i class="fa fa-chevron-left"></i> 读《鸟哥的Linux私房菜 基础学习篇(第三版)》笔记(一)
               </a>
             
           </div>
@@ -541,10 +558,6 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/11/oauth2/" rel="prev" title="第三方登录">
-                第三方登录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -718,7 +731,7 @@ xlwt直接上干货, 重点看export_excel函数12345678910111213141516171">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#表格处理模块"><span class="nav-number">1.</span> <span class="nav-text">表格处理模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xlwt"><span class="nav-number">2.</span> <span class="nav-text">xlwt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xlrd"><span class="nav-number">3.</span> <span class="nav-text">xlrd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#openpyxl"><span class="nav-number">4.</span> <span class="nav-text">openpyxl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xlsxwriter"><span class="nav-number">5.</span> <span class="nav-text">xlsxwriter</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#心跳检测是什么？"><span class="nav-number">1.</span> <span class="nav-text">心跳检测是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用心跳机制？"><span class="nav-number">2.</span> <span class="nav-text">为什么要用心跳机制？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么代码实现心跳机制？"><span class="nav-number">3.</span> <span class="nav-text">怎么代码实现心跳机制？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Python代码实现心跳检测"><span class="nav-number">3.1.</span> <span class="nav-text">Python代码实现心跳检测</span></a></li></ol></li></ol></div>
             
 
           </div>
