@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title><![CDATA[关于Python中json库的一些整理]]></title>
+      <url>http://blog.hugoxia.com/2017/04/19/python-json/</url>
+      <content type="html"><![CDATA[<h3 id="json-dump和json-dumps的区别-来自Stackoverflow的释疑"><a href="#json-dump和json-dumps的区别-来自Stackoverflow的释疑" class="headerlink" title="json.dump和json.dumps的区别(来自Stackoverflow的释疑)"></a>json.dump和json.dumps的区别(<a href="http://stackoverflow.com/questions/36059194/what-is-the-difference-between-json-dump-and-json-dumps-in-python" target="_blank" rel="external">来自Stackoverflow的释疑</a>)</h3><ul>
+<li><p>json.dump</p>
+<blockquote>
+<p>Serialize <code>obj</code> as a JSON formatted stream to <code>fp</code> (a <code>.write()</code>-supporting file-like object).<br>If <code>ensure_ascii</code> is <code>False</code>, some chunks written to <code>fp</code> may be <code>unicode</code> instances.</p>
+</blockquote>
+</li>
+<li><p>json.dumps</p>
+<blockquote>
+<p>Serialize <code>obj</code> to a JSON formatted <code>str</code>.<br>If <code>ensure_ascii</code> is <code>False</code>, all non-ASCII characters are not escaped, and the return value may be a <code>unicode</code> instance.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="ensure-ascii的神奇之处"><a href="#ensure-ascii的神奇之处" class="headerlink" title="ensure_ascii的神奇之处"></a>ensure_ascii的神奇之处</h3><blockquote><p>If <code>ensure_ascii</code> is true (the default), all non-ASCII characters in the output are escaped with <code>\uXXXX</code> sequences, and the result is a <code>str</code> instance consisting of ASCII characters only.  If <code>ensure_ascii</code> is <code>False</code>, some chunks written to <code>fp</code> may be <code>unicode</code> instances. This usually happens because the input contains unicode strings or the <code>encoding</code> parameter is used. Unless <code>fp.write()</code> explicitly understands <code>unicode</code> (as in <code>codecs.getwriter</code>) this is likely to cause an error.</p>
+<footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/json.html?highlight=ensure_ascii#basic-usage" target="_blank" rel="external">Welcome to docs.python.org</a></cite></footer></blockquote>
+<h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> json</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = [<span class="string">u"她"</span>, <span class="string">u"是"</span>, <span class="string">u"美女"</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output1 = json.dumps(data)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output1</div><div class="line"><span class="string">'["\\u5979", "\\u662f", "\\u7f8e\\u5973"]'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(output1)</div><div class="line">[<span class="string">"\\u5979"</span>, <span class="string">"\\u662f"</span>, <span class="string">"\\u7f8e\\u5973"</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output2 = json.dumps(data, ensure_ascii=<span class="keyword">False</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>outout2</div><div class="line"><span class="string">u'["\u5979", "\u662f", "\u7f8e\u5973"]'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(output2)</div><div class="line">[<span class="string">"她"</span>, <span class="string">"是"</span>, <span class="string">"美女"</span>]</div></pre></td></tr></table></figure>
+<h3 id="参数cls的妙用之处理时间"><a href="#参数cls的妙用之处理时间" class="headerlink" title="参数cls的妙用之处理时间"></a>参数cls的妙用之处理时间</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> json</div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DateTimeEncoder</span><span class="params">(json.JSONEncoder)</span>:</span></div><div class="line">    <span class="string">"""convert datetime to string in json.dumps"""</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">default</span><span class="params">(self, obj)</span>:</span></div><div class="line">        <span class="keyword">if</span> isinstance(obj, datetime):</div><div class="line">            encoded_object = obj.strftime(<span class="string">'%Y-%m-%d %H:%M:%S'</span>)</div><div class="line">        <span class="keyword">elif</span> isinstance(obj, date):</div><div class="line">            encoded_object = obj.strftime(<span class="string">'%Y-%m-%d'</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            encoded_object = json.JSONEncoder.default(self, obj)</div><div class="line">        <span class="keyword">return</span> encoded_object</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    data = &#123;<span class="string">"now"</span>: datetime.now()&#125;</div><div class="line">    print(json.dumps(data, cls=DateTimeEncoder))</div><div class="line">    <span class="comment"># output: &#123;"now": "2017-04-19 16:32:53"&#125;</span></div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> Python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Json </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Pycharm实现前进/后退]]></title>
       <url>http://blog.hugoxia.com/2017/04/19/pycharm-jump/</url>
       <content type="html"><![CDATA[<blockquote>

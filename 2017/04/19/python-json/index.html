@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Life,Mouse," />
+  <meta name="keywords" content="Python,Json," />
 
 
 
@@ -111,37 +111,25 @@
 
 
 
-<meta name="description" content="昨晚在京东商城上买了一个罗技鼠标，今天上午到货，于是寻思着吧，找下序列号，查下它是不是正品。按照网友的提示，我在包装盒上翻来覆去，就是找不到可以刮的地方，看到P/N,S/N,这都是啥？？？
+<meta name="description" content="json.dump和json.dumps的区别(来自Stackoverflow的释疑)
+json.dump
 
-
-P/N: Part Number(部件编号)
-S/N: Serial Number(产品序列号)
-L/N: Lot Number(批号)
-
-有时候咱买回来的产品可能有好几个S/N, 像我的鼠标就是包装盒子">
+Serialize obj as a JSON formatted stream to fp (a .write()-supporting file-like object).If ensure_ascii is False, some chunks written to fp may b">
 <meta property="og:type" content="article">
-<meta property="og:title" content="由罗技G502鼠标引起的“聒噪”">
-<meta property="og:url" content="http://blog.hugoxia.com/2017/04/15/pnvssn/index.html">
+<meta property="og:title" content="关于Python中json库的一些整理">
+<meta property="og:url" content="http://blog.hugoxia.com/2017/04/19/python-json/index.html">
 <meta property="og:site_name" content="Too Young Too Simple">
-<meta property="og:description" content="昨晚在京东商城上买了一个罗技鼠标，今天上午到货，于是寻思着吧，找下序列号，查下它是不是正品。按照网友的提示，我在包装盒上翻来覆去，就是找不到可以刮的地方，看到P/N,S/N,这都是啥？？？
+<meta property="og:description" content="json.dump和json.dumps的区别(来自Stackoverflow的释疑)
+json.dump
 
-
-P/N: Part Number(部件编号)
-S/N: Serial Number(产品序列号)
-L/N: Lot Number(批号)
-
-有时候咱买回来的产品可能有好几个S/N, 像我的鼠标就是包装盒子">
-<meta property="og:updated_time" content="2017-04-15T11:09:10.119Z">
+Serialize obj as a JSON formatted stream to fp (a .write()-supporting file-like object).If ensure_ascii is False, some chunks written to fp may b">
+<meta property="og:updated_time" content="2017-04-19T08:54:27.295Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="由罗技G502鼠标引起的“聒噪”">
-<meta name="twitter:description" content="昨晚在京东商城上买了一个罗技鼠标，今天上午到货，于是寻思着吧，找下序列号，查下它是不是正品。按照网友的提示，我在包装盒上翻来覆去，就是找不到可以刮的地方，看到P/N,S/N,这都是啥？？？
+<meta name="twitter:title" content="关于Python中json库的一些整理">
+<meta name="twitter:description" content="json.dump和json.dumps的区别(来自Stackoverflow的释疑)
+json.dump
 
-
-P/N: Part Number(部件编号)
-S/N: Serial Number(产品序列号)
-L/N: Lot Number(批号)
-
-有时候咱买回来的产品可能有好几个S/N, 像我的鼠标就是包装盒子">
+Serialize obj as a JSON formatted stream to fp (a .write()-supporting file-like object).If ensure_ascii is False, some chunks written to fp may b">
 
 
 
@@ -169,13 +157,13 @@ L/N: Lot Number(批号)
 
 
 
-  <link rel="canonical" href="http://blog.hugoxia.com/2017/04/15/pnvssn/"/>
+  <link rel="canonical" href="http://blog.hugoxia.com/2017/04/19/python-json/"/>
 
 
 
 
 
-  <title> 由罗技G502鼠标引起的“聒噪” | Too Young Too Simple </title>
+  <title> 关于Python中json库的一些整理 | Too Young Too Simple </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -347,7 +335,7 @@ L/N: Lot Number(批号)
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://blog.hugoxia.com/2017/04/15/pnvssn/">
+    <link itemprop="mainEntityOfPage" href="http://blog.hugoxia.com/2017/04/19/python-json/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hugo Xia">
@@ -368,7 +356,7 @@ L/N: Lot Number(批号)
             
             
               
-                由罗技G502鼠标引起的“聒噪”
+                关于Python中json库的一些整理
               
             
           </h1>
@@ -383,8 +371,8 @@ L/N: Lot Number(批号)
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T11:52:28+08:00">
-                2017-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T15:42:53+08:00">
+                2017-04-19
               </time>
             
 
@@ -406,8 +394,8 @@ L/N: Lot Number(批号)
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Life/" itemprop="url" rel="index">
-                    <span itemprop="name">Life</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -424,7 +412,7 @@ L/N: Lot Number(批号)
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/15/pnvssn/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/04/19/python-json/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -456,15 +444,22 @@ L/N: Lot Number(批号)
       
 
       
-        <blockquote>
-<p>昨晚在京东商城上买了一个罗技鼠标，今天上午到货，于是寻思着吧，找下序列号，查下它是不是正品。按照网友的提示，我在包装盒上翻来覆去，就是找不到可以刮的地方，看到<code>P/N</code>,<code>S/N</code>,这都是啥？？？</p>
+        <h3 id="json-dump和json-dumps的区别-来自Stackoverflow的释疑"><a href="#json-dump和json-dumps的区别-来自Stackoverflow的释疑" class="headerlink" title="json.dump和json.dumps的区别(来自Stackoverflow的释疑)"></a>json.dump和json.dumps的区别(<a href="http://stackoverflow.com/questions/36059194/what-is-the-difference-between-json-dump-and-json-dumps-in-python" target="_blank" rel="external">来自Stackoverflow的释疑</a>)</h3><ul>
+<li><p>json.dump</p>
+<blockquote>
+<p>Serialize <code>obj</code> as a JSON formatted stream to <code>fp</code> (a <code>.write()</code>-supporting file-like object).<br>If <code>ensure_ascii</code> is <code>False</code>, some chunks written to <code>fp</code> may be <code>unicode</code> instances.</p>
 </blockquote>
-<ul>
-<li><code>P/N</code>: Part Number(部件编号)</li>
-<li><code>S/N</code>: Serial Number(产品序列号)</li>
-<li><code>L/N</code>: Lot Number(批号)</li>
+</li>
+<li><p>json.dumps</p>
+<blockquote>
+<p>Serialize <code>obj</code> to a JSON formatted <code>str</code>.<br>If <code>ensure_ascii</code> is <code>False</code>, all non-ASCII characters are not escaped, and the return value may be a <code>unicode</code> instance.</p>
+</blockquote>
+</li>
 </ul>
-<p>有时候咱买回来的产品可能有好几个<code>S/N</code>, 像我的鼠标就是包装盒子上有一个，鼠标绳上也有一个，并且两个都不一样，盒子上标的是1647XXXXXXXXX,鼠标上标的是1648XXXXXXXX，其实不用担心，这并不能说明鼠标不是正品，只是盒子生产的比鼠标早而已，1647表示16年第47周生产的产品。先到这，后续补充再添加。</p>
+<h3 id="ensure-ascii的神奇之处"><a href="#ensure-ascii的神奇之处" class="headerlink" title="ensure_ascii的神奇之处"></a>ensure_ascii的神奇之处</h3><blockquote><p>If <code>ensure_ascii</code> is true (the default), all non-ASCII characters in the output are escaped with <code>\uXXXX</code> sequences, and the result is a <code>str</code> instance consisting of ASCII characters only.  If <code>ensure_ascii</code> is <code>False</code>, some chunks written to <code>fp</code> may be <code>unicode</code> instances. This usually happens because the input contains unicode strings or the <code>encoding</code> parameter is used. Unless <code>fp.write()</code> explicitly understands <code>unicode</code> (as in <code>codecs.getwriter</code>) this is likely to cause an error.</p>
+<footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/json.html?highlight=ensure_ascii#basic-usage" target="_blank" rel="external">Welcome to docs.python.org</a></cite></footer></blockquote>
+<h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> json</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = [<span class="string">u"她"</span>, <span class="string">u"是"</span>, <span class="string">u"美女"</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output1 = json.dumps(data)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output1</div><div class="line"><span class="string">'["\\u5979", "\\u662f", "\\u7f8e\\u5973"]'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(output1)</div><div class="line">[<span class="string">"\\u5979"</span>, <span class="string">"\\u662f"</span>, <span class="string">"\\u7f8e\\u5973"</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output2 = json.dumps(data, ensure_ascii=<span class="keyword">False</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>outout2</div><div class="line"><span class="string">u'["\u5979", "\u662f", "\u7f8e\u5973"]'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(output2)</div><div class="line">[<span class="string">"她"</span>, <span class="string">"是"</span>, <span class="string">"美女"</span>]</div></pre></td></tr></table></figure>
+<h3 id="参数cls的妙用之处理时间"><a href="#参数cls的妙用之处理时间" class="headerlink" title="参数cls的妙用之处理时间"></a>参数cls的妙用之处理时间</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> json</div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DateTimeEncoder</span><span class="params">(json.JSONEncoder)</span>:</span></div><div class="line">    <span class="string">"""convert datetime to string in json.dumps"""</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">default</span><span class="params">(self, obj)</span>:</span></div><div class="line">        <span class="keyword">if</span> isinstance(obj, datetime):</div><div class="line">            encoded_object = obj.strftime(<span class="string">'%Y-%m-%d %H:%M:%S'</span>)</div><div class="line">        <span class="keyword">elif</span> isinstance(obj, date):</div><div class="line">            encoded_object = obj.strftime(<span class="string">'%Y-%m-%d'</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            encoded_object = json.JSONEncoder.default(self, obj)</div><div class="line">        <span class="keyword">return</span> encoded_object</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    data = &#123;<span class="string">"now"</span>: datetime.now()&#125;</div><div class="line">    print(json.dumps(data, cls=DateTimeEncoder))</div><div class="line">    <span class="comment"># output: &#123;"now": "2017-04-19 16:32:53"&#125;</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -515,9 +510,9 @@ L/N: Lot Number(批号)
       
         <div class="post-tags">
           
-            <a href="/tags/Life/" rel="tag"># Life</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
-            <a href="/tags/Mouse/" rel="tag"># Mouse</a>
+            <a href="/tags/Json/" rel="tag"># Json</a>
           
         </div>
       
@@ -530,8 +525,8 @@ L/N: Lot Number(批号)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/14/flask-1/" rel="next" title="Flask成长之路(一)">
-                <i class="fa fa-chevron-left"></i> Flask成长之路(一)
+              <a href="/2017/04/19/pycharm-jump/" rel="next" title="Pycharm实现前进/后退">
+                <i class="fa fa-chevron-left"></i> Pycharm实现前进/后退
               </a>
             
           </div>
@@ -539,10 +534,6 @@ L/N: Lot Number(批号)
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/17/linux-1/" rel="prev" title="鸟叔Linux私房菜基础篇——Linux是什么？">
-                鸟叔Linux私房菜基础篇——Linux是什么？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -614,8 +605,17 @@ L/N: Lot Number(批号)
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -697,6 +697,22 @@ L/N: Lot Number(批号)
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#json-dump和json-dumps的区别-来自Stackoverflow的释疑"><span class="nav-number">1.</span> <span class="nav-text">json.dump和json.dumps的区别(来自Stackoverflow的释疑)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ensure-ascii的神奇之处"><span class="nav-number">2.</span> <span class="nav-text">ensure_ascii的神奇之处</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实战"><span class="nav-number">2.1.</span> <span class="nav-text">实战</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数cls的妙用之处理时间"><span class="nav-number">3.</span> <span class="nav-text">参数cls的妙用之处理时间</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
