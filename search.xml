@@ -4,6 +4,65 @@
   
     
     <entry>
+      <title><![CDATA[Pycharm实现前进/后退]]></title>
+      <url>http://blog.hugoxia.com/2017/04/19/pycharm-jump/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>操作系统: Ubuntu14.04; Pycharm版本: 2016.3; 这里的前进指的是追踪函数源码, 后退是前进的反方向。</p>
+</blockquote>
+<h3 id="前进"><a href="#前进" class="headerlink" title="前进"></a>前进</h3><ul>
+<li><code>Ctrl</code>+<code>B</code></li>
+<li><code>Ctrl</code>+<code>Q</code>+<code>&lt;F4&gt;</code></li>
+</ul>
+<h3 id="后退"><a href="#后退" class="headerlink" title="后退"></a>后退</h3><ul>
+<li><code>View</code> -&gt; <code>ToolBar</code> -&gt; <code>√ ToolBar</code>(出现工具栏，工具栏中有前进和后退)</li>
+<li><code>Ctrl</code>+ <code>Alt</code> + <code>Left</code>(我试了没生效，不知道为啥)</li>
+<li>罗技G502鼠标左侧前进键和后退键完美兼容Pycharm(意外之喜)</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Pycharm </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Pycharm </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[西安寻找“吉他”培训班]]></title>
+      <url>http://blog.hugoxia.com/2017/04/19/guitar/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>这里不包含个人主观情感，纯粹是找培训班花了些时间，我种树，你们乘凉。。。</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 生活 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Guitar </tag>
+            
+            <tag> Life </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[鸟叔Linux私房菜基础篇——Linux如何学习]]></title>
       <url>http://blog.hugoxia.com/2017/04/18/linux-2/</url>
       <content type="html"><![CDATA[<h3 id="鸟叔的建议"><a href="#鸟叔的建议" class="headerlink" title="鸟叔的建议:"></a>鸟叔的建议:</h3><h4 id="计算器概论与硬件相关知识"><a href="#计算器概论与硬件相关知识" class="headerlink" title="计算器概论与硬件相关知识:"></a>计算器概论与硬件相关知识:</h4><p>因为既然想要走Linux 这门路,信息相关的基础技能也不能没有啊! 所以先理解一下基础的硬件知识,不用一定要全懂啦!又不是真的要你去组计算机~^_^, 但是至少要『听过、有概念』即可;</p>
@@ -151,9 +210,9 @@
         
         <tags>
             
-            <tag> Mouse </tag>
-            
             <tag> Life </tag>
+            
+            <tag> Mouse </tag>
             
         </tags>
         
