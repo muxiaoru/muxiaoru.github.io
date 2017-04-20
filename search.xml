@@ -4,6 +4,43 @@
   
     
     <entry>
+      <title><![CDATA[通过workbench导出ER图]]></title>
+      <url>http://blog.hugoxia.com/2017/04/20/mysql-workbench-export-ER/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>操作系统: Ubuntu14.04</p>
+</blockquote>
+<h3 id="操作流程概览"><a href="#操作流程概览" class="headerlink" title="操作流程概览"></a>操作流程概览</h3><ul>
+<li><code>Database</code> -&gt; <code>Reverse Engine...</code> -&gt; 依次填入信息,然后 <code>&gt; Next</code>, <code>&gt; Next</code>…</li>
+<li><code>Ctrl</code>+<code>R</code> -&gt; 依次填入信息, 后面同上</li>
+</ul>
+<h3 id="操作流程明细-无图无真相"><a href="#操作流程明细-无图无真相" class="headerlink" title="操作流程明细(无图无真相)"></a>操作流程明细(无图无真相)</h3><ul>
+<li>执行<code>Ctrl</code>+<code>R</code>后,出现如下对话框<br><img src="/uploads/ER0.png" style="margin: auto" title="One"></li>
+<li>Next<br><img src="/uploads/ER1.png" style="margin: auto" title="Two"></li>
+<li>Next<br><img src="/uploads/ER2.png" style="margin: auto" title="Three"></li>
+<li>Next<br><img src="/uploads/ER3.png" style="margin: auto" title="Four"></li>
+<li>Next<br><img src="/uploads/ER4.png" style="margin: auto" title="Five"></li>
+<li>Next<br><img src="/uploads/ER5.png" style="margin: auto" title="Six"></li>
+<li>Next<br><img src="/uploads/ER6.png" style="margin: auto" title="Seven"></li>
+<li>Finish<br><img src="/uploads/ER7.png" style="margin: auto" title="Last"></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> workbench </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> workbench </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于Python中json库的一些整理]]></title>
       <url>http://blog.hugoxia.com/2017/04/19/python-json/</url>
       <content type="html"><![CDATA[<h3 id="json-dump和json-dumps的区别-来自Stackoverflow的释疑"><a href="#json-dump和json-dumps的区别-来自Stackoverflow的释疑" class="headerlink" title="json.dump和json.dumps的区别(来自Stackoverflow的释疑)"></a>json.dump和json.dumps的区别(<a href="http://stackoverflow.com/questions/36059194/what-is-the-difference-between-json-dump-and-json-dumps-in-python" target="_blank" rel="external">来自Stackoverflow的释疑</a>)</h3><ul>
