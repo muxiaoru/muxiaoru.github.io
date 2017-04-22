@@ -23,11 +23,11 @@
 <li>Go语言的缺点<ul>
 <li>语法糖没有Python和Ruby那么多</li>
 <li>目前的程序运行速度还不及C</li>
-<li>第三方函数库暂时不像绝对主流的编程语言那样多(随着Go的流行，这不是问题)<h2 id="Go的安装和配置"><a href="#Go的安装和配置" class="headerlink" title="Go的安装和配置"></a>Go的安装和配置</h2></li>
+<li>第三方函数库暂时不像绝对主流的编程语言那样多(随着Go的流行，这不是问题)</li>
 </ul>
 </li>
 </ul>
-]]></content>
+<h2 id="Go的安装和配置"><a href="#Go的安装和配置" class="headerlink" title="Go的安装和配置"></a>Go的安装和配置</h2>]]></content>
       
         <categories>
             
