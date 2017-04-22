@@ -4,6 +4,49 @@
   
     
     <entry>
+      <title><![CDATA[Go学习笔记]]></title>
+      <url>http://blog.hugoxia.com/2017/04/22/go-note/</url>
+      <content type="html"><![CDATA[<h1 id="Go笔记"><a href="#Go笔记" class="headerlink" title="Go笔记"></a>Go笔记</h1><blockquote><p>The Go programming language is an open source project to make programmers more productive.</p>
+<footer><strong>Go</strong><cite><a href="https://golang.org" target="_blank" rel="external">Welcome to golang.org</a></cite></footer></blockquote>
+<blockquote>
+<p>Go编程语言是一个开源项目，使程序员更有成效</p>
+</blockquote>
+<h2 id="Go简介"><a href="#Go简介" class="headerlink" title="Go简介"></a>Go简介</h2><blockquote><p>Go is expressive, concise, clean, and efficient. Its concurrency mechanisms make it easy to write programs that get the most out of multicore and networked machines, while its novel type system enables flexible and modular program construction. Go compiles quickly to machine code yet has the convenience of garbage collection and the power of run-time reflection. It’s a fast, statically typed, compiled language that feels like a dynamically typed, interpreted language.</p>
+<footer><strong>Go Docs</strong><cite><a href="https://golang.org/doc/" target="_blank" rel="external">golang.org/doc</a></cite></footer></blockquote>
+<ul>
+<li>Go语言的优点<ul>
+<li>脚本化的语法, 非常容易编写程序, 新手容易上手</li>
+<li>静态类型+编译型, 程序运行速度有保障</li>
+<li>原生的支持并发编程, 降低开发、维护成本、程序更好的执行</li>
+</ul>
+</li>
+<li>Go语言的缺点<ul>
+<li>语法糖没有Python和Ruby那么多</li>
+<li>目前的程序运行速度还不及C</li>
+<li>第三方函数库暂时不像绝对主流的编程语言那样多(随着Go的流行，这不是问题)<h2 id="Go的安装和配置"><a href="#Go的安装和配置" class="headerlink" title="Go的安装和配置"></a>Go的安装和配置</h2></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Go </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Go </tag>
+            
+            <tag> Note </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[通过workbench导出ER图]]></title>
       <url>http://blog.hugoxia.com/2017/04/20/mysql-workbench-export-ER/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -945,23 +988,6 @@
             <tag> Database </tag>
             
         </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>http://blog.hugoxia.com/2017/03/31/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-      
         
     </entry>
     
