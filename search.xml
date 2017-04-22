@@ -27,7 +27,17 @@
 </ul>
 </li>
 </ul>
-<h2 id="Go的安装和配置"><a href="#Go的安装和配置" class="headerlink" title="Go的安装和配置"></a>Go的安装和配置</h2>]]></content>
+<h2 id="Go的安装和配置"><a href="#Go的安装和配置" class="headerlink" title="Go的安装和配置"></a>Go的安装和配置</h2><p>可以到<a href="https://golang.org/dl/" target="_blank" rel="external">官网</a>下载相应系统的go版本,下面说说Linux下的安装方式</p>
+<ul>
+<li><p>Linux(源码安装)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ sudo curl -O https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz</div><div class="line">$ sudo tar -zxf go1.8.1.linux-amd64.tar.gz -C /usr/<span class="built_in">local</span></div><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/go &amp;&amp; bin/go version <span class="comment"># 验证安装结果</span></div><div class="line">go version go1.8.1 linux/amd64</div></pre></td></tr></table></figure>
+</li>
+<li><p>Linux配置</p>
+<p>  在<code>~/.profile</code>中最后添加下面语句，添加完之后执行<code>source ~/.profile</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/go/bin</div></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
       
         <categories>
             
