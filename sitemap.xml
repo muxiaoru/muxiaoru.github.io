@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.hugoxia.com/2017/04/23/docker-note/</loc>
+    
+    <lastmod>2017-04-23T15:29:41.064Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.hugoxia.com/2017/04/22/go-note/</loc>
     
     <lastmod>2017-04-22T16:03:49.625Z</lastmod>

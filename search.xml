@@ -4,6 +4,26 @@
   
     
     <entry>
+      <title><![CDATA[Docker学习笔记]]></title>
+      <url>http://blog.hugoxia.com/2017/04/23/docker-note/</url>
+      <content type="html"></content>
+      
+        <categories>
+            
+            <category> Docker </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Go学习笔记]]></title>
       <url>http://blog.hugoxia.com/2017/04/22/go-note/</url>
       <content type="html"><![CDATA[<h1 id="Go笔记"><a href="#Go笔记" class="headerlink" title="Go笔记"></a>Go笔记</h1><blockquote><p>The Go programming language is an open source project to make programmers more productive.</p>
