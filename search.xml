@@ -4,6 +4,40 @@
   
     
     <entry>
+      <title><![CDATA[Python 中的 exit()、sys.exit() 和 os._exit()的区别]]></title>
+      <url>http://blog.hugoxia.com/2017/04/24/python-exit/</url>
+      <content type="html"><![CDATA[<h2 id="Python官方解释"><a href="#Python官方解释" class="headerlink" title="Python官方解释"></a>Python官方解释</h2><h3 id="exit"><a href="#exit" class="headerlink" title="exit()"></a>exit()</h3><blockquote><p>Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, and when called, raise SystemExit with the specified exit code.</p>
+<footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/constants.html#exit" target="_blank" rel="external">exit([code=None])</a></cite></footer></blockquote>
+<p>简言之: 抛出 SystemExit 异常. 用于给交互式Shell退出.</p>
+<h3 id="sys-exit"><a href="#sys-exit" class="headerlink" title="sys.exit()"></a>sys.exit()</h3><blockquote><p>Exit from Python. This is implemented by raising the SystemExit exception, so cleanup actions specified by finally clauses of try statements are honored, and it is possible to intercept the exit attempt at an outer level.</p>
+<footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/sys.html#sys.exit" target="_blank" rel="external">sys.exit([arg])</a></cite></footer></blockquote>
+<p>简言之: 抛出 SystemExit 异常, 可以用try捕获异常执行清理工作. 用于程序内部.</p>
+<h3 id="os-exit"><a href="#os-exit" class="headerlink" title="os._exit()"></a>os._exit()</h3><blockquote><p>Exit the process with status n, without calling cleanup handlers, flushing stdio buffers, etc.<br>Note: The standard way to exit is <a href="https://docs.python.org/2/library/sys.html#sys.exit" target="_blank" rel="external">sys.exit(n)</a>. _exit() should normally only be used in the child process after a fork().</p>
+<footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/os.html?highlight=os#os._exit" target="_blank" rel="external">os._exit(n)</a></cite></footer></blockquote>
+<p>简言之: 直接退出, 不抛出异常. 用于子进程的退出.</p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a href="https://www.zhihu.com/question/21187839" target="_blank" rel="external">python 中 os._exit()， sys.exit()， exit() 的区别是什么(知乎)</a></li>
+<li><a href="http://stackoverflow.com/questions/6501121/difference-between-exit-and-sys-exit-in-python" target="_blank" rel="external">The difference between exit() and sys.exit() in Python?(stackoverflow)</a></li>
+<li><a href="http://jaminzhang.github.io/python/exit-and-sys-exit-in-python/" target="_blank" rel="external">Python 中的 exit() 和 sys.exit()(jaminzhang’s blog)</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Docker学习笔记]]></title>
       <url>http://blog.hugoxia.com/2017/04/23/docker-note/</url>
       <content type="html"><![CDATA[<h2 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h2><blockquote><p>Docker is the world’s leading software container platform. Developers use Docker to eliminate “works on my machine” problems when collaborating on code with co-workers. Operators use Docker to run and manage apps side-by-side in isolated containers to get better compute density. Enterprises use Docker to build agile software delivery pipelines to ship new features faster, more securely and with confidence for both Linux and Windows Server apps.</p>
