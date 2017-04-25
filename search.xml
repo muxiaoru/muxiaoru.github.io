@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title><![CDATA[HTTPS for GitHub Pages]]></title>
+      <url>http://blog.hugoxia.com/2017/04/25/github-pages-https/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>福利来啦, Github响应小伙伴们的号召, 于2016年6月15日, 推出https服务, 为username.github.io站点添加<code>Enforce HTTPS</code>选项, 详情请参阅<a href="https://github.com/blog/2186-https-for-github-pages" target="_blank" rel="external">https://github.com/blog/2186-https-for-github-pages</a></p>
+</blockquote>
+<h2 id="具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS"><a href="#具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS" class="headerlink" title="具体操作参见Securing your GitHub Pages site with HTTPS"></a>具体操作参见<a href="https://help.github.com/articles/securing-your-github-pages-site-with-https/" target="_blank" rel="external">Securing your GitHub Pages site with HTTPS</a></h2><h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点:"></a>注意点:</h2><ul>
+<li>使用自定义域的GitHub页面不支持HTTPS(即是说,<code>Custom domain</code>选项置空并保存)</li>
+<li>使用HTTPS之后, 必须删除文件<code>CNAME</code></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Github </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Github </tag>
+            
+            <tag> https </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Python 中的 exit()、sys.exit() 和 os._exit()的区别]]></title>
       <url>http://blog.hugoxia.com/2017/04/24/python-exit/</url>
       <content type="html"><![CDATA[<h2 id="Python官方解释"><a href="#Python官方解释" class="headerlink" title="Python官方解释"></a>Python官方解释</h2><h3 id="exit"><a href="#exit" class="headerlink" title="exit()"></a>exit()</h3><blockquote><p>Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, and when called, raise SystemExit with the specified exit code.</p>
