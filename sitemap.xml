@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hugoxia.github.io/2017/04/25/wsgi-uwsgi/</loc>
+    
+    <lastmod>2017-04-25T08:25:15.294Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hugoxia.github.io/2017/04/14/flask-1/</loc>
+    
+    <lastmod>2017-04-25T07:16:19.990Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hugoxia.github.io/2017/04/25/github-pages-https/</loc>
     
     <lastmod>2017-04-25T05:13:39.158Z</lastmod>
@@ -89,13 +103,6 @@
     <loc>https://hugoxia.github.io/2017/04/15/pnvssn/</loc>
     
     <lastmod>2017-04-15T11:09:10.119Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hugoxia.github.io/2017/04/14/flask-1/</loc>
-    
-    <lastmod>2017-04-14T15:55:21.993Z</lastmod>
     
   </url>
   
