@@ -12,6 +12,7 @@
 <h2 id="具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS"><a href="#具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS" class="headerlink" title="具体操作参见Securing your GitHub Pages site with HTTPS"></a>具体操作参见<a href="https://help.github.com/articles/securing-your-github-pages-site-with-https/" target="_blank" rel="external">Securing your GitHub Pages site with HTTPS</a></h2><h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点:"></a>注意点:</h2><ul>
 <li>使用自定义域的GitHub页面不支持HTTPS(即是说,<code>Custom domain</code>选项置空并保存)</li>
 <li>使用HTTPS之后, 必须删除文件<code>CNAME</code></li>
+<li>最后一点也是最重要的一点, 设置成功之后,需要等待十几分钟才能生效,耐心等待</li>
 </ul>
 ]]></content>
       
