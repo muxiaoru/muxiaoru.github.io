@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[HTTPS for GitHub Pages]]></title>
-      <url>http://blog.hugoxia.com/2017/04/25/github-pages-https/</url>
+      <url>https://hugoxia.github.io/2017/04/25/github-pages-https/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>福利来啦, Github响应小伙伴们的号召, 于2016年6月15日, 推出https服务, 为username.github.io站点添加<code>Enforce HTTPS</code>选项, 详情请参阅<a href="https://github.com/blog/2186-https-for-github-pages" target="_blank" rel="external">https://github.com/blog/2186-https-for-github-pages</a></p>
 </blockquote>
@@ -34,7 +34,7 @@
     
     <entry>
       <title><![CDATA[Python 中的 exit()、sys.exit() 和 os._exit()的区别]]></title>
-      <url>http://blog.hugoxia.com/2017/04/24/python-exit/</url>
+      <url>https://hugoxia.github.io/2017/04/24/python-exit/</url>
       <content type="html"><![CDATA[<h2 id="Python官方解释"><a href="#Python官方解释" class="headerlink" title="Python官方解释"></a>Python官方解释</h2><h3 id="exit"><a href="#exit" class="headerlink" title="exit()"></a>exit()</h3><blockquote><p>Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, and when called, raise SystemExit with the specified exit code.</p>
 <footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/constants.html#exit" target="_blank" rel="external">exit([code=None])</a></cite></footer></blockquote>
 <p>简言之: 抛出 SystemExit 异常. 用于给交互式Shell退出.</p>
@@ -68,7 +68,7 @@
     
     <entry>
       <title><![CDATA[Docker学习笔记]]></title>
-      <url>http://blog.hugoxia.com/2017/04/23/docker-note/</url>
+      <url>https://hugoxia.github.io/2017/04/23/docker-note/</url>
       <content type="html"><![CDATA[<h2 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h2><blockquote><p>Docker is the world’s leading software container platform. Developers use Docker to eliminate “works on my machine” problems when collaborating on code with co-workers. Operators use Docker to run and manage apps side-by-side in isolated containers to get better compute density. Enterprises use Docker to build agile software delivery pipelines to ship new features faster, more securely and with confidence for both Linux and Windows Server apps.</p>
 <footer><strong>What is Docker?</strong><cite><a href="https://www.docker.com/what-docker" target="_blank" rel="external">www.docker.com/what-docker</a></cite></footer></blockquote>
 <blockquote>
@@ -101,7 +101,7 @@
     
     <entry>
       <title><![CDATA[Go学习笔记]]></title>
-      <url>http://blog.hugoxia.com/2017/04/22/go-note/</url>
+      <url>https://hugoxia.github.io/2017/04/22/go-note/</url>
       <content type="html"><![CDATA[<h1 id="Go笔记"><a href="#Go笔记" class="headerlink" title="Go笔记"></a>Go笔记</h1><blockquote><p>The Go programming language is an open source project to make programmers more productive.</p>
 <footer><strong>Go</strong><cite><a href="https://golang.org" target="_blank" rel="external">Welcome to golang.org</a></cite></footer></blockquote>
 <blockquote>
@@ -154,7 +154,7 @@
     
     <entry>
       <title><![CDATA[通过workbench导出ER图]]></title>
-      <url>http://blog.hugoxia.com/2017/04/20/mysql-workbench-export-ER/</url>
+      <url>https://hugoxia.github.io/2017/04/20/mysql-workbench-export-ER/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>操作系统: Ubuntu14.04</p>
 </blockquote>
@@ -191,7 +191,7 @@
     
     <entry>
       <title><![CDATA[关于Python中json库的一些整理]]></title>
-      <url>http://blog.hugoxia.com/2017/04/19/python-json/</url>
+      <url>https://hugoxia.github.io/2017/04/19/python-json/</url>
       <content type="html"><![CDATA[<h3 id="json-dump和json-dumps的区别-来自Stackoverflow的释疑"><a href="#json-dump和json-dumps的区别-来自Stackoverflow的释疑" class="headerlink" title="json.dump和json.dumps的区别(来自Stackoverflow的释疑)"></a>json.dump和json.dumps的区别(<a href="http://stackoverflow.com/questions/36059194/what-is-the-difference-between-json-dump-and-json-dumps-in-python" target="_blank" rel="external">来自Stackoverflow的释疑</a>)</h3><ul>
 <li><p>json.dump</p>
 <blockquote>
@@ -229,7 +229,7 @@
     
     <entry>
       <title><![CDATA[Pycharm实现前进/后退]]></title>
-      <url>http://blog.hugoxia.com/2017/04/19/pycharm-jump/</url>
+      <url>https://hugoxia.github.io/2017/04/19/pycharm-jump/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>操作系统: Ubuntu14.04; Pycharm版本: 2016.3; 这里的前进指的是追踪函数源码, 后退是前进的反方向。</p>
 </blockquote>
@@ -263,7 +263,7 @@
     
     <entry>
       <title><![CDATA[西安寻找“吉他”培训班]]></title>
-      <url>http://blog.hugoxia.com/2017/04/19/guitar/</url>
+      <url>https://hugoxia.github.io/2017/04/19/guitar/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>这里不包含个人主观情感，纯粹是找培训班花了些时间，我种树，你们乘凉。。。</p>
 </blockquote>
@@ -293,7 +293,7 @@
     
     <entry>
       <title><![CDATA[鸟叔Linux私房菜基础篇——Linux如何学习]]></title>
-      <url>http://blog.hugoxia.com/2017/04/18/linux-2/</url>
+      <url>https://hugoxia.github.io/2017/04/18/linux-2/</url>
       <content type="html"><![CDATA[<h3 id="鸟叔的建议"><a href="#鸟叔的建议" class="headerlink" title="鸟叔的建议:"></a>鸟叔的建议:</h3><h4 id="计算器概论与硬件相关知识"><a href="#计算器概论与硬件相关知识" class="headerlink" title="计算器概论与硬件相关知识:"></a>计算器概论与硬件相关知识:</h4><p>因为既然想要走Linux 这门路,信息相关的基础技能也不能没有啊! 所以先理解一下基础的硬件知识,不用一定要全懂啦!又不是真的要你去组计算机~^_^, 但是至少要『听过、有概念』即可;</p>
 <h4 id="先从Linux的安装与指令学起"><a href="#先从Linux的安装与指令学起" class="headerlink" title="先从Linux的安装与指令学起:"></a>先从Linux的安装与指令学起:</h4><p>没有Linux怎么学习Linux呢? 所以好好的安装起一套你需要的Linux吧!虽然说 Linux distributions 很多, 不过基本上架构都是大同小异的,差别在亍接口的亲和力与软件的选择不同罢了! 选择一套你喜欢的就好了,倒是没有哪一套特别好说~</p>
 <h4 id="Linux-操作系统的基础技能"><a href="#Linux-操作系统的基础技能" class="headerlink" title="Linux 操作系统的基础技能:"></a>Linux 操作系统的基础技能:</h4><p>这些包含了『使用者、群组的概念』、『权限的观念』,『程序的定义』等等,尤其是权限的概念, 由于不同的权限设定会妨碍你的使用者的便利性,但是太过于便利又会导致入侵的可能! 所以这里需要了解一下你的系统呦!</p>
@@ -335,7 +335,7 @@
     
     <entry>
       <title><![CDATA[玩的就是“心跳”]]></title>
-      <url>http://blog.hugoxia.com/2017/04/18/heartbeat/</url>
+      <url>https://hugoxia.github.io/2017/04/18/heartbeat/</url>
       <content type="html"><![CDATA[<h3 id="心跳检测是什么？"><a href="#心跳检测是什么？" class="headerlink" title="心跳检测是什么？"></a>心跳检测是什么？</h3><p>这里的“心跳”，可不是男女之间心动啥的“砰砰砰”。</p>
 <ul>
 <li>心跳检测是判断对方(设备，进程或其它网元)是否正常进行，一般采用定时发送简单的通讯包，如果长时间未收到对方响应，则判断对方已经挂掉。</li>
@@ -385,7 +385,7 @@
     
     <entry>
       <title><![CDATA[鸟叔Linux私房菜基础篇——Linux是什么？]]></title>
-      <url>http://blog.hugoxia.com/2017/04/17/linux-1/</url>
+      <url>https://hugoxia.github.io/2017/04/17/linux-1/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>古人云: 读书从厚到薄，从薄到厚。我现在开始做第一步。。。</p>
 </blockquote>
@@ -418,7 +418,7 @@
     
     <entry>
       <title><![CDATA[由罗技G502鼠标引起的“聒噪”]]></title>
-      <url>http://blog.hugoxia.com/2017/04/15/pnvssn/</url>
+      <url>https://hugoxia.github.io/2017/04/15/pnvssn/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>昨晚在京东商城上买了一个罗技鼠标，今天上午到货，于是寻思着吧，找下序列号，查下它是不是正品。按照网友的提示，我在包装盒上翻来覆去，就是找不到可以刮的地方，看到<code>P/N</code>,<code>S/N</code>,这都是啥？？？</p>
 </blockquote>
@@ -449,7 +449,7 @@
     
     <entry>
       <title><![CDATA[Flask成长之路(一)]]></title>
-      <url>http://blog.hugoxia.com/2017/04/14/flask-1/</url>
+      <url>https://hugoxia.github.io/2017/04/14/flask-1/</url>
       <content type="html"></content>
       
         <categories>
@@ -473,7 +473,7 @@
     
     <entry>
       <title><![CDATA[Pycharm配置autopep8到菜单]]></title>
-      <url>http://blog.hugoxia.com/2017/04/12/pycharm-autopep8/</url>
+      <url>https://hugoxia.github.io/2017/04/12/pycharm-autopep8/</url>
       <content type="html"><![CDATA[<p>Pycharm可以自动检测PEP8规范, 菜单<code>Code</code>–&gt;<code>Reformat Code</code>可以自动调整代码,但是效果一般,只能实现简单的规范代码; 为了满足需要, 可以安装autopep8来自动修改文件实现PEP8规范.</p>
 <h3 id="安装autopep8"><a href="#安装autopep8" class="headerlink" title="安装autopep8"></a>安装autopep8</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install autopep8</div></pre></td></tr></table></figure>
 <h3 id="Pycharm中进行设置"><a href="#Pycharm中进行设置" class="headerlink" title="Pycharm中进行设置"></a>Pycharm中进行设置</h3><ul>
@@ -522,7 +522,7 @@
     
     <entry>
       <title><![CDATA[Python中字符串格式化符号和转义字符含义]]></title>
-      <url>http://blog.hugoxia.com/2017/04/12/python-format/</url>
+      <url>https://hugoxia.github.io/2017/04/12/python-format/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>这篇文档整理自<a href="http://bbs.fishc.com/forum.php?mod=viewthread&amp;tid=39140&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D403" target="_blank" rel="external">鱼C论坛</a>, 感谢作者输出,我只是一枚搬运工…</p>
 </blockquote>
@@ -691,7 +691,7 @@
     
     <entry>
       <title><![CDATA[第三方登录]]></title>
-      <url>http://blog.hugoxia.com/2017/04/11/oauth2/</url>
+      <url>https://hugoxia.github.io/2017/04/11/oauth2/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>这篇文档的源自一个第三方登录的需求,于是我就想搞清楚怎么实现第三方登录的,网上有现成的解决方案: <a href="http://dev.umeng.com/social/android/login-page" target="_blank" rel="external">友盟</a>和<a href="http://wiki.mob.com/%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" target="_blank" rel="external">ShareSDK</a>;但是这不是我最需要,于是就有了下面的的记录: </p>
 </blockquote>
@@ -721,7 +721,7 @@
     
     <entry>
       <title><![CDATA[Python和Excel的不解之缘]]></title>
-      <url>http://blog.hugoxia.com/2017/04/10/python-excel/</url>
+      <url>https://hugoxia.github.io/2017/04/10/python-excel/</url>
       <content type="html"><![CDATA[<h2 id="表格处理模块"><a href="#表格处理模块" class="headerlink" title="表格处理模块"></a>表格处理模块</h2><ul>
 <li><a href="http://xlwt.readthedocs.io/en/latest/" target="_blank" rel="external">xlwt (writing xls files)</a></li>
 <li><a href="http://xlrd.readthedocs.io/en/latest/" target="_blank" rel="external">xlrd (reading xls/xlsx files)</a></li>
@@ -754,7 +754,7 @@
     
     <entry>
       <title><![CDATA[mysql]]></title>
-      <url>http://blog.hugoxia.com/2017/03/31/mysql/</url>
+      <url>https://hugoxia.github.io/2017/03/31/mysql/</url>
       <content type="html"><![CDATA[<h2 id="初涉Mysql"><a href="#初涉Mysql" class="headerlink" title="初涉Mysql"></a>初涉Mysql</h2><h3 id="MySQL概述"><a href="#MySQL概述" class="headerlink" title="MySQL概述"></a>MySQL概述</h3><ul>
 <li>MySQL由瑞典MySQL AB公司开发，目前属于Oracle公司.</li>
 <li>MySQL是一个开源的关系型数据库管理系统.</li>
@@ -1099,7 +1099,7 @@
     
     <entry>
       <title><![CDATA[scp]]></title>
-      <url>http://blog.hugoxia.com/2015/10/10/scp/</url>
+      <url>https://hugoxia.github.io/2015/10/10/scp/</url>
       <content type="html"></content>
       
         
@@ -1107,7 +1107,7 @@
     
     <entry>
       <title><![CDATA[Python3正则表达式特殊符号及用法(详细列表)]]></title>
-      <url>http://blog.hugoxia.com/2015/09/26/regex/</url>
+      <url>https://hugoxia.github.io/2015/09/26/regex/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>这篇文档整理自<a href="http://bbs.fishc.com/forum.php?mod=viewthread&amp;tid=57691&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D403" target="_blank" rel="external">鱼C论坛</a>, 感谢作者输出,我只是一枚搬运工…</p>
 </blockquote>
@@ -1294,7 +1294,7 @@
     
     <entry>
       <title><![CDATA[Vim Cheat Sheet]]></title>
-      <url>http://blog.hugoxia.com/2015/09/21/vim/</url>
+      <url>https://hugoxia.github.io/2015/09/21/vim/</url>
       <content type="html"><![CDATA[<h2 id="光标"><a href="#光标" class="headerlink" title="光标"></a>光标</h2><ul>
 <li>h - 左移光标</li>
 <li>j - 下移光标</li>
