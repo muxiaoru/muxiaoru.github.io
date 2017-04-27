@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title><![CDATA[MySQL的limit用法和分页查询的性能优化]]></title>
+      <url>https://hugoxia.github.io/2017/04/27/mysql-limit/</url>
+      <content type="html"><![CDATA[<blockquote><p>学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。</p>
+<footer><strong>CloudMan</strong><cite><a href="http://www.cnblogs.com/CloudMan6/p/6751516.html" target="_blank" rel="external">每天5分钟玩转容器技术（6）</a></cite></footer></blockquote>
+<blockquote>
+<p>我非常赞同CloudMan的观点, 下面咱就以这三个问题来讨论今天的主题</p>
+</blockquote>
+<h1 id="What-Mysql中的LIMIT是什么东东"><a href="#What-Mysql中的LIMIT是什么东东" class="headerlink" title="What-Mysql中的LIMIT是什么东东?"></a>What-Mysql中的LIMIT是什么东东?</h1><h1 id="Why-为什么需要为分页查询做优化"><a href="#Why-为什么需要为分页查询做优化" class="headerlink" title="Why-为什么需要为分页查询做优化?"></a>Why-为什么需要为分页查询做优化?</h1><h1 id="How-分页查询如何优化"><a href="#How-分页查询如何优化" class="headerlink" title="How-分页查询如何优化?"></a>How-分页查询如何优化?</h1>]]></content>
+      
+        <categories>
+            
+            <category> Mysql </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Mysql </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[WSGI，uwsgi和uWSGI的区别]]></title>
       <url>https://hugoxia.github.io/2017/04/25/wsgi-uwsgi/</url>
       <content type="html"><![CDATA[<h2 id="WSGI"><a href="#WSGI" class="headerlink" title="WSGI"></a>WSGI</h2><blockquote><p>WSGI(Python Web Server Gateway Interface, Web服务器网关接口)是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口</p>
