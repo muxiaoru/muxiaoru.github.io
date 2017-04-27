@@ -111,28 +111,31 @@
 
 
 
-<meta name="description" content="学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。CloudMan
+<meta name="description" content="学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。
+CloudMan-每天5分钟玩转容器技术（6）
 
 我非常赞同CloudMan的观点, 下面咱就以这三个问题来讨论今天的主题
 
-What-Mysql中的LIMIT是干啥的?Why-为什么需要为分页查询做优化?How-分页查询如何优化?">
+What-Mysql中的LIMIT是干啥的?在我们使用查询语句的时候，经常要返回前几条或者中间某几行数据，这个时候怎么办呢？不用担心，mysql已经为我们提供了这样一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL的limit用法和分页查询的性能优化">
 <meta property="og:url" content="https://hugoxia.github.io/2017/04/27/mysql-limit/index.html">
 <meta property="og:site_name" content="Too Young Too Simple">
-<meta property="og:description" content="学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。CloudMan
+<meta property="og:description" content="学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。
+CloudMan-每天5分钟玩转容器技术（6）
 
 我非常赞同CloudMan的观点, 下面咱就以这三个问题来讨论今天的主题
 
-What-Mysql中的LIMIT是干啥的?Why-为什么需要为分页查询做优化?How-分页查询如何优化?">
-<meta property="og:updated_time" content="2017-04-27T08:47:50.886Z">
+What-Mysql中的LIMIT是干啥的?在我们使用查询语句的时候，经常要返回前几条或者中间某几行数据，这个时候怎么办呢？不用担心，mysql已经为我们提供了这样一">
+<meta property="og:updated_time" content="2017-04-27T09:48:20.535Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL的limit用法和分页查询的性能优化">
-<meta name="twitter:description" content="学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。CloudMan
+<meta name="twitter:description" content="学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。
+CloudMan-每天5分钟玩转容器技术（6）
 
 我非常赞同CloudMan的观点, 下面咱就以这三个问题来讨论今天的主题
 
-What-Mysql中的LIMIT是干啥的?Why-为什么需要为分页查询做优化?How-分页查询如何优化?">
+What-Mysql中的LIMIT是干啥的?在我们使用查询语句的时候，经常要返回前几条或者中间某几行数据，这个时候怎么办呢？不用担心，mysql已经为我们提供了这样一">
 
 
 
@@ -447,11 +450,38 @@ What-Mysql中的LIMIT是干啥的?Why-为什么需要为分页查询做优化?Ho
       
 
       
-        <blockquote class="blockquote-center"><p>学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。<br>CloudMan</p>
+        <blockquote class="blockquote-center"><p>学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。</p>
+<p>CloudMan-<a href="http://www.cnblogs.com/CloudMan6/p/6751516.html" target="_blank" rel="external">每天5分钟玩转容器技术（6）</a></p>
 </blockquote>
 <div class="note success"><p>我非常赞同CloudMan的观点, 下面咱就以这三个问题来讨论今天的主题</p>
 </div>
-<h1 id="What-Mysql中的LIMIT是干啥的"><a href="#What-Mysql中的LIMIT是干啥的" class="headerlink" title="What-Mysql中的LIMIT是干啥的?"></a>What-Mysql中的LIMIT是干啥的?</h1><h1 id="Why-为什么需要为分页查询做优化"><a href="#Why-为什么需要为分页查询做优化" class="headerlink" title="Why-为什么需要为分页查询做优化?"></a>Why-为什么需要为分页查询做优化?</h1><h1 id="How-分页查询如何优化"><a href="#How-分页查询如何优化" class="headerlink" title="How-分页查询如何优化?"></a>How-分页查询如何优化?</h1>
+<h1 id="What-Mysql中的LIMIT是干啥的"><a href="#What-Mysql中的LIMIT是干啥的" class="headerlink" title="What-Mysql中的LIMIT是干啥的?"></a>What-Mysql中的LIMIT是干啥的?</h1><p>在我们使用查询语句的时候，经常要返回前几条或者中间某几行数据，这个时候怎么办呢？不用担心，mysql已经为我们提供了这样一个功能。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">table</span> <span class="keyword">LIMIT</span> [<span class="keyword">offset</span>,] <span class="keyword">rows</span> | <span class="keyword">rows</span> <span class="keyword">OFFSET</span> <span class="keyword">offset</span></div></pre></td></tr></table></figure></p>
+<p>LIMIT 子句可以被用于强制 SELECT 语句返回指定的记录数。LIMIT 接受一个或两个数字参数。如果给定一个参数(rows), 偏移量offset默认为0, 指定返回[:rows]的数据; 如果给定两个参数(offset, rows)，offset指定第一个返回记录行的偏移量，rows指定返回记录行的最大数目。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; SELECT * FROM table LIMIT 5,10; // 检索记录行 6-15</div></pre></td></tr></table></figure></p>
+<p>获得开头的几行数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; SELECT * FROM table LIMIT 10; // 检索记录行 0-9</div></pre></td></tr></table></figure></p>
+<p>获得结尾的几行数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; SELECT * FROM table LIMIT 100,-1; // 检索记录行 100-last.</div></pre></td></tr></table></figure></p>
+<h1 id="Why-为什么需要为分页查询做优化"><a href="#Why-为什么需要为分页查询做优化" class="headerlink" title="Why-为什么需要为分页查询做优化?"></a>Why-为什么需要为分页查询做优化?</h1><ul>
+<li>随着数据量的增加，页数会越来越多，查看后几页的SQL就可能类似：<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> age = <span class="number">12</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span> <span class="keyword">LIMIT</span> <span class="number">10000</span>, <span class="number">20</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>总而言之，越往后分页，LIMIT语句的偏移量(offset)就会越大，速度也会明显变慢</p>
+<ul>
+<li>随着业务的复杂度越来越高, 查询条件不断增多, 可想而知, 速度也会越来越慢</li>
+</ul>
+<h1 id="How-分页查询如何优化"><a href="#How-分页查询如何优化" class="headerlink" title="How-分页查询如何优化?"></a>How-分页查询如何优化?</h1><ul>
+<li><p>提速原理:<br>避免全表扫描,而是通过索引找到指定位置,于是就相当于只是扫描了指定数量(rows)的数据</p>
+</li>
+<li><p>实现方式:</p>
+<ul>
+<li><p>子查询分页方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM users WHERE  id &gt;=  </div><div class="line">(SELECT id FROM users  WHERE age = 12 ORDER BY id LIMIT 10000, 1) LIMIT 20</div></pre></td></tr></table></figure>
+</li>
+<li><p>JOIN分页方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">暂缺示例</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
 
