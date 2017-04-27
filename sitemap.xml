@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hugoxia.github.io/2017/03/31/mysql/</loc>
+    
+    <lastmod>2017-04-27T10:07:53.795Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hugoxia.github.io/2017/04/25/wsgi-uwsgi/</loc>
     
     <lastmod>2017-04-27T10:05:45.841Z</lastmod>
@@ -89,13 +96,6 @@
     <loc>https://hugoxia.github.io/2017/04/12/pycharm-autopep8/</loc>
     
     <lastmod>2017-04-27T09:59:34.077Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hugoxia.github.io/2017/03/31/mysql/</loc>
-    
-    <lastmod>2017-04-27T09:58:44.507Z</lastmod>
     
   </url>
   
