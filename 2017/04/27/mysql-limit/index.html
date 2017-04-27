@@ -113,29 +113,26 @@
 
 <meta name="description" content="学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。
 CloudMan每天5分钟玩转容器技术（6）
-
 我非常赞同CloudMan的观点, 下面咱就以这三个问题来讨论今天的主题
 
-What-Mysql中的LIMIT是什么东东?Why-为什么需要为分页查询做优化?How-分页查询如何优化?">
+What-Mysql中的LIMIT是干啥的?Why-为什么需要为分页查询做优化?How-分页查询如何优化?">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL的limit用法和分页查询的性能优化">
 <meta property="og:url" content="https://hugoxia.github.io/2017/04/27/mysql-limit/index.html">
 <meta property="og:site_name" content="Too Young Too Simple">
 <meta property="og:description" content="学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。
 CloudMan每天5分钟玩转容器技术（6）
-
 我非常赞同CloudMan的观点, 下面咱就以这三个问题来讨论今天的主题
 
-What-Mysql中的LIMIT是什么东东?Why-为什么需要为分页查询做优化?How-分页查询如何优化?">
-<meta property="og:updated_time" content="2017-04-27T07:34:44.006Z">
+What-Mysql中的LIMIT是干啥的?Why-为什么需要为分页查询做优化?How-分页查询如何优化?">
+<meta property="og:updated_time" content="2017-04-27T08:42:49.985Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL的limit用法和分页查询的性能优化">
 <meta name="twitter:description" content="学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。
 CloudMan每天5分钟玩转容器技术（6）
-
 我非常赞同CloudMan的观点, 下面咱就以这三个问题来讨论今天的主题
 
-What-Mysql中的LIMIT是什么东东?Why-为什么需要为分页查询做优化?How-分页查询如何优化?">
+What-Mysql中的LIMIT是干啥的?Why-为什么需要为分页查询做优化?How-分页查询如何优化?">
 
 
 
@@ -452,10 +449,9 @@ What-Mysql中的LIMIT是什么东东?Why-为什么需要为分页查询做优化
       
         <blockquote><p>学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。</p>
 <footer><strong>CloudMan</strong><cite><a href="http://www.cnblogs.com/CloudMan6/p/6751516.html" target="_blank" rel="external">每天5分钟玩转容器技术（6）</a></cite></footer></blockquote>
-<blockquote>
-<p>我非常赞同CloudMan的观点, 下面咱就以这三个问题来讨论今天的主题</p>
-</blockquote>
-<h1 id="What-Mysql中的LIMIT是什么东东"><a href="#What-Mysql中的LIMIT是什么东东" class="headerlink" title="What-Mysql中的LIMIT是什么东东?"></a>What-Mysql中的LIMIT是什么东东?</h1><h1 id="Why-为什么需要为分页查询做优化"><a href="#Why-为什么需要为分页查询做优化" class="headerlink" title="Why-为什么需要为分页查询做优化?"></a>Why-为什么需要为分页查询做优化?</h1><h1 id="How-分页查询如何优化"><a href="#How-分页查询如何优化" class="headerlink" title="How-分页查询如何优化?"></a>How-分页查询如何优化?</h1>
+<div class="note success"><p>我非常赞同CloudMan的观点, 下面咱就以这三个问题来讨论今天的主题</p>
+</div>
+<h1 id="What-Mysql中的LIMIT是干啥的"><a href="#What-Mysql中的LIMIT是干啥的" class="headerlink" title="What-Mysql中的LIMIT是干啥的?"></a>What-Mysql中的LIMIT是干啥的?</h1><h1 id="Why-为什么需要为分页查询做优化"><a href="#Why-为什么需要为分页查询做优化" class="headerlink" title="Why-为什么需要为分页查询做优化?"></a>Why-为什么需要为分页查询做优化?</h1><h1 id="How-分页查询如何优化"><a href="#How-分页查询如何优化" class="headerlink" title="How-分页查询如何优化?"></a>How-分页查询如何优化?</h1>
       
     </div>
 
@@ -700,7 +696,7 @@ What-Mysql中的LIMIT是什么东东?Why-为什么需要为分页查询做优化
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-Mysql中的LIMIT是什么东东"><span class="nav-number">1.</span> <span class="nav-text">What-Mysql中的LIMIT是什么东东?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-为什么需要为分页查询做优化"><span class="nav-number">2.</span> <span class="nav-text">Why-为什么需要为分页查询做优化?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-分页查询如何优化"><span class="nav-number">3.</span> <span class="nav-text">How-分页查询如何优化?</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-Mysql中的LIMIT是干啥的"><span class="nav-number">1.</span> <span class="nav-text">What-Mysql中的LIMIT是干啥的?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-为什么需要为分页查询做优化"><span class="nav-number">2.</span> <span class="nav-text">Why-为什么需要为分页查询做优化?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-分页查询如何优化"><span class="nav-number">3.</span> <span class="nav-text">How-分页查询如何优化?</span></a></li></ol></div>
             
 
           </div>
