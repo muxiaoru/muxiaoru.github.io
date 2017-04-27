@@ -11,17 +11,18 @@
 </blockquote>
 <div class="note success"><p>我非常赞同CloudMan的观点, 下面咱就以这三个问题来讨论今天的主题</p>
 </div>
+<a id="more"></a>
 <h1 id="What-Mysql中的LIMIT是干啥的"><a href="#What-Mysql中的LIMIT是干啥的" class="headerlink" title="What-Mysql中的LIMIT是干啥的?"></a>What-Mysql中的LIMIT是干啥的?</h1><p>在我们使用查询语句的时候，经常要返回前几条或者中间某几行数据，这个时候怎么办呢？不用担心，mysql已经为我们提供了这样一个功能。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">table</span> <span class="keyword">LIMIT</span> [<span class="keyword">offset</span>,] <span class="keyword">rows</span> | <span class="keyword">rows</span> <span class="keyword">OFFSET</span> <span class="keyword">offset</span></div></pre></td></tr></table></figure></p>
 <p>LIMIT 子句可以被用于强制 SELECT 语句返回指定的记录数。LIMIT 接受一个或两个数字参数。如果给定一个参数(rows), 偏移量offset默认为0, 指定返回[:rows]的数据; 如果给定两个参数(offset, rows)，offset指定第一个返回记录行的偏移量，rows指定返回记录行的最大数目。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; SELECT * FROM table LIMIT 5,10; // 检索记录行 6-15</div></pre></td></tr></table></figure></p>
 <p>获得开头的几行数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; SELECT * FROM table LIMIT 10; // 检索记录行 0-9</div></pre></td></tr></table></figure></p>
 <p>获得结尾的几行数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; SELECT * FROM table LIMIT 100,-1; // 检索记录行 100-last.</div></pre></td></tr></table></figure></p>
 <h1 id="Why-为什么需要为分页查询做优化"><a href="#Why-为什么需要为分页查询做优化" class="headerlink" title="Why-为什么需要为分页查询做优化?"></a>Why-为什么需要为分页查询做优化?</h1><ul>
-<li>随着数据量的增加，页数会越来越多，查看后几页的SQL就可能类似：<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> age = <span class="number">12</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span> <span class="keyword">LIMIT</span> <span class="number">10000</span>, <span class="number">20</span></div></pre></td></tr></table></figure>
+<li><p>随着数据量的增加，页数会越来越多，查看后几页的SQL就可能类似：</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> age = <span class="number">12</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span> <span class="keyword">LIMIT</span> <span class="number">10000</span>, <span class="number">20</span></div></pre></td></tr></table></figure>
+<p>  总而言之，越往后分页，LIMIT语句的偏移量(offset)就会越大，速度也会明显变慢</p>
 </li>
-</ul>
-<p>总而言之，越往后分页，LIMIT语句的偏移量(offset)就会越大，速度也会明显变慢</p>
-<ul>
-<li>随着业务的复杂度越来越高, 查询条件不断增多, 可想而知, 速度也会越来越慢</li>
+<li><p>随着业务的复杂度越来越高, 查询条件不断增多, 可想而知, 速度也会越来越慢</p>
+</li>
 </ul>
 <h1 id="How-分页查询如何优化"><a href="#How-分页查询如何优化" class="headerlink" title="How-分页查询如何优化?"></a>How-分页查询如何优化?</h1><ul>
 <li><p>提速原理:<br>避免全表扫描,而是通过索引找到指定位置,于是就相当于只是扫描了指定数量(rows)的数据</p>
@@ -59,6 +60,7 @@
       <url>https://hugoxia.github.io/2017/04/25/wsgi-uwsgi/</url>
       <content type="html"><![CDATA[<h2 id="WSGI"><a href="#WSGI" class="headerlink" title="WSGI"></a>WSGI</h2><blockquote><p>WSGI(Python Web Server Gateway Interface, Web服务器网关接口)是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口</p>
 <footer><strong>维基百科</strong><cite><a href="https://zh.wikipedia.org/wiki/Web%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%85%B3%E6%8E%A5%E5%8F%A3" target="_blank" rel="external">Web服务器网关接口</a></cite></footer></blockquote>
+<a id="more"></a>
 <h2 id="uwsgi"><a href="#uwsgi" class="headerlink" title="uwsgi"></a>uwsgi</h2><blockquote><p>uwsgi同WSGI一样是一种通信协议。uwsgi协议是一个uWSGI服务器自有的协议，它用于定义传输信息的类型（type of information），每一个uwsgi packet前4byte为传输信息类型描述，它与WSGI相比是两样东西。</p>
 <footer><strong>互动百科</strong><cite><a href="http://www.baike.com/wiki/uwsgi" target="_blank" rel="external">uwsgi协议</a></cite></footer></blockquote>
 <h2 id="uWSGI"><a href="#uWSGI" class="headerlink" title="uWSGI"></a>uWSGI</h2><blockquote><p>uWSGI是一个Web服务器，它实现了WSGI协议、uwsgi、http等协议。Nginx中HttpUwsgiModule的作用是与uWSGI服务器进行交换。</p>
@@ -89,9 +91,9 @@
       <title><![CDATA[HTTPS for GitHub Pages]]></title>
       <url>https://hugoxia.github.io/2017/04/25/github-pages-https/</url>
       <content type="html"><![CDATA[<blockquote>
-<p>福利来啦, Github响应小伙伴们的号召, 于2016年6月15日, 推出https服务, 为username.github.io站点添加<code>Enforce HTTPS</code>选项, 详情请参阅<a href="https://github.com/blog/2186-https-for-github-pages" target="_blank" rel="external">https://github.com/blog/2186-https-for-github-pages</a></p>
-</blockquote>
-<h2 id="具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS"><a href="#具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS" class="headerlink" title="具体操作参见Securing your GitHub Pages site with HTTPS"></a>具体操作参见<a href="https://help.github.com/articles/securing-your-github-pages-site-with-https/" target="_blank" rel="external">Securing your GitHub Pages site with HTTPS</a></h2><h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点:"></a>注意点:</h2><ul>
+<p>福利来啦, Github响应小伙伴们的号召, 于2016年6月15日, 推出https服务, 为username.github.io站点添加<code>Enforce HTTPS</code>选项, 详情请参阅<a href="https://github.com/blog/2186-https-for-github-pages" target="_blank" rel="external">https://github.com/blog/2186-https-for-github-pages</a><br><a id="more"></a></p>
+<h2 id="具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS"><a href="#具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS" class="headerlink" title="具体操作参见Securing your GitHub Pages site with HTTPS"></a>具体操作参见<a href="https://help.github.com/articles/securing-your-github-pages-site-with-https/" target="_blank" rel="external">Securing your GitHub Pages site with HTTPS</a></h2></blockquote>
+<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点:"></a>注意点:</h2><ul>
 <li>使用自定义域的GitHub页面不支持HTTPS(即是说,<code>Custom domain</code>选项置空并保存)</li>
 <li>使用HTTPS之后, 必须删除文件<code>CNAME</code></li>
 <li>最后一点也是最重要的一点, 设置成功之后,需要等待十几分钟才能生效,耐心等待</li>
@@ -120,7 +122,9 @@
       <url>https://hugoxia.github.io/2017/04/24/python-exit/</url>
       <content type="html"><![CDATA[<h2 id="Python官方解释"><a href="#Python官方解释" class="headerlink" title="Python官方解释"></a>Python官方解释</h2><h3 id="exit"><a href="#exit" class="headerlink" title="exit()"></a>exit()</h3><blockquote><p>Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, and when called, raise SystemExit with the specified exit code.</p>
 <footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/constants.html#exit" target="_blank" rel="external">exit([code=None])</a></cite></footer></blockquote>
-<p>简言之: 抛出 SystemExit 异常. 用于给交互式Shell退出.</p>
+<a id="more"></a>
+<div class="note success"><p>简言之: 抛出 SystemExit 异常. 用于给交互式Shell退出.</p>
+</div>
 <h3 id="sys-exit"><a href="#sys-exit" class="headerlink" title="sys.exit()"></a>sys.exit()</h3><blockquote><p>Exit from Python. This is implemented by raising the SystemExit exception, so cleanup actions specified by finally clauses of try statements are honored, and it is possible to intercept the exit attempt at an outer level.</p>
 <footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/sys.html#sys.exit" target="_blank" rel="external">sys.exit([arg])</a></cite></footer></blockquote>
 <p>简言之: 抛出 SystemExit 异常, 可以用try捕获异常执行清理工作. 用于程序内部.</p>
@@ -154,17 +158,16 @@
       <url>https://hugoxia.github.io/2017/04/23/docker-note/</url>
       <content type="html"><![CDATA[<h2 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h2><blockquote><p>Docker is the world’s leading software container platform. Developers use Docker to eliminate “works on my machine” problems when collaborating on code with co-workers. Operators use Docker to run and manage apps side-by-side in isolated containers to get better compute density. Enterprises use Docker to build agile software delivery pipelines to ship new features faster, more securely and with confidence for both Linux and Windows Server apps.</p>
 <footer><strong>What is Docker?</strong><cite><a href="https://www.docker.com/what-docker" target="_blank" rel="external">www.docker.com/what-docker</a></cite></footer></blockquote>
-<blockquote>
-<p>Docker是世界领先的软件容器平台。开发人员使用Docker来消除与同事的代码协作时的“我机器上的工作”问题。运营商使用Docker在独立的容器中并行运行和管理应用程序，以获得更好的计算密度。企业使用Docker构建灵活的软件传送管道，可以更快，更安全地运行新功能，并且对于Linux和Windows Server应用程序都有信心。</p>
-</blockquote>
+<a id="more"></a>
+<div class="note success"><p>Docker是世界领先的软件容器平台。开发人员使用Docker来消除与同事的代码协作时的“我机器上的工作”问题。运营商使用Docker在独立的容器中并行运行和管理应用程序，以获得更好的计算密度。企业使用Docker构建灵活的软件传送管道，可以更快，更安全地运行新功能，并且对于Linux和Windows Server应用程序都有信心。</p>
+</div>
 <h3 id="什么是容器"><a href="#什么是容器" class="headerlink" title="什么是容器?"></a>什么是容器?</h3><blockquote><p>Using containers, everything required to make a piece of software run is packaged into isolated containers. Unlike VMs, containers do not bundle a full operating system - only libraries and settings required to make the software work are needed. This makes for efficient, lightweight, self-contained systems and guarantees that software will always run the same, regardless of where it’s deployed.</p>
 <footer><strong>What is Container?</strong><cite><a href="https://www.docker.com/what-docker" target="_blank" rel="external">www.docker.com/what-docker</a></cite></footer></blockquote>
-<blockquote>
-<p>使用容器，使一件软件运行所需的一切都被打包成隔离的容器。与虚拟机不同，容器不捆绑完整的操作系统 - 只需要使软件工作所需的库和设置。这使得高效，轻便，自包含的系统，并保证软件将始终运行相同，无论它在哪里部署。</p>
+<div class="note success"><p>使用容器，使一件软件运行所需的一切都被打包成隔离的容器。与虚拟机不同，容器不捆绑完整的操作系统 - 只需要使软件工作所需的库和设置。这使得高效，轻便，自包含的系统，并保证软件将始终运行相同，无论它在哪里部署。</p>
+</div>
 <ul>
 <li>Linux容器技术 vs 虚拟机<br><img src="/uploads/vmvsdocker.png" alt=""></li>
 </ul>
-</blockquote>
 ]]></content>
       
         <categories>
@@ -190,6 +193,7 @@
 <blockquote>
 <p>Go编程语言是一个开源项目，使程序员更有成效</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="Go简介"><a href="#Go简介" class="headerlink" title="Go简介"></a>Go简介</h2><blockquote><p>Go is expressive, concise, clean, and efficient. Its concurrency mechanisms make it easy to write programs that get the most out of multicore and networked machines, while its novel type system enables flexible and modular program construction. Go compiles quickly to machine code yet has the convenience of garbage collection and the power of run-time reflection. It’s a fast, statically typed, compiled language that feels like a dynamically typed, interpreted language.</p>
 <footer><strong>Go Docs</strong><cite><a href="https://golang.org/doc/" target="_blank" rel="external">golang.org/doc</a></cite></footer></blockquote>
 <ul>
@@ -239,12 +243,12 @@
       <title><![CDATA[通过workbench导出ER图]]></title>
       <url>https://hugoxia.github.io/2017/04/20/mysql-workbench-export-ER/</url>
       <content type="html"><![CDATA[<blockquote>
-<p>操作系统: Ubuntu14.04</p>
-</blockquote>
+<p>操作系统: Ubuntu14.04<br><a id="more"></a></p>
 <h3 id="操作流程概览"><a href="#操作流程概览" class="headerlink" title="操作流程概览"></a>操作流程概览</h3><ul>
 <li><code>Database</code> -&gt; <code>Reverse Engine...</code> -&gt; 依次填入信息,然后 <code>&gt; Next</code>, <code>&gt; Next</code>…</li>
 <li><code>Ctrl</code>+<code>R</code> -&gt; 依次填入信息, 后面同上</li>
 </ul>
+</blockquote>
 <h3 id="操作流程明细-无图无真相"><a href="#操作流程明细-无图无真相" class="headerlink" title="操作流程明细(无图无真相)"></a>操作流程明细(无图无真相)</h3><ul>
 <li>执行<code>Ctrl</code>+<code>R</code>后,出现如下对话框<br><img src="/uploads/ER0.png" style="margin: auto" title="One"></li>
 <li>Next<br><img src="/uploads/ER1.png" style="margin: auto" title="Two"></li>
@@ -287,6 +291,7 @@
 </blockquote>
 </li>
 </ul>
+<a id="more"></a>
 <h3 id="ensure-ascii的神奇之处"><a href="#ensure-ascii的神奇之处" class="headerlink" title="ensure_ascii的神奇之处"></a>ensure_ascii的神奇之处</h3><blockquote><p>If <code>ensure_ascii</code> is true (the default), all non-ASCII characters in the output are escaped with <code>\uXXXX</code> sequences, and the result is a <code>str</code> instance consisting of ASCII characters only.  If <code>ensure_ascii</code> is <code>False</code>, some chunks written to <code>fp</code> may be <code>unicode</code> instances. This usually happens because the input contains unicode strings or the <code>encoding</code> parameter is used. Unless <code>fp.write()</code> explicitly understands <code>unicode</code> (as in <code>codecs.getwriter</code>) this is likely to cause an error.</p>
 <footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/json.html?highlight=ensure_ascii#basic-usage" target="_blank" rel="external">Welcome to docs.python.org</a></cite></footer></blockquote>
 <h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> json</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = [<span class="string">u"她"</span>, <span class="string">u"是"</span>, <span class="string">u"美女"</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output1 = json.dumps(data)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output1</div><div class="line"><span class="string">'["\\u5979", "\\u662f", "\\u7f8e\\u5973"]'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(output1)</div><div class="line">[<span class="string">"\\u5979"</span>, <span class="string">"\\u662f"</span>, <span class="string">"\\u7f8e\\u5973"</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output2 = json.dumps(data, ensure_ascii=<span class="keyword">False</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>outout2</div><div class="line"><span class="string">u'["\u5979", "\u662f", "\u7f8e\u5973"]'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(output2)</div><div class="line">[<span class="string">"她"</span>, <span class="string">"是"</span>, <span class="string">"美女"</span>]</div></pre></td></tr></table></figure>
@@ -316,6 +321,7 @@
       <content type="html"><![CDATA[<blockquote>
 <p>操作系统: Ubuntu14.04; Pycharm版本: 2016.3; 这里的前进指的是追踪函数源码, 后退是前进的反方向。</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="前进"><a href="#前进" class="headerlink" title="前进"></a>前进</h3><ul>
 <li><code>Ctrl</code>+<code>B</code></li>
 <li><code>Ctrl</code>+<code>Q</code>+<code>&lt;F4&gt;</code></li>
@@ -377,7 +383,8 @@
     <entry>
       <title><![CDATA[鸟叔Linux私房菜基础篇——Linux如何学习]]></title>
       <url>https://hugoxia.github.io/2017/04/18/linux-2/</url>
-      <content type="html"><![CDATA[<h3 id="鸟叔的建议"><a href="#鸟叔的建议" class="headerlink" title="鸟叔的建议:"></a>鸟叔的建议:</h3><h4 id="计算器概论与硬件相关知识"><a href="#计算器概论与硬件相关知识" class="headerlink" title="计算器概论与硬件相关知识:"></a>计算器概论与硬件相关知识:</h4><p>因为既然想要走Linux 这门路,信息相关的基础技能也不能没有啊! 所以先理解一下基础的硬件知识,不用一定要全懂啦!又不是真的要你去组计算机~^_^, 但是至少要『听过、有概念』即可;</p>
+      <content type="html"><![CDATA[<h3 id="鸟叔的建议"><a href="#鸟叔的建议" class="headerlink" title="鸟叔的建议:"></a>鸟叔的建议:</h3><a id="more"></a>
+<h4 id="计算器概论与硬件相关知识"><a href="#计算器概论与硬件相关知识" class="headerlink" title="计算器概论与硬件相关知识:"></a>计算器概论与硬件相关知识:</h4><p>因为既然想要走Linux 这门路,信息相关的基础技能也不能没有啊! 所以先理解一下基础的硬件知识,不用一定要全懂啦!又不是真的要你去组计算机~^_^, 但是至少要『听过、有概念』即可;</p>
 <h4 id="先从Linux的安装与指令学起"><a href="#先从Linux的安装与指令学起" class="headerlink" title="先从Linux的安装与指令学起:"></a>先从Linux的安装与指令学起:</h4><p>没有Linux怎么学习Linux呢? 所以好好的安装起一套你需要的Linux吧!虽然说 Linux distributions 很多, 不过基本上架构都是大同小异的,差别在亍接口的亲和力与软件的选择不同罢了! 选择一套你喜欢的就好了,倒是没有哪一套特别好说~</p>
 <h4 id="Linux-操作系统的基础技能"><a href="#Linux-操作系统的基础技能" class="headerlink" title="Linux 操作系统的基础技能:"></a>Linux 操作系统的基础技能:</h4><p>这些包含了『使用者、群组的概念』、『权限的观念』,『程序的定义』等等,尤其是权限的概念, 由于不同的权限设定会妨碍你的使用者的便利性,但是太过于便利又会导致入侵的可能! 所以这里需要了解一下你的系统呦!</p>
 <h4 id="务必学会vi文书编辑器"><a href="#务必学会vi文书编辑器" class="headerlink" title="务必学会vi文书编辑器:"></a>务必学会vi文书编辑器:</h4><p>Linux的文书编辑器多到会让你数到生气!不过,vi 即是强烈建议要先学习的! 这是因为 vi 会被很多软件所呼叫,加上所有的Unix like 系统上面都有 vi,所以你一定要学会才好!</p>
@@ -423,7 +430,8 @@
 <ul>
 <li>心跳检测是判断对方(设备，进程或其它网元)是否正常进行，一般采用定时发送简单的通讯包，如果长时间未收到对方响应，则判断对方已经挂掉。</li>
 <li><a href="http://www.baike.com/wiki/%E5%BF%83%E8%B7%B3%E6%9C%BA%E5%88%B6" target="_blank" rel="external">心跳机制</a>是服务端和客户端检测对方是否在线的一种方式。</li>
-<li>心跳包就是客户端定时发送简单的信息给服务端告诉它我还在，服务端视情况而定给客户单返回合适信息，一般情况下是客户端给服务端发心跳包。</li>
+<li>心跳包就是客户端定时发送简单的信息给服务端告诉它我还在，服务端视情况而定给客户单返回合适信息，一般情况下是客户端给服务端发心跳包。<a id="more"></a>
+</li>
 </ul>
 <h3 id="为什么要用心跳机制？"><a href="#为什么要用心跳机制？" class="headerlink" title="为什么要用心跳机制？"></a>为什么要用心跳机制？</h3><ul>
 <li>服务端不能有效判断客户端是否在线。</li>
@@ -470,9 +478,9 @@
       <title><![CDATA[鸟叔Linux私房菜基础篇——Linux是什么？]]></title>
       <url>https://hugoxia.github.io/2017/04/17/linux-1/</url>
       <content type="html"><![CDATA[<blockquote>
-<p>古人云: 读书从厚到薄，从薄到厚。我现在开始做第一步。。。</p>
-</blockquote>
+<p>古人云: 读书从厚到薄，从薄到厚。我现在开始做第一步。。。<br><a id="more"></a></p>
 <h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><p>无图无真相，先来了图。<br><img src="/uploads/operate_system.png" style="margin: auto" title="操作系统的角色"><br>说白了，操作系统就是一个调度者，实现硬件控制和资源管理的一个管理员。而Linux 提供了一个完整的操作系统当中最底层的硬件控制与资源管理的完整架构。</p>
+</blockquote>
 <h3 id="Linux的核心版本"><a href="#Linux的核心版本" class="headerlink" title="Linux的核心版本"></a>Linux的核心版本</h3><h4 id="查询指令"><a href="#查询指令" class="headerlink" title="查询指令"></a>查询指令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uname -r</div></pre></td></tr></table></figure>
 <h4 id="版本号解释"><a href="#版本号解释" class="headerlink" title="版本号解释"></a>版本号解释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2.6.18-92.el5</div><div class="line">主版本.次版本.释出版本-修改版本</div></pre></td></tr></table></figure>
 <ul>
@@ -505,6 +513,7 @@
       <content type="html"><![CDATA[<blockquote>
 <p>昨晚在京东商城上买了一个罗技鼠标，今天上午到货，于是寻思着吧，找下序列号，查下它是不是正品。按照网友的提示，我在包装盒上翻来覆去，就是找不到可以刮的地方，看到<code>P/N</code>,<code>S/N</code>,这都是啥？？？</p>
 </blockquote>
+<a id="more"></a>
 <ul>
 <li><code>P/N</code>: Part Number(部件编号)</li>
 <li><code>S/N</code>: Serial Number(产品序列号)</li>
@@ -557,7 +566,9 @@
     <entry>
       <title><![CDATA[Pycharm配置autopep8到菜单]]></title>
       <url>https://hugoxia.github.io/2017/04/12/pycharm-autopep8/</url>
-      <content type="html"><![CDATA[<p>Pycharm可以自动检测PEP8规范, 菜单<code>Code</code>–&gt;<code>Reformat Code</code>可以自动调整代码,但是效果一般,只能实现简单的规范代码; 为了满足需要, 可以安装autopep8来自动修改文件实现PEP8规范.</p>
+      <content type="html"><![CDATA[<div class="note success"><p>Pycharm可以自动检测PEP8规范, 菜单<code>Code</code>–&gt;<code>Reformat Code</code>可以自动调整代码,但是效果一般,只能实现简单的规范代码; 为了满足需要, 可以安装autopep8来自动修改文件实现PEP8规范.</p>
+</div>
+<a id="more"></a>
 <h3 id="安装autopep8"><a href="#安装autopep8" class="headerlink" title="安装autopep8"></a>安装autopep8</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install autopep8</div></pre></td></tr></table></figure>
 <h3 id="Pycharm中进行设置"><a href="#Pycharm中进行设置" class="headerlink" title="Pycharm中进行设置"></a>Pycharm中进行设置</h3><ul>
 <li><code>Settings</code>–&gt;<code>Tools</code>–&gt;<code>External Tools</code>, 点击<code>+</code>按钮<ul>
@@ -609,6 +620,7 @@
       <content type="html"><![CDATA[<blockquote>
 <p>这篇文档整理自<a href="http://bbs.fishc.com/forum.php?mod=viewthread&amp;tid=39140&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D403" target="_blank" rel="external">鱼C论坛</a>, 感谢作者输出,我只是一枚搬运工…</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="字符串格式化符号含义"><a href="#字符串格式化符号含义" class="headerlink" title="字符串格式化符号含义"></a>字符串格式化符号含义</h3><table>
 <thead>
 <tr>
@@ -778,6 +790,7 @@
       <content type="html"><![CDATA[<blockquote>
 <p>这篇文档的源自一个第三方登录的需求,于是我就想搞清楚怎么实现第三方登录的,网上有现成的解决方案: <a href="http://dev.umeng.com/social/android/login-page" target="_blank" rel="external">友盟</a>和<a href="http://wiki.mob.com/%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" target="_blank" rel="external">ShareSDK</a>;但是这不是我最需要,于是就有了下面的的记录: </p>
 </blockquote>
+<a id="more"></a>
 <ul>
 <li><a href="http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html" target="_blank" rel="external">阮一峰的网络日志之理解OAuth2.0</a>这篇讲的很详细,可以先看下这个</li>
 <li><a href="http://wiki.open.qq.com/wiki/mobile/OAuth2.0%E7%AE%80%E4%BB%8B" target="_blank" rel="external">QQ的OAuth2.0简介</a></li>
@@ -812,6 +825,7 @@
 <li><a href="https://xlsxwriter.readthedocs.io" target="_blank" rel="external">xlsxwriter (writing xlsx files)</a></li>
 <li><a href="http://www.python-excel.org/" target="_blank" rel="external">more details</a></li>
 </ul>
+<a id="more"></a>
 <h2 id="xlwt"><a href="#xlwt" class="headerlink" title="xlwt"></a>xlwt</h2><p>直接上干货, 重点看export_excel函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> xlwt</div><div class="line"><span class="keyword">import</span> functools</div><div class="line"></div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">cost_time</span><span class="params">(method)</span>:</span></div><div class="line"><span class="meta">    @functools.wraps(method)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(self, *args, **kwargs)</span>:</span></div><div class="line">        start_time = datetime.now()</div><div class="line">        num = method(self, *args, **kwargs)</div><div class="line">        end_time = datetime.now()</div><div class="line">        print(<span class="string">u"导出%s条数据, 共消耗%s时间"</span> % (num, str(end_time - start_time)))</div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">@cost_time</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">export_excel</span><span class="params">(filename, header, content, *args, **kwargs)</span>:</span></div><div class="line">    wb = xlwt.Workbook()</div><div class="line">    <span class="keyword">if</span> len(content) &gt; <span class="number">65536</span>:</div><div class="line">        <span class="keyword">raise</span> Exception(<span class="string">u"你的数据量为%s, 超过65536, 拒绝通过xlwt导出"</span> % len(content))</div><div class="line">    ws = wb.add_sheet(<span class="string">u"报表"</span>)</div><div class="line">    ws1 = wb.add_sheet(<span class="string">u"表2"</span>)</div><div class="line"></div><div class="line">    <span class="comment"># 写表头</span></div><div class="line">    map(<span class="keyword">lambda</span> h: ws.write(<span class="number">0</span>, h[<span class="number">0</span>], h[<span class="number">1</span>]), enumerate(header))</div><div class="line"></div><div class="line">    <span class="comment"># 写主体内容</span></div><div class="line">    map(<span class="keyword">lambda</span> c: map(<span class="keyword">lambda</span> sub_c: ws.write(c[<span class="number">0</span>] + <span class="number">1</span>, sub_c[<span class="number">0</span>], sub_c[<span class="number">1</span>]), enumerate(c[<span class="number">1</span>])), enumerate(content))</div><div class="line"></div><div class="line">    ws1.write(<span class="number">0</span>, <span class="number">0</span>, <span class="string">u"test"</span>)</div><div class="line"></div><div class="line">    wb.save(filename)</div><div class="line">    <span class="keyword">return</span> len(content)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    header = (<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>, <span class="string">"E"</span>, <span class="string">"F"</span>, <span class="string">"G"</span>)</div><div class="line">    a = xrange(<span class="number">0</span>, <span class="number">77777</span>*<span class="number">1</span>)</div><div class="line">    content = [(a[i], a[i+<span class="number">1</span>], a[i+<span class="number">2</span>], a[i+<span class="number">3</span>], a[i+<span class="number">4</span>], a[i+<span class="number">5</span>], a[i+<span class="number">6</span>]) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(a))[::<span class="number">7</span>]]</div><div class="line">    export_excel(<span class="string">"test.xls"</span>, header=header, content=content)</div></pre></td></tr></table></figure></p>
 <h2 id="xlrd"><a href="#xlrd" class="headerlink" title="xlrd"></a>xlrd</h2><p>后续更新, 敬请期待…</p>
 <h2 id="openpyxl"><a href="#openpyxl" class="headerlink" title="openpyxl"></a>openpyxl</h2><p>后续更新, 敬请期待…</p>
@@ -841,9 +855,10 @@
       <content type="html"><![CDATA[<h2 id="初涉Mysql"><a href="#初涉Mysql" class="headerlink" title="初涉Mysql"></a>初涉Mysql</h2><h3 id="MySQL概述"><a href="#MySQL概述" class="headerlink" title="MySQL概述"></a>MySQL概述</h3><ul>
 <li>MySQL由瑞典MySQL AB公司开发，目前属于Oracle公司.</li>
 <li>MySQL是一个开源的关系型数据库管理系统.</li>
-<li>MySQL分为社区版和企业版.</li>
+<li>MySQL分为社区版和企业版.<a id="more"></a>
+<h3 id="MySQL的安装与配置"><a href="#MySQL的安装与配置" class="headerlink" title="MySQL的安装与配置"></a>MySQL的安装与配置</h3></li>
 </ul>
-<h3 id="MySQL的安装与配置"><a href="#MySQL的安装与配置" class="headerlink" title="MySQL的安装与配置"></a>MySQL的安装与配置</h3><h3 id="启动和停止MySQL"><a href="#启动和停止MySQL" class="headerlink" title="启动和停止MySQL"></a>启动和停止MySQL</h3><ul>
+<h3 id="启动和停止MySQL"><a href="#启动和停止MySQL" class="headerlink" title="启动和停止MySQL"></a>启动和停止MySQL</h3><ul>
 <li><p>windows</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">net start/stop mysql</div></pre></td></tr></table></figure>
 </li>
@@ -1181,20 +1196,14 @@
     </entry>
     
     <entry>
-      <title><![CDATA[scp]]></title>
-      <url>https://hugoxia.github.io/2015/10/10/scp/</url>
-      <content type="html"></content>
-      
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Python3正则表达式特殊符号及用法(详细列表)]]></title>
       <url>https://hugoxia.github.io/2015/09/26/regex/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>这篇文档整理自<a href="http://bbs.fishc.com/forum.php?mod=viewthread&amp;tid=57691&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D403" target="_blank" rel="external">鱼C论坛</a>, 感谢作者输出,我只是一枚搬运工…</p>
 </blockquote>
-<p>正则表达式的强大之处在于特殊符号的应用,特殊符号定义了字符集合、子组匹配、模式重复次数。正是这些特性符号使得一个正则表达式可以匹配字符串集合而不只是一个字符串。</p>
+<a id="more"></a>
+<div class="note success"><p>正则表达式的强大之处在于特殊符号的应用,特殊符号定义了字符集合、子组匹配、模式重复次数。正是这些特性符号使得一个正则表达式可以匹配字符串集合而不只是一个字符串。</p>
+</div>
 <blockquote>
 <p>注1: 为了便于理解，难点的地方均用<em>斜体</em>举了栗子。</p>
 </blockquote>

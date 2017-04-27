@@ -123,7 +123,7 @@ Serialize obj as a JSON formatted stream to fp (a .write()-supporting file-like 
 json.dump
 
 Serialize obj as a JSON formatted stream to fp (a .write()-supporting file-like object).If ensure_ascii is False, some chunks written to fp may b">
-<meta property="og:updated_time" content="2017-04-19T08:54:27.295Z">
+<meta property="og:updated_time" content="2017-04-27T10:05:24.466Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Python中json库的一些整理">
 <meta name="twitter:description" content="json.dump和json.dumps的区别(来自Stackoverflow的释疑)
@@ -456,6 +456,7 @@ Serialize obj as a JSON formatted stream to fp (a .write()-supporting file-like 
 </blockquote>
 </li>
 </ul>
+<a id="more"></a>
 <h3 id="ensure-ascii的神奇之处"><a href="#ensure-ascii的神奇之处" class="headerlink" title="ensure_ascii的神奇之处"></a>ensure_ascii的神奇之处</h3><blockquote><p>If <code>ensure_ascii</code> is true (the default), all non-ASCII characters in the output are escaped with <code>\uXXXX</code> sequences, and the result is a <code>str</code> instance consisting of ASCII characters only.  If <code>ensure_ascii</code> is <code>False</code>, some chunks written to <code>fp</code> may be <code>unicode</code> instances. This usually happens because the input contains unicode strings or the <code>encoding</code> parameter is used. Unless <code>fp.write()</code> explicitly understands <code>unicode</code> (as in <code>codecs.getwriter</code>) this is likely to cause an error.</p>
 <footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/json.html?highlight=ensure_ascii#basic-usage" target="_blank" rel="external">Welcome to docs.python.org</a></cite></footer></blockquote>
 <h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> json</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = [<span class="string">u"她"</span>, <span class="string">u"是"</span>, <span class="string">u"美女"</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output1 = json.dumps(data)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output1</div><div class="line"><span class="string">'["\\u5979", "\\u662f", "\\u7f8e\\u5973"]'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(output1)</div><div class="line">[<span class="string">"\\u5979"</span>, <span class="string">"\\u662f"</span>, <span class="string">"\\u7f8e\\u5973"</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output2 = json.dumps(data, ensure_ascii=<span class="keyword">False</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>outout2</div><div class="line"><span class="string">u'["\u5979", "\u662f", "\u7f8e\u5973"]'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(output2)</div><div class="line">[<span class="string">"她"</span>, <span class="string">"是"</span>, <span class="string">"美女"</span>]</div></pre></td></tr></table></figure>
@@ -634,7 +635,7 @@ Serialize obj as a JSON formatted stream to fp (a .write()-supporting file-like 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

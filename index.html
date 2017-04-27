@@ -425,40 +425,18 @@
 
       
         
-          
-            <blockquote class="blockquote-center"><p>学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。</p>
-<p>CloudMan-<a href="http://www.cnblogs.com/CloudMan6/p/6751516.html" target="_blank" rel="external">每天5分钟玩转容器技术（6）</a></p>
+          <blockquote class="blockquote-center"><p>学习任何东西都可以按照3W的框架进行，容器技术也是一样，先回答 What、Why 和 How 这三个问题。</p>
+<p>CloudMan-<a href="http://www.cnblogs.com/CloudMan6/p/6751516.html">每天5分钟玩转容器技术（6）</a></p>
 </blockquote>
 <div class="note success"><p>我非常赞同CloudMan的观点, 下面咱就以这三个问题来讨论今天的主题</p>
 </div>
-<h1 id="What-Mysql中的LIMIT是干啥的"><a href="#What-Mysql中的LIMIT是干啥的" class="headerlink" title="What-Mysql中的LIMIT是干啥的?"></a>What-Mysql中的LIMIT是干啥的?</h1><p>在我们使用查询语句的时候，经常要返回前几条或者中间某几行数据，这个时候怎么办呢？不用担心，mysql已经为我们提供了这样一个功能。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">table</span> <span class="keyword">LIMIT</span> [<span class="keyword">offset</span>,] <span class="keyword">rows</span> | <span class="keyword">rows</span> <span class="keyword">OFFSET</span> <span class="keyword">offset</span></div></pre></td></tr></table></figure></p>
-<p>LIMIT 子句可以被用于强制 SELECT 语句返回指定的记录数。LIMIT 接受一个或两个数字参数。如果给定一个参数(rows), 偏移量offset默认为0, 指定返回[:rows]的数据; 如果给定两个参数(offset, rows)，offset指定第一个返回记录行的偏移量，rows指定返回记录行的最大数目。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; SELECT * FROM table LIMIT 5,10; // 检索记录行 6-15</div></pre></td></tr></table></figure></p>
-<p>获得开头的几行数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; SELECT * FROM table LIMIT 10; // 检索记录行 0-9</div></pre></td></tr></table></figure></p>
-<p>获得结尾的几行数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; SELECT * FROM table LIMIT 100,-1; // 检索记录行 100-last.</div></pre></td></tr></table></figure></p>
-<h1 id="Why-为什么需要为分页查询做优化"><a href="#Why-为什么需要为分页查询做优化" class="headerlink" title="Why-为什么需要为分页查询做优化?"></a>Why-为什么需要为分页查询做优化?</h1><ul>
-<li>随着数据量的增加，页数会越来越多，查看后几页的SQL就可能类似：<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> age = <span class="number">12</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span> <span class="keyword">LIMIT</span> <span class="number">10000</span>, <span class="number">20</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>总而言之，越往后分页，LIMIT语句的偏移量(offset)就会越大，速度也会明显变慢</p>
-<ul>
-<li>随着业务的复杂度越来越高, 查询条件不断增多, 可想而知, 速度也会越来越慢</li>
-</ul>
-<h1 id="How-分页查询如何优化"><a href="#How-分页查询如何优化" class="headerlink" title="How-分页查询如何优化?"></a>How-分页查询如何优化?</h1><ul>
-<li><p>提速原理:<br>避免全表扫描,而是通过索引找到指定位置,于是就相当于只是扫描了指定数量(rows)的数据</p>
-</li>
-<li><p>实现方式:</p>
-<ul>
-<li><p>子查询分页方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM users WHERE  id &gt;=  </div><div class="line">(SELECT id FROM users  WHERE age = 12 ORDER BY id LIMIT 10000, 1) LIMIT 20</div></pre></td></tr></table></figure>
-</li>
-<li><p>JOIN分页方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">暂缺示例</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/27/mysql-limit/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -598,18 +576,15 @@
 
       
         
-          
-            <h2 id="WSGI"><a href="#WSGI" class="headerlink" title="WSGI"></a>WSGI</h2><blockquote><p>WSGI(Python Web Server Gateway Interface, Web服务器网关接口)是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口</p>
-<footer><strong>维基百科</strong><cite><a href="https://zh.wikipedia.org/wiki/Web%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%85%B3%E6%8E%A5%E5%8F%A3" target="_blank" rel="external">Web服务器网关接口</a></cite></footer></blockquote>
-<h2 id="uwsgi"><a href="#uwsgi" class="headerlink" title="uwsgi"></a>uwsgi</h2><blockquote><p>uwsgi同WSGI一样是一种通信协议。uwsgi协议是一个uWSGI服务器自有的协议，它用于定义传输信息的类型（type of information），每一个uwsgi packet前4byte为传输信息类型描述，它与WSGI相比是两样东西。</p>
-<footer><strong>互动百科</strong><cite><a href="http://www.baike.com/wiki/uwsgi" target="_blank" rel="external">uwsgi协议</a></cite></footer></blockquote>
-<h2 id="uWSGI"><a href="#uWSGI" class="headerlink" title="uWSGI"></a>uWSGI</h2><blockquote><p>uWSGI是一个Web服务器，它实现了WSGI协议、uwsgi、http等协议。Nginx中HttpUwsgiModule的作用是与uWSGI服务器进行交换。</p>
-<footer><strong>互动百科</strong><cite><a href="http://www.baike.com/wiki/uwsgi" target="_blank" rel="external">uWSGI</a></cite></footer></blockquote>
-<ul>
-<li>最流行的 uWSGI 服务器是 <a href="https://uwsgi-docs.readthedocs.io/en/latest/" target="_blank" rel="external">uwsgi</a></li>
-</ul>
-
-          
+          <h2 id="WSGI"><a href="#WSGI" class="headerlink" title="WSGI"></a>WSGI</h2><blockquote><p>WSGI(Python Web Server Gateway Interface, Web服务器网关接口)是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口</p>
+<footer><strong>维基百科</strong><cite><a href="https://zh.wikipedia.org/wiki/Web%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BD%91%E5%85%B3%E6%8E%A5%E5%8F%A3">Web服务器网关接口</a></cite></footer></blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/25/wsgi-uwsgi/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -749,17 +724,15 @@
 
       
         
-          
-            <blockquote>
-<p>福利来啦, Github响应小伙伴们的号召, 于2016年6月15日, 推出https服务, 为username.github.io站点添加<code>Enforce HTTPS</code>选项, 详情请参阅<a href="https://github.com/blog/2186-https-for-github-pages" target="_blank" rel="external">https://github.com/blog/2186-https-for-github-pages</a></p>
-</blockquote>
-<h2 id="具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS"><a href="#具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS" class="headerlink" title="具体操作参见Securing your GitHub Pages site with HTTPS"></a>具体操作参见<a href="https://help.github.com/articles/securing-your-github-pages-site-with-https/" target="_blank" rel="external">Securing your GitHub Pages site with HTTPS</a></h2><h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点:"></a>注意点:</h2><ul>
-<li>使用自定义域的GitHub页面不支持HTTPS(即是说,<code>Custom domain</code>选项置空并保存)</li>
-<li>使用HTTPS之后, 必须删除文件<code>CNAME</code></li>
-<li>最后一点也是最重要的一点, 设置成功之后,需要等待十几分钟才能生效,耐心等待</li>
-</ul>
-
-          
+          <blockquote>
+<p>福利来啦, Github响应小伙伴们的号召, 于2016年6月15日, 推出https服务, 为username.github.io站点添加<code>Enforce HTTPS</code>选项, 详情请参阅<a href="https://github.com/blog/2186-https-for-github-pages">https://github.com/blog/2186-https-for-github-pages</a><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/25/github-pages-https/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -899,23 +872,15 @@
 
       
         
-          
-            <h2 id="Python官方解释"><a href="#Python官方解释" class="headerlink" title="Python官方解释"></a>Python官方解释</h2><h3 id="exit"><a href="#exit" class="headerlink" title="exit()"></a>exit()</h3><blockquote><p>Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, and when called, raise SystemExit with the specified exit code.</p>
-<footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/constants.html#exit" target="_blank" rel="external">exit([code=None])</a></cite></footer></blockquote>
-<p>简言之: 抛出 SystemExit 异常. 用于给交互式Shell退出.</p>
-<h3 id="sys-exit"><a href="#sys-exit" class="headerlink" title="sys.exit()"></a>sys.exit()</h3><blockquote><p>Exit from Python. This is implemented by raising the SystemExit exception, so cleanup actions specified by finally clauses of try statements are honored, and it is possible to intercept the exit attempt at an outer level.</p>
-<footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/sys.html#sys.exit" target="_blank" rel="external">sys.exit([arg])</a></cite></footer></blockquote>
-<p>简言之: 抛出 SystemExit 异常, 可以用try捕获异常执行清理工作. 用于程序内部.</p>
-<h3 id="os-exit"><a href="#os-exit" class="headerlink" title="os._exit()"></a>os._exit()</h3><blockquote><p>Exit the process with status n, without calling cleanup handlers, flushing stdio buffers, etc.<br>Note: The standard way to exit is <a href="https://docs.python.org/2/library/sys.html#sys.exit" target="_blank" rel="external">sys.exit(n)</a>. _exit() should normally only be used in the child process after a fork().</p>
-<footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/os.html?highlight=os#os._exit" target="_blank" rel="external">os._exit(n)</a></cite></footer></blockquote>
-<p>简言之: 直接退出, 不抛出异常. 用于子进程的退出.</p>
-<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
-<li><a href="https://www.zhihu.com/question/21187839" target="_blank" rel="external">python 中 os._exit()， sys.exit()， exit() 的区别是什么(知乎)</a></li>
-<li><a href="http://stackoverflow.com/questions/6501121/difference-between-exit-and-sys-exit-in-python" target="_blank" rel="external">The difference between exit() and sys.exit() in Python?(stackoverflow)</a></li>
-<li><a href="http://jaminzhang.github.io/python/exit-and-sys-exit-in-python/" target="_blank" rel="external">Python 中的 exit() 和 sys.exit()(jaminzhang’s blog)</a></li>
-</ul>
-
-          
+          <h2 id="Python官方解释"><a href="#Python官方解释" class="headerlink" title="Python官方解释"></a>Python官方解释</h2><h3 id="exit"><a href="#exit" class="headerlink" title="exit()"></a>exit()</h3><blockquote><p>Objects that when printed, print a message like “Use quit() or Ctrl-D (i.e. EOF) to exit”, and when called, raise SystemExit with the specified exit code.</p>
+<footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/constants.html#exit">exit([code=None])</a></cite></footer></blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/24/python-exit/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1055,22 +1020,15 @@
 
       
         
-          
-            <h2 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h2><blockquote><p>Docker is the world’s leading software container platform. Developers use Docker to eliminate “works on my machine” problems when collaborating on code with co-workers. Operators use Docker to run and manage apps side-by-side in isolated containers to get better compute density. Enterprises use Docker to build agile software delivery pipelines to ship new features faster, more securely and with confidence for both Linux and Windows Server apps.</p>
-<footer><strong>What is Docker?</strong><cite><a href="https://www.docker.com/what-docker" target="_blank" rel="external">www.docker.com/what-docker</a></cite></footer></blockquote>
-<blockquote>
-<p>Docker是世界领先的软件容器平台。开发人员使用Docker来消除与同事的代码协作时的“我机器上的工作”问题。运营商使用Docker在独立的容器中并行运行和管理应用程序，以获得更好的计算密度。企业使用Docker构建灵活的软件传送管道，可以更快，更安全地运行新功能，并且对于Linux和Windows Server应用程序都有信心。</p>
-</blockquote>
-<h3 id="什么是容器"><a href="#什么是容器" class="headerlink" title="什么是容器?"></a>什么是容器?</h3><blockquote><p>Using containers, everything required to make a piece of software run is packaged into isolated containers. Unlike VMs, containers do not bundle a full operating system - only libraries and settings required to make the software work are needed. This makes for efficient, lightweight, self-contained systems and guarantees that software will always run the same, regardless of where it’s deployed.</p>
-<footer><strong>What is Container?</strong><cite><a href="https://www.docker.com/what-docker" target="_blank" rel="external">www.docker.com/what-docker</a></cite></footer></blockquote>
-<blockquote>
-<p>使用容器，使一件软件运行所需的一切都被打包成隔离的容器。与虚拟机不同，容器不捆绑完整的操作系统 - 只需要使软件工作所需的库和设置。这使得高效，轻便，自包含的系统，并保证软件将始终运行相同，无论它在哪里部署。</p>
-<ul>
-<li>Linux容器技术 vs 虚拟机<br><img src="/uploads/vmvsdocker.png" alt=""></li>
-</ul>
-</blockquote>
-
-          
+          <h2 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h2><blockquote><p>Docker is the world’s leading software container platform. Developers use Docker to eliminate “works on my machine” problems when collaborating on code with co-workers. Operators use Docker to run and manage apps side-by-side in isolated containers to get better compute density. Enterprises use Docker to build agile software delivery pipelines to ship new features faster, more securely and with confidence for both Linux and Windows Server apps.</p>
+<footer><strong>What is Docker?</strong><cite><a href="https://www.docker.com/what-docker">www.docker.com/what-docker</a></cite></footer></blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/23/docker-note/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1210,40 +1168,18 @@
 
       
         
-          
-            <h1 id="Go笔记"><a href="#Go笔记" class="headerlink" title="Go笔记"></a>Go笔记</h1><blockquote><p>The Go programming language is an open source project to make programmers more productive.</p>
-<footer><strong>Go</strong><cite><a href="https://golang.org" target="_blank" rel="external">Welcome to golang.org</a></cite></footer></blockquote>
+          <h1 id="Go笔记"><a href="#Go笔记" class="headerlink" title="Go笔记"></a>Go笔记</h1><blockquote><p>The Go programming language is an open source project to make programmers more productive.</p>
+<footer><strong>Go</strong><cite><a href="https://golang.org">Welcome to golang.org</a></cite></footer></blockquote>
 <blockquote>
 <p>Go编程语言是一个开源项目，使程序员更有成效</p>
 </blockquote>
-<h2 id="Go简介"><a href="#Go简介" class="headerlink" title="Go简介"></a>Go简介</h2><blockquote><p>Go is expressive, concise, clean, and efficient. Its concurrency mechanisms make it easy to write programs that get the most out of multicore and networked machines, while its novel type system enables flexible and modular program construction. Go compiles quickly to machine code yet has the convenience of garbage collection and the power of run-time reflection. It’s a fast, statically typed, compiled language that feels like a dynamically typed, interpreted language.</p>
-<footer><strong>Go Docs</strong><cite><a href="https://golang.org/doc/" target="_blank" rel="external">golang.org/doc</a></cite></footer></blockquote>
-<ul>
-<li>Go语言的优点<ul>
-<li>脚本化的语法, 非常容易编写程序, 新手容易上手</li>
-<li>静态类型+编译型, 程序运行速度有保障</li>
-<li>原生的支持并发编程, 降低开发、维护成本、程序更好的执行</li>
-</ul>
-</li>
-<li>Go语言的缺点<ul>
-<li>语法糖没有Python和Ruby那么多</li>
-<li>目前的程序运行速度还不及C</li>
-<li>第三方函数库暂时不像绝对主流的编程语言那样多(随着Go的流行，这不是问题)</li>
-</ul>
-</li>
-</ul>
-<h2 id="Go的安装和配置"><a href="#Go的安装和配置" class="headerlink" title="Go的安装和配置"></a>Go的安装和配置</h2><p>可以到<a href="https://golang.org/dl/" target="_blank" rel="external">官网</a>下载相应系统的go版本,下面说说Linux下的安装方式</p>
-<ul>
-<li><p>Linux(源码安装)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ sudo curl -O https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz</div><div class="line">$ sudo tar -zxf go1.8.1.linux-amd64.tar.gz -C /usr/<span class="built_in">local</span></div><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/go &amp;&amp; bin/go version <span class="comment"># 验证安装结果</span></div><div class="line">go version go1.8.1 linux/amd64</div></pre></td></tr></table></figure>
-</li>
-<li><p>Linux配置</p>
-<p>  在<code>~/.profile</code>中最后添加下面语句，添加完之后执行<code>source ~/.profile</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/go/bin</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/22/go-note/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1383,26 +1319,15 @@
 
       
         
-          
-            <blockquote>
-<p>操作系统: Ubuntu14.04</p>
-</blockquote>
-<h3 id="操作流程概览"><a href="#操作流程概览" class="headerlink" title="操作流程概览"></a>操作流程概览</h3><ul>
-<li><code>Database</code> -&gt; <code>Reverse Engine...</code> -&gt; 依次填入信息,然后 <code>&gt; Next</code>, <code>&gt; Next</code>…</li>
-<li><code>Ctrl</code>+<code>R</code> -&gt; 依次填入信息, 后面同上</li>
-</ul>
-<h3 id="操作流程明细-无图无真相"><a href="#操作流程明细-无图无真相" class="headerlink" title="操作流程明细(无图无真相)"></a>操作流程明细(无图无真相)</h3><ul>
-<li>执行<code>Ctrl</code>+<code>R</code>后,出现如下对话框<br><img src="/uploads/ER0.png" style="margin: auto" title="One"></li>
-<li>Next<br><img src="/uploads/ER1.png" style="margin: auto" title="Two"></li>
-<li>Next<br><img src="/uploads/ER2.png" style="margin: auto" title="Three"></li>
-<li>Next<br><img src="/uploads/ER3.png" style="margin: auto" title="Four"></li>
-<li>Next<br><img src="/uploads/ER4.png" style="margin: auto" title="Five"></li>
-<li>Next<br><img src="/uploads/ER5.png" style="margin: auto" title="Six"></li>
-<li>Next<br><img src="/uploads/ER6.png" style="margin: auto" title="Seven"></li>
-<li>Finish<br><img src="/uploads/ER7.png" style="margin: auto" title="Last"></li>
-</ul>
-
-          
+          <blockquote>
+<p>操作系统: Ubuntu14.04<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/20/mysql-workbench-export-ER/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1542,8 +1467,7 @@
 
       
         
-          
-            <h3 id="json-dump和json-dumps的区别-来自Stackoverflow的释疑"><a href="#json-dump和json-dumps的区别-来自Stackoverflow的释疑" class="headerlink" title="json.dump和json.dumps的区别(来自Stackoverflow的释疑)"></a>json.dump和json.dumps的区别(<a href="http://stackoverflow.com/questions/36059194/what-is-the-difference-between-json-dump-and-json-dumps-in-python" target="_blank" rel="external">来自Stackoverflow的释疑</a>)</h3><ul>
+          <h3 id="json-dump和json-dumps的区别-来自Stackoverflow的释疑"><a href="#json-dump和json-dumps的区别-来自Stackoverflow的释疑" class="headerlink" title="json.dump和json.dumps的区别(来自Stackoverflow的释疑)"></a>json.dump和json.dumps的区别(<a href="http://stackoverflow.com/questions/36059194/what-is-the-difference-between-json-dump-and-json-dumps-in-python">来自Stackoverflow的释疑</a>)</h3><ul>
 <li><p>json.dump</p>
 <blockquote>
 <p>Serialize <code>obj</code> as a JSON formatted stream to <code>fp</code> (a <code>.write()</code>-supporting file-like object).<br>If <code>ensure_ascii</code> is <code>False</code>, some chunks written to <code>fp</code> may be <code>unicode</code> instances.</p>
@@ -1555,12 +1479,13 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="ensure-ascii的神奇之处"><a href="#ensure-ascii的神奇之处" class="headerlink" title="ensure_ascii的神奇之处"></a>ensure_ascii的神奇之处</h3><blockquote><p>If <code>ensure_ascii</code> is true (the default), all non-ASCII characters in the output are escaped with <code>\uXXXX</code> sequences, and the result is a <code>str</code> instance consisting of ASCII characters only.  If <code>ensure_ascii</code> is <code>False</code>, some chunks written to <code>fp</code> may be <code>unicode</code> instances. This usually happens because the input contains unicode strings or the <code>encoding</code> parameter is used. Unless <code>fp.write()</code> explicitly understands <code>unicode</code> (as in <code>codecs.getwriter</code>) this is likely to cause an error.</p>
-<footer><strong>Python Docs</strong><cite><a href="https://docs.python.org/2/library/json.html?highlight=ensure_ascii#basic-usage" target="_blank" rel="external">Welcome to docs.python.org</a></cite></footer></blockquote>
-<h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> json</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>data = [<span class="string">u"她"</span>, <span class="string">u"是"</span>, <span class="string">u"美女"</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output1 = json.dumps(data)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output1</div><div class="line"><span class="string">'["\\u5979", "\\u662f", "\\u7f8e\\u5973"]'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(output1)</div><div class="line">[<span class="string">"\\u5979"</span>, <span class="string">"\\u662f"</span>, <span class="string">"\\u7f8e\\u5973"</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>output2 = json.dumps(data, ensure_ascii=<span class="keyword">False</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>outout2</div><div class="line"><span class="string">u'["\u5979", "\u662f", "\u7f8e\u5973"]'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(output2)</div><div class="line">[<span class="string">"她"</span>, <span class="string">"是"</span>, <span class="string">"美女"</span>]</div></pre></td></tr></table></figure>
-<h3 id="参数cls的妙用之处理时间"><a href="#参数cls的妙用之处理时间" class="headerlink" title="参数cls的妙用之处理时间"></a>参数cls的妙用之处理时间</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> json</div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DateTimeEncoder</span><span class="params">(json.JSONEncoder)</span>:</span></div><div class="line">    <span class="string">"""convert datetime to string in json.dumps"""</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">default</span><span class="params">(self, obj)</span>:</span></div><div class="line">        <span class="keyword">if</span> isinstance(obj, datetime):</div><div class="line">            encoded_object = obj.strftime(<span class="string">'%Y-%m-%d %H:%M:%S'</span>)</div><div class="line">        <span class="keyword">elif</span> isinstance(obj, date):</div><div class="line">            encoded_object = obj.strftime(<span class="string">'%Y-%m-%d'</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            encoded_object = json.JSONEncoder.default(self, obj)</div><div class="line">        <span class="keyword">return</span> encoded_object</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    data = &#123;<span class="string">"now"</span>: datetime.now()&#125;</div><div class="line">    print(json.dumps(data, cls=DateTimeEncoder))</div><div class="line">    <span class="comment"># output: &#123;"now": "2017-04-19 16:32:53"&#125;</span></div></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/19/python-json/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1700,21 +1625,16 @@
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>操作系统: Ubuntu14.04; Pycharm版本: 2016.3; 这里的前进指的是追踪函数源码, 后退是前进的反方向。</p>
 </blockquote>
-<h3 id="前进"><a href="#前进" class="headerlink" title="前进"></a>前进</h3><ul>
-<li><code>Ctrl</code>+<code>B</code></li>
-<li><code>Ctrl</code>+<code>Q</code>+<code>&lt;F4&gt;</code></li>
-</ul>
-<h3 id="后退"><a href="#后退" class="headerlink" title="后退"></a>后退</h3><ul>
-<li><code>View</code> -&gt; <code>ToolBar</code> -&gt; <code>√ ToolBar</code>(出现工具栏，工具栏中有前进和后退)</li>
-<li><code>Ctrl</code>+ <code>Alt</code> + <code>Left</code>(我试了没生效，不知道为啥)</li>
-<li>罗技G502鼠标左侧前进键和后退键完美兼容Pycharm(意外之喜)</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/19/pycharm-jump/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1946,7 +1866,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
