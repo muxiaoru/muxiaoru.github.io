@@ -91,9 +91,10 @@
       <title><![CDATA[HTTPS for GitHub Pages]]></title>
       <url>https://hugoxia.github.io/2017/04/25/github-pages-https/</url>
       <content type="html"><![CDATA[<blockquote>
-<p>福利来啦, Github响应小伙伴们的号召, 于2016年6月15日, 推出https服务, 为username.github.io站点添加<code>Enforce HTTPS</code>选项, 详情请参阅<a href="https://github.com/blog/2186-https-for-github-pages" target="_blank" rel="external">https://github.com/blog/2186-https-for-github-pages</a><br><a id="more"></a></p>
-<h2 id="具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS"><a href="#具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS" class="headerlink" title="具体操作参见Securing your GitHub Pages site with HTTPS"></a>具体操作参见<a href="https://help.github.com/articles/securing-your-github-pages-site-with-https/" target="_blank" rel="external">Securing your GitHub Pages site with HTTPS</a></h2></blockquote>
-<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点:"></a>注意点:</h2><ul>
+<p>福利来啦, Github响应小伙伴们的号召, 于2016年6月15日, 推出https服务, 为username.github.io站点添加<code>Enforce HTTPS</code>选项, 详情请参阅<a href="https://github.com/blog/2186-https-for-github-pages" target="_blank" rel="external">https://github.com/blog/2186-https-for-github-pages</a></p>
+</blockquote>
+<a id="more"></a>
+<h2 id="具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS"><a href="#具体操作参见Securing-your-GitHub-Pages-site-with-HTTPS" class="headerlink" title="具体操作参见Securing your GitHub Pages site with HTTPS"></a>具体操作参见<a href="https://help.github.com/articles/securing-your-github-pages-site-with-https/" target="_blank" rel="external">Securing your GitHub Pages site with HTTPS</a></h2><h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点:"></a>注意点:</h2><ul>
 <li>使用自定义域的GitHub页面不支持HTTPS(即是说,<code>Custom domain</code>选项置空并保存)</li>
 <li>使用HTTPS之后, 必须删除文件<code>CNAME</code></li>
 <li>最后一点也是最重要的一点, 设置成功之后,需要等待十几分钟才能生效,耐心等待</li>
@@ -243,12 +244,13 @@
       <title><![CDATA[通过workbench导出ER图]]></title>
       <url>https://hugoxia.github.io/2017/04/20/mysql-workbench-export-ER/</url>
       <content type="html"><![CDATA[<blockquote>
-<p>操作系统: Ubuntu14.04<br><a id="more"></a></p>
+<p>操作系统: Ubuntu14.04</p>
+</blockquote>
+<a id="more"></a>
 <h3 id="操作流程概览"><a href="#操作流程概览" class="headerlink" title="操作流程概览"></a>操作流程概览</h3><ul>
 <li><code>Database</code> -&gt; <code>Reverse Engine...</code> -&gt; 依次填入信息,然后 <code>&gt; Next</code>, <code>&gt; Next</code>…</li>
 <li><code>Ctrl</code>+<code>R</code> -&gt; 依次填入信息, 后面同上</li>
 </ul>
-</blockquote>
 <h3 id="操作流程明细-无图无真相"><a href="#操作流程明细-无图无真相" class="headerlink" title="操作流程明细(无图无真相)"></a>操作流程明细(无图无真相)</h3><ul>
 <li>执行<code>Ctrl</code>+<code>R</code>后,出现如下对话框<br><img src="/uploads/ER0.png" style="margin: auto" title="One"></li>
 <li>Next<br><img src="/uploads/ER1.png" style="margin: auto" title="Two"></li>
@@ -430,9 +432,9 @@
 <ul>
 <li>心跳检测是判断对方(设备，进程或其它网元)是否正常进行，一般采用定时发送简单的通讯包，如果长时间未收到对方响应，则判断对方已经挂掉。</li>
 <li><a href="http://www.baike.com/wiki/%E5%BF%83%E8%B7%B3%E6%9C%BA%E5%88%B6" target="_blank" rel="external">心跳机制</a>是服务端和客户端检测对方是否在线的一种方式。</li>
-<li>心跳包就是客户端定时发送简单的信息给服务端告诉它我还在，服务端视情况而定给客户单返回合适信息，一般情况下是客户端给服务端发心跳包。<a id="more"></a>
-</li>
+<li>心跳包就是客户端定时发送简单的信息给服务端告诉它我还在，服务端视情况而定给客户单返回合适信息，一般情况下是客户端给服务端发心跳包。</li>
 </ul>
+<a id="more"></a>
 <h3 id="为什么要用心跳机制？"><a href="#为什么要用心跳机制？" class="headerlink" title="为什么要用心跳机制？"></a>为什么要用心跳机制？</h3><ul>
 <li>服务端不能有效判断客户端是否在线。</li>
 <li>心跳包可以用于长连接的保活和断线处理。</li>
@@ -478,9 +480,10 @@
       <title><![CDATA[鸟叔Linux私房菜基础篇——Linux是什么？]]></title>
       <url>https://hugoxia.github.io/2017/04/17/linux-1/</url>
       <content type="html"><![CDATA[<blockquote>
-<p>古人云: 读书从厚到薄，从薄到厚。我现在开始做第一步。。。<br><a id="more"></a></p>
-<h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><p>无图无真相，先来了图。<br><img src="/uploads/operate_system.png" style="margin: auto" title="操作系统的角色"><br>说白了，操作系统就是一个调度者，实现硬件控制和资源管理的一个管理员。而Linux 提供了一个完整的操作系统当中最底层的硬件控制与资源管理的完整架构。</p>
+<p>古人云: 读书从厚到薄，从薄到厚。我现在开始做第一步。。。</p>
 </blockquote>
+<a id="more"></a>
+<h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><p>无图无真相，先来了图。<br><img src="/uploads/operate_system.png" style="margin: auto" title="操作系统的角色"><br>说白了，操作系统就是一个调度者，实现硬件控制和资源管理的一个管理员。而Linux 提供了一个完整的操作系统当中最底层的硬件控制与资源管理的完整架构。</p>
 <h3 id="Linux的核心版本"><a href="#Linux的核心版本" class="headerlink" title="Linux的核心版本"></a>Linux的核心版本</h3><h4 id="查询指令"><a href="#查询指令" class="headerlink" title="查询指令"></a>查询指令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uname -r</div></pre></td></tr></table></figure>
 <h4 id="版本号解释"><a href="#版本号解释" class="headerlink" title="版本号解释"></a>版本号解释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2.6.18-92.el5</div><div class="line">主版本.次版本.释出版本-修改版本</div></pre></td></tr></table></figure>
 <ul>
