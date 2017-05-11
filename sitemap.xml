@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://muxiaoru.github.io/2017/05/12/introduction/</loc>
+    
+    <lastmod>2017-05-11T16:52:46.734Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://muxiaoru.github.io/tags/index.html</loc>
     
     <lastmod>2017-05-11T16:15:26.620Z</lastmod>
@@ -12,174 +19,6 @@
     <loc>https://muxiaoru.github.io/404.html</loc>
     
     <lastmod>2017-05-11T16:15:26.268Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2015/09/21/vim/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.220Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/05/03/high-speed-seat/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.212Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/27/mysql-limit/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.196Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/23/docker-note/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.180Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/03/31/mysql/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.176Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/17/linux-1/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.164Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/26/python-config/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.124Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/20/mysql-workbench-export-ER/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.096Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/14/flask-1/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.064Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/15/pnvssn/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.056Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/25/wsgi-uwsgi/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.052Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/19/guitar/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.052Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/19/python-json/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.040Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/19/pycharm-jump/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.032Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/11/oauth2/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.024Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/18/linux-2/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.024Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/12/pycharm-autopep8/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.008Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/24/python-exit/</loc>
-    
-    <lastmod>2017-05-11T16:15:26.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/12/python-format/</loc>
-    
-    <lastmod>2017-05-11T16:15:25.984Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/25/github-pages-https/</loc>
-    
-    <lastmod>2017-05-11T16:15:25.980Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/18/heartbeat/</loc>
-    
-    <lastmod>2017-05-11T16:15:25.960Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/10/python-excel/</loc>
-    
-    <lastmod>2017-05-11T16:15:25.952Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2015/09/26/regex/</loc>
-    
-    <lastmod>2017-05-11T16:15:25.944Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://muxiaoru.github.io/2017/04/22/go-note/</loc>
-    
-    <lastmod>2017-05-11T16:15:25.900Z</lastmod>
     
   </url>
   
